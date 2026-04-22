@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.env
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# MLflow
+mlruns/
+mlartifacts/
+
+# Data (we version config, not raw data)
+data/raw/
+data/processed/
+*.csv
+*.xlsx
+!data/samples/*.csv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.key
+credentials.json
+.streamlit/secrets.toml
+
+# Output
+outputs/
+screenshots/temp/

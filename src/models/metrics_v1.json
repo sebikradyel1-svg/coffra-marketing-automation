@@ -1,0 +1,31 @@
+{
+  "dataset": "kaggle/rabieelkharoua/predict-conversion-in-digital-marketing-dataset",
+  "dataset_size": 8000,
+  "train_size": 6400,
+  "test_size": 1600,
+  "class_balance": {
+    "converted": 5610,
+    "not_converted": 790
+  },
+  "models": {
+    "logistic_regression": {
+      "cv_roc_auc_mean": 0.7671258376768428,
+      "cv_roc_auc_std": 0.03084531741427759,
+      "test_roc_auc": 0.7643013588092048,
+      "test_pr_auc": 0.9440728541635992
+    },
+    "xgboost": {
+      "cv_roc_auc_mean": 0.7812845506441932,
+      "cv_roc_auc_std": 0.04121449572805306,
+      "test_roc_auc": 0.7842692257813513,
+      "test_pr_auc": 0.9439679848554531,
+      "hyperparameters": {
+        "n_estimators": 200,
+        "max_depth": 6,
+        "learning_rate": 0.1,
+        "scale_pos_weight": 0.1408199643493761
+      }
+    }
+  },
+  "random_state": 42
+}

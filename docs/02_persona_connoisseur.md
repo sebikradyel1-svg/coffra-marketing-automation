@@ -131,11 +131,11 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 
 | Product | Fits Job | Priority |
 |---|---|---|
-| Single Origin Ethiopia/Colombia 250g | Primary + Emotional | ⭐⭐⭐ |
-| Coffra Home subscription (sample din origin nou la fiecare livrare) | Secondary | ⭐⭐⭐ **killer feature** |
-| Signature Blend | — (prea "safe") | ⭐ (doar backup când are vizitatori) |
-| In-store V60 manual brew | Primary + Emotional | ⭐⭐⭐ |
-| Coffra Pass (15 cafele/lună) | Not primary (acasă e ritualul lui) | ⭐ |
+| Single Origin Ethiopia/Colombia 250g | Primary + Emotional | High |
+| Coffra Home subscription (sample din origin nou la fiecare livrare) | Secondary | High **killer feature** |
+| Signature Blend | — (prea "safe") | Low (doar backup când are vizitatori) |
+| In-store V60 manual brew | Primary + Emotional | High |
+| Coffra Pass (15 cafele/lună) | Not primary (acasă e ritualul lui) | Low |
 
 ---
 
@@ -192,8 +192,8 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 ## 9. Copy & Messaging Guidelines (pentru Ziua 3)
 
 **Tone check pentru emailuri către Connoisseur:**
-- ✅ **Da:** specific (numere, procese, origin), peer-to-peer, assumptive (știe ce e washed process)
-- ❌ **Nu:** "amazing coffee", "perfect cup", educational basic, exclamation marks
+- **Use:** specific (numere, procese, origin), peer-to-peer, assumptive (știe ce e washed process)
+- **Avoid:** "amazing coffee", "perfect cup", educational basic, exclamation marks
 
 **Words & phrases care funcționează:**
 - "Harvested", "process", "altitude", "lot", "micro-lot", "varietal"

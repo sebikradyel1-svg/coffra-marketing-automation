@@ -56,9 +56,9 @@
 
 **Consumption pattern:**
 - **1-2 cafele/zi**, distribuite:
-  - **Dimineață acasă:** Nespresso (quick, familiar, trusted)
-  - **Afternoon sau pranz:** dacă lucrează remote → cafenea (break + change of scenery)
-  - **Social:** când iese cu prietene / networking / eveniment → cafenea
+ - **Dimineață acasă:** Nespresso (quick, familiar, trusted)
+ - **Afternoon sau pranz:** dacă lucrează remote → cafenea (break + change of scenery)
+ - **Social:** când iese cu prietene / networking / eveniment → cafenea
 
 **Home setup:**
 - **Nespresso** (capsule) — pentru viteza și consistența. Zero interes pentru V60/Aeropress.
@@ -86,10 +86,10 @@
 ## 5. Digital Footprint
 
 **Platforms frecventate (în ordinea importanței):**
-- **Instagram** ⭐⭐⭐ — principala sursă de inspirație lifestyle/gastronomy
-- **TikTok** ⭐⭐⭐ — trenduri, food/travel/fashion content
-- **Facebook** ⭐⭐ — pentru grupuri (travel, events locale), mai puțin feed
-- **LinkedIn** ⭐ — profesional, dar nu e lifestyle channel pentru ea
+- **Instagram** High — principala sursă de inspirație lifestyle/gastronomy
+- **TikTok** High — trenduri, food/travel/fashion content
+- **Facebook** Medium — pentru grupuri (travel, events locale), mai puțin feed
+- **LinkedIn** Low — profesional, dar nu e lifestyle channel pentru ea
 - **NOT:** Reddit, YouTube long-form, podcasturi technical, newsletter-uri specializate
 
 **Influenceri followed (pattern, nu nume exacte):**
@@ -136,12 +136,12 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 
 | Product | Fits Job | Priority |
 |---|---|---|
-| **In-store brewed coffee à la carte (espresso, cappuccino, V60)** | Primary + Emotional — default mode of consumption | ⭐⭐⭐ **primary fit** |
-| In-store community events (tasting, launch nou origin) | Secondary + Emotional (social, shareable) | ⭐⭐⭐ |
-| **Coffra Pass (15 cafele/lună)** | **Aspirational purchase** — considerat pentru "momente de upgrade" (nou job, pauză profesională, nou an, gift from partner). Nu default monthly, dar pitch valid pentru ocazii. | ⭐⭐ |
-| Signature Blend 250g pachet | Occasional (acasă ca "nice to have" după o vizită memorabilă, sau cadou pentru prietene) | ⭐⭐ |
-| Single Origin Ethiopia/Colombia 250g | Rare (doar dacă primește ca recomandare foarte puternică sau ca gift) | ⭐ |
-| **Coffra Home subscription (D2C)** | **Does NOT fit** — nu face home brewing elaborat, e prea scump recurent pentru profil financiar | ❌ |
+| **In-store brewed coffee à la carte (espresso, cappuccino, V60)** | Primary + Emotional — default mode of consumption | High **primary fit** |
+| In-store community events (tasting, launch nou origin) | Secondary + Emotional (social, shareable) | High |
+| **Coffra Pass (15 cafele/lună)** | **Aspirational purchase** — considerat pentru "momente de upgrade" (nou job, pauză profesională, nou an, gift from partner). Nu default monthly, dar pitch valid pentru ocazii. | Medium |
+| Signature Blend 250g pachet | Occasional (acasă ca "nice to have" după o vizită memorabilă, sau cadou pentru prietene) | Medium |
+| Single Origin Ethiopia/Colombia 250g | Rare (doar dacă primește ca recomandare foarte puternică sau ca gift) | Low |
+| **Coffra Home subscription (D2C)** | **Does NOT fit** — nu face home brewing elaborat, e prea scump recurent pentru profil financiar | Not applicable |
 
 ---
 
@@ -181,14 +181,14 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 
 | Canal | Probabilitate | Mesaj dominant |
 |---|---|---|
-| **Instagram organic** (post cu ambient + latte art + aesthetic) | ⭐⭐⭐ HIGH | "Look at this place — must visit" |
-| **TikTok** (trend-based short — "cafenele noi Timișoara") | ⭐⭐⭐ HIGH | Social proof + discovery |
-| **Recomandare prietenă/colegă** | ⭐⭐⭐ HIGH | Word of mouth pur |
-| **Influencer gastronomy RO** menționează | ⭐⭐ MEDIUM | Trust transfer |
-| **Google: "cafenele Timișoara"** sau "brunch Timișoara" | ⭐⭐ MEDIUM | SEO local |
-| Facebook groups (Timișoara events, WFH spots) | ⭐ LOW-MEDIUM | Community-based |
-| Newsletter signup | ⭐ LOW | Doar dacă e convinsă deja de vizită |
-| Vitrină fizică | ⭐⭐ MEDIUM (pentru locals) | Aesthetic draw |
+| **Instagram organic** (post cu ambient + latte art + aesthetic) | High HIGH | "Look at this place — must visit" |
+| **TikTok** (trend-based short — "cafenele noi Timișoara") | High HIGH | Social proof + discovery |
+| **Recomandare prietenă/colegă** | High HIGH | Word of mouth pur |
+| **Influencer gastronomy RO** menționează | Medium MEDIUM | Trust transfer |
+| **Google: "cafenele Timișoara"** sau "brunch Timișoara" | Medium MEDIUM | SEO local |
+| Facebook groups (Timișoara events, WFH spots) | Low LOW-MEDIUM | Community-based |
+| Newsletter signup | Low LOW | Doar dacă e convinsă deja de vizită |
+| Vitrină fizică | Medium MEDIUM (pentru locals) | Aesthetic draw |
 
 **Implicații pentru P1 (email nurture):**
 - **Intrarea primară în funnel** pentru Bianca e: **IG/TT → vizită fizică → newsletter signup la cashieră sau QR pe masă cu "join Coffra list for 10% off first Pass"**
@@ -201,8 +201,8 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 ## 9. Copy & Messaging Guidelines (pentru Ziua 3)
 
 **Tone check pentru emailuri către Daily Ritualist (Bianca):**
-- ✅ **Da:** warm, aspirational, invitational, visual-driven, short paragraphs
-- ❌ **Nu:** technical (ratios, altitude), educational basic ("ce e o cafea bună"), long-form without visual, urgency manipulativă ("ultima zi!")
+- **Use:** warm, aspirational, invitational, visual-driven, short paragraphs
+- **Avoid:** technical (ratios, altitude), educational basic ("ce e o cafea bună"), long-form without visual, urgency manipulativă ("ultima zi!")
 
 **Words & phrases care funcționează:**
 - "Your next favorite spot in Timișoara"
@@ -239,10 +239,10 @@ Framework: *"When I [situation], I want to [motivation], so I can [outcome]."*
 **Surse de construcție a persona:**
 - **Direct behavioral observation** of a real person in Coffra team's extended network (anonymized, name changed)
 - **Industry pattern validation** via:
-  - Google Trends RO — "cafenele Timișoara", "brunch", "cafea buna" (2023-2026)
-  - Instagram hashtag analysis — #cafenelebune, #specialtycoffeeromania, #timisoaracafe
-  - Observational study of 5 to go, Starbucks RO, and local specialty cafes
-  - CEE aspirational consumer segment patterns (Euromonitor, Mintel public summaries on aspirational millennials)
+ - Google Trends RO — "cafenele Timișoara", "brunch", "cafea buna" (2023-2026)
+ - Instagram hashtag analysis — #cafenelebune, #specialtycoffeeromania, #timisoaracafe
+ - Observational study of 5 to go, Starbucks RO, and local specialty cafes
+ - CEE aspirational consumer segment patterns (Euromonitor, Mintel public summaries on aspirational millennials)
 
 **Decizii de brand (not public data):**
 - Income bracket range (4-8k RON) — aliniat cu profesie și pattern de consum descris

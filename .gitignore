@@ -37,3 +37,9 @@ credentials.json
 # Output
 outputs/
 screenshots/temp/
+
+# Cache (API responses, temp files)
+cache/
+
+# Notebook scratchpads
+Untitled*.ipynb

@@ -1,0 +1,42 @@
+{
+  "variants": [
+    {
+      "text": "Coffra Pass: 15 cafele, 199 RON luna asta",
+      "char_count": 41,
+      "angle": "direct",
+      "rationale": "Bianca ia decizii vizual-rapid, deci cifrele concrete (15 cafele, 199 RON) îi oferă ancorele de care are nevoie fără să citească emailul întreg."
+    },
+    {
+      "text": "Și dacă luna asta te răsfeți puțin?",
+      "char_count": 35,
+      "angle": "invitation",
+      "rationale": "Tonul permisiv și întrebarea deschisă corespund profilului non-pretențios și aspirațional al Biancăi, invitând fără presiune și fără FOMO forțat."
+    },
+    {
+      "text": "Ioana îți povestește despre abonamentul nostru",
+      "char_count": 46,
+      "angle": "insider",
+      "rationale": "Framing-ul peer-to-peer cu numele sender-ului în subiect creează intimitate și senzația unui mesaj personal, nu de brand, potrivit pentru o Biancă socială și comunitar-orientată."
+    },
+    {
+      "text": "Nu e pentru în fiecare zi. Și asta e OK.",
+      "char_count": 40,
+      "angle": "counter_intuitive",
+      "rationale": "Negarea așteptării că un abonament trebuie să fie daily default surprinde plăcut și validează comportamentul Biancăi de consumer aspirațional ocazional, nu utilitar."
+    },
+    {
+      "text": "Cum arată o pauză de celebrat, prietenă?",
+      "char_count": 40,
+      "angle": "curiosity",
+      "rationale": "Combinația dintre cuvântul-cheie 'pauză', adresarea caldă 'prietenă' și întrebarea deschisă stârnește curiozitatea fără clickbait, ancorând produsul în momentele de upgrade personale."
+    }
+  ],
+  "metadata": {
+    "persona": "daily_ritualist",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 846,
+    "output_tokens": 572
+  }
+}

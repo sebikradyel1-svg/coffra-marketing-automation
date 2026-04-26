@@ -1,0 +1,81 @@
+{
+  "evaluations": [
+    {
+      "variant_text": "3 lots. Roast dates included. Free.",
+      "scores": {
+        "clarity": 9,
+        "intrigue": 7,
+        "brand_fit": 9,
+        "mobile_readability": 10
+      },
+      "total_score": 35,
+      "biggest_strength": "Staccato structure mirrors how a connoisseur like Andrei thinks — terse, data-forward, no fluff — while 'Free.' lands as a confident punchline rather than a promotional shout.",
+      "biggest_weakness": "Slightly transactional; a first-time subscriber hasn't yet built enough brand context to fully appreciate the significance of roast date transparency as a differentiator.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "What's in the Gelana this harvest?",
+      "scores": {
+        "clarity": 4,
+        "intrigue": 8,
+        "brand_fit": 8,
+        "mobile_readability": 10
+      },
+      "total_score": 30,
+      "biggest_strength": "Signals deep terroir knowledge and seasonal thinking that immediately reads as credible to a specialty-educated reader like Andrei.",
+      "biggest_weakness": "Clarity suffers significantly for a welcome email — a new subscriber has no prior relationship with Coffra's lots and may not understand what action this email is inviting them to take.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "You know what to look for. Good.",
+      "scores": {
+        "clarity": 3,
+        "intrigue": 7,
+        "brand_fit": 8,
+        "mobile_readability": 10
+      },
+      "total_score": 28,
+      "biggest_strength": "The peer-to-peer, non-condescending tone is perfectly calibrated for Andrei's profile — it validates his expertise without being sycophantic.",
+      "biggest_weakness": "Extremely opaque as a welcome email subject line; offers no signal about the email's content or the free sample offer, risking low open rates from colder subscribers.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "We don't roast for café menus",
+      "scores": {
+        "clarity": 5,
+        "intrigue": 8,
+        "brand_fit": 9,
+        "mobile_readability": 10
+      },
+      "total_score": 32,
+      "biggest_strength": "Sharp positioning statement that instantly differentiates Coffra from commodity roasters and resonates with Andrei's disdain for performative, café-menu-driven coffee culture.",
+      "biggest_weakness": "As a welcome email hook, it is purely brand-voice without connecting to the concrete value proposition (free sample pack), leaving the offer completely hidden.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Ever cupped a washed Guji blind?",
+      "scores": {
+        "clarity": 3,
+        "intrigue": 8,
+        "brand_fit": 7,
+        "mobile_readability": 10
+      },
+      "total_score": 28,
+      "biggest_strength": "Cupping and Guji origin references signal high technical fluency and will immediately catch the eye of a knowledgeable reader like Andrei.",
+      "biggest_weakness": "The offer features Ethiopia Gelana specifically, not a washed Guji, creating a subtle mismatch between subject and content that slightly undermines trust on a first touchpoint.",
+      "forbidden_words_used": []
+    }
+  ],
+  "winner": {
+    "variant_text": "3 lots. Roast dates included. Free.",
+    "rationale": "This variant is the only one that simultaneously communicates technical credibility (micro-lots, roast date transparency), delivers a concrete value signal ('Free.'), and does so in a voice that feels native to how a specialty coffee engineer-type reader processes information — fast, structured, no noise. It scores highest overall precisely because it doesn't sacrifice clarity for intrigue or brand fit; all four dimensions are strong rather than spiking one at the expense of others. For a welcome email where the subscriber has zero prior brand equity with Coffra, anchoring on a tangible, information-dense hook is the strategically sound choice."
+  },
+  "metadata": {
+    "persona": "connoisseur",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 1097,
+    "output_tokens": 1025
+  }
+}

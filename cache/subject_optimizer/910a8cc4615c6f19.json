@@ -1,0 +1,42 @@
+{
+  "variants": [
+    {
+      "text": "3 lots. Roast dates included. Free.",
+      "char_count": 35,
+      "angle": "direct",
+      "rationale": "Leads with the concrete offer and roast dating transparency in nine words — no filler, exactly what Andrei scans for before deleting."
+    },
+    {
+      "text": "What's in the Gelana this harvest?",
+      "char_count": 34,
+      "angle": "curiosity",
+      "rationale": "Names a specific micro-lot and frames it as a harvest-level question, triggering the same itch Andrei gets reading Sprudge origin reports."
+    },
+    {
+      "text": "You know what to look for. Good.",
+      "char_count": 32,
+      "angle": "insider",
+      "rationale": "Peer-to-peer framing that skips the brand introduction and positions Sebastian as a roaster talking to someone already fluent in the language."
+    },
+    {
+      "text": "We don't roast for café menus",
+      "char_count": 29,
+      "angle": "counter_intuitive",
+      "rationale": "A quietly confident declaration of focus that signals Coffra's micro-lot positioning without self-aggrandisement, earning trust from someone allergic to marketing posture."
+    },
+    {
+      "text": "Ever cupped a washed Guji blind?",
+      "char_count": 32,
+      "angle": "invitation",
+      "rationale": "Uses technical vocabulary naturally and poses a low-pressure sensory challenge that speaks directly to Andrei's V60-and-Comandante weekend ritual."
+    }
+  ],
+  "metadata": {
+    "persona": "connoisseur",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 755,
+    "output_tokens": 426
+  }
+}

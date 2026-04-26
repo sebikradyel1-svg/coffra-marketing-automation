@@ -1,0 +1,81 @@
+{
+  "evaluations": [
+    {
+      "variant_text": "Coffra Pass: 15 cafele, 199 RON luna asta",
+      "scores": {
+        "clarity": 9,
+        "intrigue": 4,
+        "brand_fit": 5,
+        "mobile_readability": 9
+      },
+      "total_score": 27,
+      "biggest_strength": "Crystal clear offer at a glance — product name, quantity, and price land instantly, reducing friction for decision-oriented openers.",
+      "biggest_weakness": "Reads like a promotional flyer rather than a warm nurture touchpoint from Ioana, which undermines the aspirational positioning and feels transactional for Bianca's social-driven decision style.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Și dacă luna asta te răsfeți puțin?",
+      "scores": {
+        "clarity": 4,
+        "intrigue": 7,
+        "brand_fit": 7,
+        "mobile_readability": 10
+      },
+      "total_score": 28,
+      "biggest_strength": "Warm, conversational tone mirrors how Bianca's lifestyle influencers speak, making the self-treat framing feel natural and emotionally resonant.",
+      "biggest_weakness": "Offers almost no signal about what's inside — coffee, skincare, a subscription? — which risks low open rates from inbox-scanners who need a minimal content cue.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Ioana îți povestește despre abonamentul nostru",
+      "scores": {
+        "clarity": 6,
+        "intrigue": 3,
+        "brand_fit": 4,
+        "mobile_readability": 6
+      },
+      "total_score": 19,
+      "biggest_strength": "Sender name in subject line adds a human, personal touch that can marginally lift open rates in a crowded inbox.",
+      "biggest_weakness": "\"Abonamentul nostru\" is vague and passive — it sounds like a newsletter announcement rather than an aspirational invitation, and the 46-char length risks truncation on some mobile clients.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Nu e pentru în fiecare zi. Și asta e OK.",
+      "scores": {
+        "clarity": 5,
+        "intrigue": 8,
+        "brand_fit": 9,
+        "mobile_readability": 9
+      },
+      "total_score": 31,
+      "biggest_strength": "Directly mirrors the brief's core positioning — aspirational, not daily-default — in a disarming, self-aware tone that signals Coffra understands Bianca without over-selling.",
+      "biggest_weakness": "Lacks any product anchor, so readers unfamiliar with Coffra Pass from prior emails may feel uncertain about what exactly they're being invited into.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Cum arată o pauză de celebrat, prietenă?",
+      "scores": {
+        "clarity": 5,
+        "intrigue": 8,
+        "brand_fit": 8,
+        "mobile_readability": 9
+      },
+      "total_score": 30,
+      "biggest_strength": "The celebratory framing ties directly to the brief's \"new job / finished project\" use cases and the informal \"prietenă\" creates genuine peer-level warmth suited to Bianca's social identity.",
+      "biggest_weakness": "Slightly abstract without a product cue — in isolation it could belong to a spa or events brand, and the question format may feel slightly pressuring for low-intent openers.",
+      "forbidden_words_used": []
+    }
+  ],
+  "winner": {
+    "variant_text": "Nu e pentru în fiecare zi. Și asta e OK.",
+    "rationale": "This variant is the only one that directly encodes the strategic positioning of Coffra Pass — aspirational and occasional, not utilitarian — into the subject line itself, doing the brief's heavy lifting before the email is even opened. The self-aware, slightly counter-intuitive phrasing creates genuine intrigue while feeling unmistakably on-brand for a specialty coffee voice that respects Bianca's intelligence. At 40 characters with the key hook front-loaded, it also performs cleanly on mobile without truncation risk."
+  },
+  "metadata": {
+    "persona": "daily_ritualist",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 1201,
+    "output_tokens": 1106
+  }
+}

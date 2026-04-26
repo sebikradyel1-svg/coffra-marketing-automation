@@ -1,0 +1,42 @@
+{
+  "variants": [
+    {
+      "text": "Prima ta cafea e cadoul nostru ☕",
+      "char_count": 32,
+      "angle": "direct",
+      "rationale": "Oferă beneficiul concret (cafea gratuită) imediat și fără artificii, perfect pentru o persoană vizual-first care decide rapid pe baza valorii aparente."
+    },
+    {
+      "text": "Există un loc al tău pe Alba Iulia 🤍",
+      "char_count": 36,
+      "angle": "curiosity",
+      "rationale": "Folosește 'loc al tău' din vocabularul preferat și creează o intrigă caldă legată de locație, fără să dezvăluie tot — o invită să afle mai mult."
+    },
+    {
+      "text": "Ioana de la Coffra vrea să te cunoască",
+      "char_count": 38,
+      "angle": "insider",
+      "rationale": "Framing peer-to-peer, de la om la om, care mimează un mesaj personal de la o prietenă — rezonează cu profilul social și conversațional al Biancăi."
+    },
+    {
+      "text": "Nu e un newsletter. E o pauză cu noi ✨",
+      "char_count": 38,
+      "angle": "counter_intuitive",
+      "rationale": "Rupe așteptarea față de un email de abonare tipic și repoziționează experiența ca tihnă și conexiune, nu ca mesaj de marketing."
+    },
+    {
+      "text": "Vino cu drag — prima cafea e de la noi",
+      "char_count": 38,
+      "angle": "invitation",
+      "rationale": "Folosește 'cu drag' și 'vino' din vocabularul preferat, tonul e cald și nepretențios, iar oferta apare natural fără presiune sau urgență artificială."
+    }
+  ],
+  "metadata": {
+    "persona": "daily_ritualist",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 820,
+    "output_tokens": 518
+  }
+}

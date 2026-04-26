@@ -1,0 +1,42 @@
+{
+  "variants": [
+    {
+      "text": "We rejected 4 of 7 Gelana Abaya lots",
+      "char_count": 36,
+      "angle": "direct",
+      "rationale": "The raw number upfront signals rigorous curation to a data-aware engineer who respects process over marketing—no interpretation needed, the fact speaks."
+    },
+    {
+      "text": "What moisture variance kills a washed lot",
+      "char_count": 41,
+      "angle": "curiosity",
+      "rationale": "Frames a technical concept as an open question, pulling in a V60-obsessed reader who already knows moisture affects extraction and wants the roaster's specific threshold."
+    },
+    {
+      "text": "How we read a cupping sheet for red flags",
+      "char_count": 41,
+      "angle": "insider",
+      "rationale": "Peer-to-peer framing positions Sebastian as a colleague sharing sourcing methodology, not a brand broadcasting—exactly the register Andrei trusts."
+    },
+    {
+      "text": "Most Ethiopia lots we sampled didn't make it",
+      "char_count": 44,
+      "angle": "counter_intuitive",
+      "rationale": "Leads with rejection rather than selection, which is counterintuitive for a brand email and immediately signals that Coffra isn't running a catalogue—it's running a filter."
+    },
+    {
+      "text": "Want to see the defect counts we walked away from?",
+      "char_count": 50,
+      "angle": "invitation",
+      "rationale": "Low-pressure, data-specific invitation that respects Andrei's autonomy while teasing concrete sourcing evidence—the kind of transparency r/espresso users actively seek."
+    }
+  ],
+  "metadata": {
+    "persona": "connoisseur",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 737,
+    "output_tokens": 441
+  }
+}

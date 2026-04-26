@@ -1,0 +1,81 @@
+{
+  "evaluations": [
+    {
+      "variant_text": "We rejected 4 of 7 Gelana Abaya lots",
+      "scores": {
+        "clarity": 9,
+        "intrigue": 8,
+        "brand_fit": 10,
+        "mobile_readability": 10
+      },
+      "total_score": 37,
+      "biggest_strength": "The specific numbers (4 of 7) do all the heavy lifting — they signal rigorous curation instantly and are deeply credible to a technically-minded reader like Andrei.",
+      "biggest_weakness": "Slightly declarative with no forward pull; a reader who doesn't already trust the brand might not feel compelled to learn why.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "What moisture variance kills a washed lot",
+      "scores": {
+        "clarity": 6,
+        "intrigue": 9,
+        "brand_fit": 9,
+        "mobile_readability": 10
+      },
+      "total_score": 34,
+      "biggest_strength": "Uses precise technical language (moisture variance, washed lot) that resonates strongly with a specialty coffee enthusiast who reads Hoffmann and Sprudge.",
+      "biggest_weakness": "Reads more like a blog post headline than an email about a specific sourcing decision, so clarity about the email's actual content is weaker.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "How we read a cupping sheet for red flags",
+      "scores": {
+        "clarity": 7,
+        "intrigue": 7,
+        "brand_fit": 8,
+        "mobile_readability": 10
+      },
+      "total_score": 32,
+      "biggest_strength": "Positions Coffra as a competent, process-driven team without any performative language, which fits the brand's transparency angle well.",
+      "biggest_weakness": "Feels educational and evergreen rather than specific to this lot's story, reducing the urgency and narrative pull of the email.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Most Ethiopia lots we sampled didn't make it",
+      "scores": {
+        "clarity": 8,
+        "intrigue": 7,
+        "brand_fit": 9,
+        "mobile_readability": 9
+      },
+      "total_score": 33,
+      "biggest_strength": "Conversational and confident tone signals high selectivity without boasting, which lands well with a reader who distrusts marketing pretension.",
+      "biggest_weakness": "Less precise than the 4-of-7 framing, so it sacrifices the credibility boost that concrete numbers provide for this analytically-oriented persona.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Want to see the defect counts we walked away from?",
+      "scores": {
+        "clarity": 8,
+        "intrigue": 7,
+        "brand_fit": 6,
+        "mobile_readability": 4
+      },
+      "total_score": 25,
+      "biggest_strength": "The specificity of 'defect counts' is technically credible and the invitation framing creates mild interactivity.",
+      "biggest_weakness": "At 50 characters it sits at the truncation edge, the question format edges toward clickbait territory, and 'Want to see' can feel like a sales prompt rather than an authentic brand voice.",
+      "forbidden_words_used": []
+    }
+  ],
+  "winner": {
+    "variant_text": "We rejected 4 of 7 Gelana Abaya lots",
+    "rationale": "This variant earns the highest total score by combining maximum clarity, strong intrigue, and perfect brand fit in just 36 characters — well within mobile-safe limits. The specific ratio (4 of 7) is the single most effective signal of rigorous curation available to a specialty coffee brand: it's concrete, verifiable, and immediately separates Coffra from vague marketing claims, which is exactly what Andrei's persona rewards. It also sets up the email body naturally, promising a transparent story about why those lots were rejected rather than teasing a generic tip."
+  },
+  "metadata": {
+    "persona": "connoisseur",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 1086,
+    "output_tokens": 1038
+  }
+}

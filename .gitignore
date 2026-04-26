@@ -39,7 +39,7 @@ outputs/
 screenshots/temp/
 
 # Cache (API responses, temp files)
-cache/
+#cache/
 
 # Notebook scratchpads
 Untitled*.ipynb

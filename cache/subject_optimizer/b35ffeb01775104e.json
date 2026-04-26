@@ -1,0 +1,81 @@
+{
+  "evaluations": [
+    {
+      "variant_text": "Prima ta cafea e cadoul nostru ☕",
+      "scores": {
+        "clarity": 9,
+        "intrigue": 5,
+        "brand_fit": 7,
+        "mobile_readability": 10
+      },
+      "total_score": 31,
+      "biggest_strength": "Instantaneu clar că există un beneficiu concret (cafea gratuită), reducând orice fricțiune la deschidere.",
+      "biggest_weakness": "Sună ușor tranzacțional și promotional, mai aproape de un email de discount decât de un mesaj warm de comunitate.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Există un loc al tău pe Alba Iulia 🤍",
+      "scores": {
+        "clarity": 5,
+        "intrigue": 9,
+        "brand_fit": 10,
+        "mobile_readability": 10
+      },
+      "total_score": 34,
+      "biggest_strength": "Creează un sentiment puternic de belonging și identitate de loc, perfect pentru o persoană care folosește cafenelele ca spații sociale și de lucru.",
+      "biggest_weakness": "Nu comunică explicit oferta de cafea gratuită, ceea ce poate reduce rata de conversie la vizită dacă Bianca nu deschide emailul.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Ioana de la Coffra vrea să te cunoască",
+      "scores": {
+        "clarity": 6,
+        "intrigue": 7,
+        "brand_fit": 8,
+        "mobile_readability": 9
+      },
+      "total_score": 30,
+      "biggest_strength": "Umanizează brandul prin numele expeditorului, creând o conexiune personală autentică care se aliniază cu tonul warm al emailului.",
+      "biggest_weakness": "Poate părea ușor nenatural sau forțat pentru cineva care nu cunoaște Coffra, riscând să fie confundat cu un email de cold outreach.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Nu e un newsletter. E o pauză cu noi ✨",
+      "scores": {
+        "clarity": 4,
+        "intrigue": 8,
+        "brand_fit": 9,
+        "mobile_readability": 10
+      },
+      "total_score": 31,
+      "biggest_strength": "Repoziționează inteligent așteptările despre newsletter-uri și rezonează cu nevoia de pauză autentică a unui profil activ social și profesional.",
+      "biggest_weakness": "Foarte vag în privința conținutului real al emailului — nu oferă niciun indiciu despre oferta de cafea gratuită sau locație.",
+      "forbidden_words_used": []
+    },
+    {
+      "variant_text": "Vino cu drag — prima cafea e de la noi",
+      "scores": {
+        "clarity": 8,
+        "intrigue": 6,
+        "brand_fit": 8,
+        "mobile_readability": 9
+      },
+      "total_score": 31,
+      "biggest_strength": "Combină tonul warm și invitațional cu claritatea ofertei concrete, echilibrând emoția și utilitatea într-un singur rând.",
+      "biggest_weakness": "Liniuța em-dash poate afecta lizibilitatea rapidă pe mobile și expresia 'cu drag' poate suna ușor depășit pentru profilul urban și aspirațional al Biancăi.",
+      "forbidden_words_used": []
+    }
+  ],
+  "winner": {
+    "variant_text": "Există un loc al tău pe Alba Iulia 🤍",
+    "rationale": "Câștigă pe brand fit și intrigue, cele două dimensiuni cele mai relevante pentru Bianca — o consumatoare visual-first, social-driven, care alege cafenelele ca extensie a identității și stilului de viață ei. Menționarea explicită a străzii Alba Iulia ancorează mesajul în realitate fizică și creează un sentiment de destinație personalizată, nu ofertă generică. Deși claritatea ofertei de cafea gratuită lipsește din subject line, aceasta devine un avantaj strategic: curiositatea generată maximizează rata de deschidere, iar oferta este revelată în corp — exact structura potrivită pentru un welcome email cu miză experiențială, nu promoțională."
+  },
+  "metadata": {
+    "persona": "daily_ritualist",
+    "model": "claude-sonnet-4-6",
+    "prompt_version": "1.0",
+    "from_cache": false,
+    "input_tokens": 1166,
+    "output_tokens": 1187
+  }
+}

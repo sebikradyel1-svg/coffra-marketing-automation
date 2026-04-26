@@ -28,6 +28,52 @@ DEFAULT_MODEL = "claude-sonnet-4-6"
 DEFAULT_MAX_TOKENS = 3000
 
 
+def _extract_first_json_object(text: str) -> str:
+    """
+    Extracts the first complete JSON object from text by tracking brace balance.
+    Handles cases where Claude adds explanatory text or corrections after the JSON.
+    """
+    text = text.strip()
+    if text.startswith("```"):
+        start = text.find("{")
+    else:
+        start = text.find("{")
+
+    if start == -1:
+        return text
+
+    depth = 0
+    in_string = False
+    escape_next = False
+
+    for i in range(start, len(text)):
+        char = text[i]
+
+        if escape_next:
+            escape_next = False
+            continue
+
+        if char == "\\":
+            escape_next = True
+            continue
+
+        if char == '"' and not escape_next:
+            in_string = not in_string
+            continue
+
+        if in_string:
+            continue
+
+        if char == "{":
+            depth += 1
+        elif char == "}":
+            depth -= 1
+            if depth == 0:
+                return text[start:i + 1]
+
+    return text[start:]
+
+
 def score_variants(
     email_brief: str,
     persona: PersonaConfig,
@@ -109,6 +155,9 @@ def score_variants(
     if raw_text.startswith("```"):
         lines = raw_text.split("\n")
         raw_text = "\n".join(lines[1:-1]) if lines[-1].strip() == "```" else "\n".join(lines[1:])
+
+    # Robust JSON extraction
+    raw_text = _extract_first_json_object(raw_text)
 
     try:
         parsed = json.loads(raw_text)

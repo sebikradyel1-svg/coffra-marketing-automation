@@ -1,0 +1,12 @@
+Segment,Customers,Lift_pct,Monthly_baseline_GBP,Monthly_uplift_GBP,Annual_uplift_GBP
+Loyal Customers,1111,25%,33330.0,8332.0,99990.0
+Cannot Lose Them,445,40%,13350.0,5340.0,64080.0
+Champions,469,15%,18760.0,2814.0,33768.0
+Potential Loyalists,224,25%,4480.0,1120.0,13440.0
+Promising,533,17%,5330.0,906.0,10873.0
+Customers Needing Attention,726,18%,4356.0,784.0,9409.0
+At Risk,238,15%,2380.0,357.0,4284.0
+About to Sleep,441,10%,2646.0,265.0,3175.0
+Hibernating,718,5%,1436.0,72.0,862.0
+Recent Customers,27,15%,270.0,40.0,486.0
+Lost,946,1%,0.0,0.0,0.0

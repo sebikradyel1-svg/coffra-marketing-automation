@@ -1,0 +1,20 @@
+{
+  "source_file": "..\\data\\raw\\online_retail_II.csv",
+  "cleaning_date": "2026-04-27T00:01:48.060660",
+  "rows_original": 1067371,
+  "rows_cleaned": 779425,
+  "unique_customers": 5878,
+  "unique_invoices": 36969,
+  "date_range": {
+    "start": "2009-12-01",
+    "end": "2011-12-09"
+  },
+  "total_revenue_gbp": 17374804.27,
+  "cleaning_steps": [
+    "Drop rows missing Customer ID (~22% of original)",
+    "Drop cancellation invoices (C-prefix)",
+    "Drop non-positive quantity rows",
+    "Drop non-positive price rows",
+    "Drop exact duplicate rows"
+  ]
+}

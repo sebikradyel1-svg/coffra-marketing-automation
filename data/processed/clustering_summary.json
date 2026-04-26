@@ -1,0 +1,31 @@
+{
+  "method": "K-Means + Hierarchical (Ward)",
+  "k": 4,
+  "features_used": [
+    "Recency",
+    "Frequency_log",
+    "Monetary_log"
+  ],
+  "scaling": "StandardScaler (mean=0, std=1)",
+  "random_state": 42,
+  "kmeans_quality": {
+    "silhouette": 0.3616,
+    "davies_bouldin": 0.8939
+  },
+  "hierarchical_quality": {
+    "silhouette": 0.3076,
+    "davies_bouldin": 0.9357
+  },
+  "method_agreement_ari": 0.6128,
+  "cluster_labels": {
+    "2": "Best Customers",
+    "3": "Engaged Mid-Value",
+    "1": "Light Buyers",
+    "0": "Inactive / Lost"
+  },
+  "pca_variance_explained": {
+    "PC1": 0.747,
+    "PC2": 0.2031,
+    "total": 0.9501
+  }
+}

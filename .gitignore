@@ -13,12 +13,12 @@ venv/
 mlruns/
 mlartifacts/
 
-# Data (we version config, not raw data)
+# Data raw only (large, reproducible from Kaggle)
 data/raw/
-data/processed/
-*.csv
+
+# Allow processed data on GitHub (parquet/json artifacts for dashboard)
+# data/processed/  - committed for dashboard demo
 *.xlsx
-!data/samples/*.csv
 
 # IDE
 .vscode/

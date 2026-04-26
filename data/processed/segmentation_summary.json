@@ -1,0 +1,46 @@
+{
+  "analysis_date": "2026-04-27T00:15:00.010462",
+  "total_customers": 5878,
+  "total_revenue_observed_gbp": 17374804.27,
+  "projected_annual_uplift_gbp": 240367.0,
+  "projected_lift_pct": 23.2,
+  "segment_counts": {
+    "Loyal Customers": 1111,
+    "Lost": 946,
+    "Customers Needing Attention": 726,
+    "Hibernating": 718,
+    "Promising": 533,
+    "Champions": 469,
+    "Cannot Lose Them": 445,
+    "About to Sleep": 441,
+    "At Risk": 238,
+    "Potential Loyalists": 224,
+    "Recent Customers": 27
+  },
+  "cluster_counts": {
+    "Engaged Mid-Value": 1862,
+    "Light Buyers": 1646,
+    "Inactive / Lost": 1494,
+    "Best Customers": 876
+  },
+  "persona_counts": {
+    "Unaligned": 3690,
+    "Daily Ritualist (probable)": 1343,
+    "Connoisseur (probable)": 845
+  },
+  "top_3_uplift_segments": [
+    {
+      "Segment": "Loyal Customers",
+      "Annual_uplift_GBP": 99990.0
+    },
+    {
+      "Segment": "Cannot Lose Them",
+      "Annual_uplift_GBP": 64080.0
+    },
+    {
+      "Segment": "Champions",
+      "Annual_uplift_GBP": 33768.0
+    }
+  ],
+  "methodology_note": "Lift assumptions are scenario-based, anchored to industry benchmarks (Klaviyo, Bloomreach 2024). They represent reasonable projections for differentiated segment campaigns vs. untargeted broadcast. Real Coffra deployment would measure actual lifts via A/B testing per segment."
+}

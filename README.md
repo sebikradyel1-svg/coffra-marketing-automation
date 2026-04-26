@@ -5,6 +5,14 @@
 
 ---
 
+## Live Demo
+
+**[coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)**
+
+Interactive marketing operations dashboard built with Streamlit. Covers lead quality (XGBoost model), AI subject line generation, HubSpot CRM snapshot, simulated campaign funnels, and a methodology page with transparent data provenance.
+
+---
+
 ## What's in this repo
 
 This is **Project 1 (P1)** in a 6-project portfolio targeting AI Marketing Specialist and Marketing Automation roles. P1 takes a fictional specialty coffee brand (Coffra, Timișoara) from strategy to operational implementation, with every step documented and reproducible.
@@ -36,6 +44,9 @@ The brand is fictional — by design. This project deliberately avoids using rea
 | [`src/subject_optimizer/`](src/subject_optimizer/) | AI Subject Line Optimizer Python package (Claude API + caching) |
 | [`src/streamlit_app.py`](src/streamlit_app.py) | Streamlit UI for the Subject Line Optimizer |
 | [`src/models/`](src/models/) | Saved model artifacts (joblib, JSON metrics, sample predictions) |
+| [`dashboard/`](dashboard/) | Multi-page Streamlit marketing analytics dashboard (live: [coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)) |
+| [`extract_hubspot_snapshot.py`](extract_hubspot_snapshot.py) | One-time HubSpot data extraction script using Private App API |
+| [`generate_case_study.py`](generate_case_study.py) | ReportLab PDF generator for the case study |
 
 ### Visual evidence
 
@@ -105,11 +116,20 @@ streamlit run src/streamlit_app.py
 # App opens at http://localhost:8501
 ```
 
+### Marketing Dashboard
+
+```bash
+# Requires snapshots in data/snapshots/ (run extract_hubspot_snapshot.py first if needed)
+streamlit run dashboard/streamlit_dashboard.py
+# Or view live: https://coffra-marketing-dashboard.streamlit.app/
+```
+
 ---
 
 ## Project status
 
 **P1 v1.0 — complete.** All design and implementation artifacts shipped. Live A/B testing deferred to v1.1.
+**P2 v1.0 — complete.** Live dashboard deployed.
 
 | Component | Status |
 |---|---|
@@ -119,8 +139,9 @@ streamlit run src/streamlit_app.py
 | AI Subject Line Optimizer | Complete |
 | HubSpot implementation (visual) | Complete |
 | A/B testing methodology | Complete |
+| Case study PDF | Complete |
+| **Marketing dashboard (live)** | **Complete — [coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)** |
 | Live A/B testing | Deferred to v1.1 |
-| Case study PDF | In progress |
 
 ---
 
@@ -142,7 +163,7 @@ For an AI Marketing Specialist or Marketing Automation role, this project shows:
 
 **Sebastian Kradyel** — Marketing Master's graduate (9.54 GPA, Babeș-Bolyai University) transitioning into AI/ML engineering and marketing automation. Based in Reșița, Romania. Active in Erasmus+ project coordination through ATOR Banatul de Munte.
 
-[**LinkedIn**](https://www.linkedin.com/in/paul-sebastian-kradyel/) · [**GitHub**](https://github.com/sebikradyel1-svg)
+[**LinkedIn**](https://www.linkedin.com/in/) (see GitHub profile for direct link) · [**GitHub**](https://github.com/sebikradyel1-svg)
 
 ---
 

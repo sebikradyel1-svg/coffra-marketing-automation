@@ -1,0 +1,28 @@
+{
+  "distribution": {
+    "persona_1": 1,
+    "persona_2": 1
+  },
+  "property_definition": {
+    "name": "hs_persona",
+    "label": "Persona",
+    "type": "enumeration",
+    "field_type": "select",
+    "options": [
+      {
+        "label": "Specialty coffee enthusiast",
+        "value": "persona_1",
+        "description": "Connoisseur",
+        "displayOrder": 0,
+        "hidden": false
+      },
+      {
+        "label": "Aspirational premium consumer",
+        "value": "persona_2",
+        "description": "Daily Ritualist",
+        "displayOrder": 1,
+        "hidden": false
+      }
+    ]
+  }
+}

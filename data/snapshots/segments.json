@@ -1,0 +1,18 @@
+[
+  {
+    "id": 5,
+    "name": "Connoisseur Subscribers",
+    "type": "DYNAMIC",
+    "size": 1,
+    "created_at": 1777128061476,
+    "updated_at": 1777128061476
+  },
+  {
+    "id": 6,
+    "name": "Daily Ritualist Subscribers",
+    "type": "DYNAMIC",
+    "size": 1,
+    "created_at": 1777128108816,
+    "updated_at": 1777128108816
+  }
+]

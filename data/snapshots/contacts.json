@@ -1,0 +1,38 @@
+[
+  {
+    "id": "764823646434",
+    "properties": {
+      "createdate": "2026-04-25T14:23:53.299Z",
+      "email": "paulsebastiankradyel@gmail.com",
+      "firstname": "Andrei",
+      "hs_email_click": null,
+      "hs_email_open": null,
+      "hs_lead_status": "NEW",
+      "hs_object_id": "764823646434",
+      "hs_persona": "persona_1",
+      "lastmodifieddate": "2026-04-25T22:59:42.404Z",
+      "lastname": "Test-Connoisseur",
+      "lifecyclestage": "subscriber"
+    },
+    "created_at": "2026-04-25T14:23:53.299Z",
+    "updated_at": "2026-04-25T22:59:42.404Z"
+  },
+  {
+    "id": "765293514961",
+    "properties": {
+      "createdate": "2026-04-25T14:27:59.170Z",
+      "email": "coffra.coffee@gmail.com",
+      "firstname": "Bianca",
+      "hs_email_click": null,
+      "hs_email_open": null,
+      "hs_lead_status": "NEW",
+      "hs_object_id": "765293514961",
+      "hs_persona": "persona_2",
+      "lastmodifieddate": "2026-04-25T22:34:33.984Z",
+      "lastname": "Test-Ritualist",
+      "lifecyclestage": "subscriber"
+    },
+    "created_at": "2026-04-25T14:27:59.170Z",
+    "updated_at": "2026-04-25T22:34:33.984Z"
+  }
+]

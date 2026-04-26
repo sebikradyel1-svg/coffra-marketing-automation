@@ -1,0 +1,15 @@
+[theme]
+# Force light theme regardless of user's system preference
+base = "light"
+
+# Coffra brand colors
+primaryColor = "#3E2723"
+backgroundColor = "#FFFFFF"
+secondaryBackgroundColor = "#EFEBE9"
+textColor = "#212121"
+
+# Typography
+font = "sans serif"
+
+[server]
+headless = true

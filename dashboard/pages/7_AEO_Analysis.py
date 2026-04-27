@@ -121,7 +121,7 @@ if summary:
     with col_a:
         viz_score = summary.get('ai_visibility_score', 0)
         st.plotly_chart(
-            gauge_chart(viz_score, max_value=100, label="AI Visibility Score (%)", height=280),
+            gauge_chart(viz_score, max_value=100, title="", label="AI Visibility Score (%)", height=280),
             use_container_width=True,
         )
         st.caption(
@@ -132,7 +132,7 @@ if summary:
     with col_b:
         priority_viz = summary.get('high_priority_visibility', 0)
         st.plotly_chart(
-            gauge_chart(priority_viz, max_value=100, label="High-Priority Visibility (%)", height=280),
+            gauge_chart(priority_viz, max_value=100, title="", label="High-Priority Visibility (%)", height=280),
             use_container_width=True,
         )
         st.caption(
@@ -143,7 +143,7 @@ if summary:
     with col_c:
         citation = summary.get('citation_rate', 0)
         st.plotly_chart(
-            gauge_chart(citation, max_value=100, label="Citation Rate (%)", height=280),
+            gauge_chart(citation, max_value=100, title="", label="Citation Rate (%)", height=280),
             use_container_width=True,
         )
         st.caption(

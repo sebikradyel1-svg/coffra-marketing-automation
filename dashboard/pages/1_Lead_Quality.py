@@ -51,14 +51,14 @@ col1, col2, col3 = st.columns(3)
 with col1:
     auc = xgb.get("test_roc_auc", 0)
     st.plotly_chart(
-        gauge_chart(auc * 100, max_value=100, label="Test ROC-AUC", height=280),
+        gauge_chart(auc * 100, max_value=100, title="", label="Test ROC-AUC", height=280),
         use_container_width=True,
     )
 
 with col2:
     pr_auc = xgb.get("test_pr_auc", 0)
     st.plotly_chart(
-        gauge_chart(pr_auc * 100, max_value=100, label="Test PR-AUC", height=280),
+        gauge_chart(pr_auc * 100, max_value=100, title="", label="Test PR-AUC", height=280),
         use_container_width=True,
     )
 

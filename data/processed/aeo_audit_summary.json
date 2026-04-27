@@ -1,0 +1,48 @@
+{
+  "audit_date": "2026-04-27T13:55:06.333883",
+  "audit_date_human": "April 27, 2026",
+  "engine_tested": "Claude (claude-sonnet-4-6)",
+  "total_queries": 12,
+  "ai_visibility_score": 41.7,
+  "high_priority_visibility": 0.0,
+  "citation_rate": 0.0,
+  "sentiment_distribution": {
+    "no_mention": 7,
+    "neutral": 4,
+    "positive": 1
+  },
+  "by_stage": {
+    "Comparison": {
+      "queries": 2,
+      "mention_rate": 100.0,
+      "citation_rate": 0.0
+    },
+    "Discovery": {
+      "queries": 3,
+      "mention_rate": 0.0,
+      "citation_rate": 0.0
+    },
+    "Evaluation": {
+      "queries": 2,
+      "mention_rate": 50.0,
+      "citation_rate": 0.0
+    },
+    "Local": {
+      "queries": 1,
+      "mention_rate": 0.0,
+      "citation_rate": 0.0
+    },
+    "Product": {
+      "queries": 2,
+      "mention_rate": 0.0,
+      "citation_rate": 0.0
+    },
+    "Trust": {
+      "queries": 2,
+      "mention_rate": 100.0,
+      "citation_rate": 0.0
+    }
+  },
+  "baseline_disclosure": "Coffra is a fictional brand without live AEO presence. Baseline visibility is expected to be near 0%. This audit establishes the methodology for measuring AEO progress after content publication and schema implementation.",
+  "methodology_note": "Audit uses Anthropic Claude API as one engine of five (ChatGPT, Perplexity, Gemini, Copilot would complete the picture). Same code adapts to other engines by changing API endpoint. Production deployment would run all 5 monthly."
+}

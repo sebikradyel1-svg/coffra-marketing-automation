@@ -23,7 +23,7 @@ The brand is fictional — by design. This project deliberately avoids using rea
 
 ## Quick navigation
 
-### Strategy & content (8 documents)
+### Strategy & content (10 documents)
 
 | File | Purpose |
 |---|---|
@@ -35,18 +35,26 @@ The brand is fictional — by design. This project deliberately avoids using rea
 | [`docs/06_email_copy_cart_recovery.md`](docs/06_email_copy_cart_recovery.md) | 3 cart recovery emails (Connoisseur), 1h/24h/72h cadence, no-discount discipline |
 | [`docs/07_hubspot_workflow_specs.md`](docs/07_hubspot_workflow_specs.md) | HubSpot implementation spec with screenshots and trial limitations |
 | [`docs/08_ab_testing_methodology.md`](docs/08_ab_testing_methodology.md) | A/B test methodology with chi-square analysis and pre-registration |
+| [`docs/09_segmentation_methodology.md`](docs/09_segmentation_methodology.md) | RFM + clustering methodology with all decisions justified |
+| [`docs/10_segment_strategies.md`](docs/10_segment_strategies.md) | Coffra-specific deployment playbook for all 11 customer segments |
 
 ### Code & models
 
 | Path | Purpose |
 |---|---|
-| [`notebooks/01_lead_scoring_eda_and_model.ipynb`](notebooks/01_lead_scoring_eda_and_model.ipynb) | Lead scoring model: EDA, leakage audit, XGBoost vs Logistic Regression baseline, SHAP explainability |
+| [`notebooks/01_lead_scoring_eda_and_model.ipynb`](notebooks/01_lead_scoring_eda_and_model.ipynb) | P1: Lead scoring model — EDA, leakage audit, XGBoost vs Logistic baseline, SHAP |
+| [`notebooks/02_rfm_eda.ipynb`](notebooks/02_rfm_eda.ipynb) | P3: EDA + data quality audit on Online Retail II dataset |
+| [`notebooks/03_rfm_scoring_and_segments.ipynb`](notebooks/03_rfm_scoring_and_segments.ipynb) | P3: RFM scoring with 11-segment standard framework |
+| [`notebooks/04_customer_clustering.ipynb`](notebooks/04_customer_clustering.ipynb) | P3: K-Means + Hierarchical clustering with PCA visualization |
+| [`notebooks/05_segment_to_strategy.ipynb`](notebooks/05_segment_to_strategy.ipynb) | P3: Coffra strategy mapping + financial impact projection |
 | [`src/subject_optimizer/`](src/subject_optimizer/) | AI Subject Line Optimizer Python package (Claude API + caching) |
 | [`src/streamlit_app.py`](src/streamlit_app.py) | Streamlit UI for the Subject Line Optimizer |
 | [`src/models/`](src/models/) | Saved model artifacts (joblib, JSON metrics, sample predictions) |
 | [`dashboard/`](dashboard/) | Multi-page Streamlit marketing analytics dashboard (live: [coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)) |
 | [`extract_hubspot_snapshot.py`](extract_hubspot_snapshot.py) | One-time HubSpot data extraction script using Private App API |
-| [`generate_case_study.py`](generate_case_study.py) | ReportLab PDF generator for the case study |
+| [`generate_case_study.py`](generate_case_study.py) | ReportLab PDF generator for the P1 case study |
+| [`generate_case_study_p2.py`](generate_case_study_p2.py) | ReportLab PDF generator for the P2 dashboard case study |
+| [`generate_case_study_p3.py`](generate_case_study_p3.py) | ReportLab PDF generator for the P3 segmentation case study |
 
 ### Visual evidence
 
@@ -58,18 +66,31 @@ The brand is fictional — by design. This project deliberately avoids using rea
 
 ## Project highlights
 
-### Persona-driven, multi-language design
+### P1: Persona-driven marketing automation
 - Two distinct personas with separate journeys (English for Connoisseur, Romanian for Daily Ritualist) — segmentation is structural, not cosmetic.
 - Different sender identities (Sebastian as Roaster & Founder vs Ioana as Community Manager) provide rhetorical separation.
 - Asymmetric incentive design: no-discount discipline for Connoisseur (value escalation only), aspirational positioning for Daily Ritualist.
 
-### AI-augmented tooling
+### P1: AI-augmented tooling
 - **Subject Line Optimizer** generates 5 variants and scores them on 4 dimensions using a two-stage Claude pipeline (generator + critic). SHA-256 cached for cost efficiency. Streamlit UI for demo.
 - **Lead Scoring Model** (XGBoost) achieves Test ROC-AUC 0.78 on the Kaggle Predict Conversion in Digital Marketing dataset, with explicit data leakage audit (3 columns dropped before modeling) and SHAP global + local explanations.
+
+### P2: Live marketing analytics dashboard
+- Multi-page Streamlit application deployed to Streamlit Cloud (free tier with auto-rebuild on git push).
+- Five operational pages: Lead Quality, Subject Optimizer cache analytics, HubSpot CRM snapshot, Campaign Funnel (simulated), Methodology disclosure.
+- Snapshot-based data architecture for stable post-trial demo. HubSpot Private App API extraction script committed for reproducibility.
+
+### P3: Customer segmentation with ML clustering
+- **RFM analysis** on Online Retail II UCI dataset (1.07M transactions, 5,878 customers after data quality audit and cleaning).
+- **11 standard rule-based segments** + **K-Means (k=4) + Hierarchical clustering** with multi-method validation (ARI = 0.613 indicates substantial agreement).
+- **Strategic insight:** Probable Connoisseurs are 14.4% of customers but 61.8% of revenue — a 4.3x revenue concentration ratio that empirically validates P1's investment in Connoisseur sequence.
+- **£240K projected annual uplift** (+23% over untargeted baseline), with clearly disclosed industry-anchored assumptions.
+- Live integration into P2 dashboard as new Customer Segments page.
 
 ### Honest implementation transparency
 - HubSpot trial limitations are disclosed: workflows visualize timing logic with delay actions because Send Marketing Email is locked behind Marketing Hub Pro. Production deployment path documented.
 - A/B testing methodology is complete and pre-registered, but live execution is deferred until a consent-based pilot list of 100+ exists. No invented results.
+- All financial projections in P3 are scenario-based and labelled as such, anchored to public benchmarks (Klaviyo, Bloomreach 2024).
 - Industry benchmarks (Mailchimp 2025 Food & Beverage) cited explicitly with source attribution.
 
 ---
@@ -130,9 +151,11 @@ streamlit run dashboard/streamlit_dashboard.py
 
 **P1 v1.0 — complete.** All design and implementation artifacts shipped. Live A/B testing deferred to v1.1.
 **P2 v1.0 — complete.** Live dashboard deployed.
+**P3 v1.0 — complete.** RFM + ML clustering + Coffra strategy playbook with dashboard integration.
 
 | Component | Status |
 |---|---|
+| **P1 — Marketing Automation** | |
 | Strategy & personas | Complete |
 | 13 emails (10 nurture + 3 cart recovery) | Complete |
 | Lead scoring model | Complete |
@@ -140,7 +163,16 @@ streamlit run dashboard/streamlit_dashboard.py
 | HubSpot implementation (visual) | Complete |
 | A/B testing methodology | Complete |
 | Case study PDF | Complete |
-| **Marketing dashboard (live)** | **Complete — [coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)** |
+| **P2 — Marketing Dashboard** | |
+| **Marketing dashboard (live)** | **[coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)** |
+| Case study PDF | Complete |
+| **P3 — Customer Segmentation** | |
+| EDA + data quality (Online Retail II, 1.07M rows) | Complete |
+| RFM scoring + 11-segment framework | Complete |
+| K-Means + Hierarchical clustering (k=4, ARI=0.61) | Complete |
+| Coffra strategy playbook + financial projection | Complete |
+| Customer Segments dashboard page | Complete |
+| Case study PDF | Complete |
 | Live A/B testing | Deferred to v1.1 |
 
 ---

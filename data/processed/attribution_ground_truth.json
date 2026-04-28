@@ -1,0 +1,56 @@
+{
+  "random_state": 42,
+  "generation_date": "2026-04-27T14:46:44.484213",
+  "mta": {
+    "n_customers": 50000,
+    "date_range": [
+      "2025-10-01",
+      "2025-12-31"
+    ],
+    "base_conversion_rate": 0.08,
+    "total_touchpoints": 89757,
+    "total_conversions": 3965
+  },
+  "mmm": {
+    "n_days": 731,
+    "date_range": [
+      "2024-01-01",
+      "2025-12-31"
+    ],
+    "total_conversions": 36675,
+    "total_spend_gbp": 130551.36,
+    "base_conversions_per_day": 30.0
+  },
+  "channels": {
+    "Google_Ads": {
+      "true_contribution": 0.25,
+      "true_adstock_decay": 0.45,
+      "true_saturation_half_point": 250,
+      "true_saturation_steepness": 1.2
+    },
+    "Meta_Ads": {
+      "true_contribution": 0.2,
+      "true_adstock_decay": 0.55,
+      "true_saturation_half_point": 200,
+      "true_saturation_steepness": 1.0
+    },
+    "Instagram_Organic": {
+      "true_contribution": 0.1,
+      "true_adstock_decay": 0.65,
+      "true_saturation_half_point": 100,
+      "true_saturation_steepness": 0.8
+    },
+    "Email": {
+      "true_contribution": 0.3,
+      "true_adstock_decay": 0.3,
+      "true_saturation_half_point": 50,
+      "true_saturation_steepness": 1.5
+    },
+    "Direct": {
+      "true_contribution": 0.15,
+      "true_adstock_decay": 0.0,
+      "true_saturation_half_point": 0,
+      "true_saturation_steepness": 0
+    }
+  }
+}

@@ -1,0 +1,7 @@
+Recommendation,Action,Expected impact,Investment
+Replace last-click attribution,Use MMM contributions for budget allocation; use Shapley values for tactical channel decisions.,Better identification of upper-funnel channel value; better budget efficiency 10-15%,One-time analyst time (~40 hours)
+Increase investment in Email,Test +20% spend over next 4 weeks. Monitor CPA shift.,Marginal CPA stays low if not yet at saturation point,~£115/month additional
+Audit Meta_Ads,Investigate creative/targeting before reallocation. Test holdout group.,If incremental: keep. If not: redirect budget to better channels.,~2 weeks holdout test + analyst review
+Implement attribution monthly cadence,Re-run MMM monthly with last 6 months of data. Update playbook quarterly.,"Catches channel saturation, seasonality shifts, market changes",~4 hours/month maintenance
+Establish ground truth via holdout tests,Quarterly geo-holdout or audience-holdout tests on top channels for incrementality validation.,Validates MMM estimates with experimental causality,~10-15% revenue at risk during holdout periods
+Diversify attribution methods,Use both MTA (Markov/Shapley) and MMM. Triangulate when they disagree.,"Robust to method-specific failures (cookie deprecation hits MTA, model misspec hits MMM)",Already done in this analysis

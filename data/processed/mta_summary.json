@@ -1,0 +1,74 @@
+{
+  "methods_tested": [
+    "Last-Click",
+    "First-Click",
+    "Linear",
+    "Time-Decay",
+    "Markov",
+    "Shapley",
+    "Ground Truth"
+  ],
+  "attribution_results": {
+    "Last-Click": {
+      "Google_Ads": 18.0,
+      "Meta_Ads": 20.4,
+      "Instagram_Organic": 11.0,
+      "Email": 30.9,
+      "Direct": 19.6
+    },
+    "First-Click": {
+      "Google_Ads": 20.2,
+      "Meta_Ads": 29.6,
+      "Instagram_Organic": 25.6,
+      "Email": 9.9,
+      "Direct": 14.7
+    },
+    "Linear": {
+      "Google_Ads": 18.9,
+      "Meta_Ads": 25.1,
+      "Instagram_Organic": 18.5,
+      "Email": 20.4,
+      "Direct": 17.1
+    },
+    "Time-Decay": {
+      "Google_Ads": 18.8,
+      "Meta_Ads": 24.1,
+      "Instagram_Organic": 17.0,
+      "Email": 22.5,
+      "Direct": 17.6
+    },
+    "Markov": {
+      "Google_Ads": 19.9,
+      "Meta_Ads": 31.5,
+      "Instagram_Organic": 25.7,
+      "Email": 8.6,
+      "Direct": 14.4
+    },
+    "Shapley": {
+      "Google_Ads": 18.3,
+      "Meta_Ads": 18.7,
+      "Instagram_Organic": 14.6,
+      "Email": 28.5,
+      "Direct": 19.9
+    },
+    "Ground Truth": {
+      "Google_Ads": 25.0,
+      "Meta_Ads": 20.0,
+      "Instagram_Organic": 10.0,
+      "Email": 30.0,
+      "Direct": 15.0
+    }
+  },
+  "total_abs_error_vs_ground_truth": {
+    "Last-Click": 13.899999999999999,
+    "First-Click": 50.400000000000006,
+    "Linear": 31.400000000000006,
+    "Time-Decay": 27.400000000000002,
+    "Markov": 54.3,
+    "Shapley": 19.0
+  },
+  "best_method": "Last-Click",
+  "worst_method": "Markov",
+  "baseline_conversion_probability": 0.07929999999999997,
+  "total_converters": 3965
+}

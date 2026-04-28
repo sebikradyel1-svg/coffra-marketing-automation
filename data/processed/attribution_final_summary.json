@@ -1,0 +1,49 @@
+{
+  "analysis_date": "2026-04-28T12:08:04.126020",
+  "methods_compared": [
+    "Last-Click",
+    "First-Click",
+    "Linear",
+    "Time-Decay",
+    "Markov",
+    "Shapley",
+    "MMM Bayesian"
+  ],
+  "best_method_by_accuracy": "Shapley",
+  "best_method_error_pp": 13.4,
+  "worst_method_by_accuracy": "Markov",
+  "worst_method_error_pp": 62.8,
+  "method_errors": {
+    "Last-Click": 14.0,
+    "First-Click": 58.8,
+    "Linear": 34.6,
+    "Time-Decay": 29.1,
+    "Markov": 62.8,
+    "Shapley": 13.4,
+    "MMM Bayesian": 17.9
+  },
+  "channels_analyzed": [
+    "Google_Ads",
+    "Meta_Ads",
+    "Instagram_Organic",
+    "Email"
+  ],
+  "best_channel_cpa": "Email",
+  "best_cpa_value": 1.92,
+  "worst_channel_cpa": "Meta_Ads",
+  "worst_cpa_value": 15.44,
+  "cpa_ratio_worst_to_best": 8.041666666666666,
+  "mmm_fit_quality": {
+    "r2": 0.686,
+    "mae": 5.42,
+    "mape": 11.3,
+    "ci_coverage_pct": 95.2
+  },
+  "mmm_convergence": {
+    "max_rhat": 1.0,
+    "min_ess_bulk": 750,
+    "good_convergence": true
+  },
+  "business_recommendations_count": 6,
+  "methodology_note": "This analysis uses synthetic data with known ground truth to validate methods. Real Coffra deployment would require 6+ months of real touchpoint and spend data. Method ranking depends on path structure \u2014 Last-Click can outperform sophisticated methods if last-touch correlates with true contribution. Always validate with holdout tests."
+}

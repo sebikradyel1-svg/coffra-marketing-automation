@@ -1,0 +1,8 @@
+Method,Strengths,Weaknesses,When to use
+Last-Click,"Simple, no assumptions, industry baseline","Systematically biased toward closer channels (Email, Direct); ignores upper funnel",Sanity check only; do not use for budget decisions
+First-Click,Captures discovery channel value,Mirror image of Last-Click bias; ignores conversion drivers,Brand awareness ROI analysis only
+Linear,"No structural bias, simple to compute",Treats all touchpoints as equally important — rarely true,When you have no information about touchpoint importance
+Time-Decay,Reflects intuition that recent matters more,Sensitive to half-life parameter; arbitrary choice,When you have evidence that recency matters
+Markov Chain,"Captures channel interaction effects, probabilistic",Sensitive to short paths; can fail if customer journeys are too simple,"When you have rich, multi-touchpoint customer journeys"
+Shapley Values,"Mathematically optimal fairness, captures coalitions",Computationally expensive (2^n coalitions); requires path data,When you need defensible per-channel attribution
+MMM Bayesian,"Aggregate view, captures adstock + saturation, uncertainty quantification, includes seasonality",Requires 6+ months of data; assumes correct model specification,"Always, alongside MTA — they answer different questions"

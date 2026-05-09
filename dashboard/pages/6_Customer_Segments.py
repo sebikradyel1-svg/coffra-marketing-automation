@@ -168,16 +168,31 @@ if 'rfm_summary' in data:
     col_a, col_b = st.columns([1, 1])
 
     with col_a:
-        # Customer share donut
-        st.plotly_chart(
-            donut_chart(
-                labels=seg_df['Segment'].tolist(),
-                values=seg_df['Customers'].tolist(),
-                title="Customers per Segment",
-                height=420,
-            ),
-            use_container_width=True,
-        )
+        # Paleta distincta pentru 11 segmente
+        SEGMENT_COLORS = [
+            "#2C1810",  # Dark brown
+            "#1565C0",  # Blue
+            "#2E7D32",  # Green
+            "#F57F17",  # Amber
+            "#6A1B9A",  # Purple
+            "#00838F",  # Teal
+            "#C62828",  # Red
+            "#4E342E",  # Brown-gray
+            "#558B2F",  # Olive green
+            "#37474F",  # Blue-gray
+            "#AD1457",  # Pink-red
+        ]
+
+        fig_seg = go.Figure(go.Pie(
+            labels=seg_df['Segment'].tolist(),
+            values=seg_df['Customers'].tolist(),
+            hole=0.45,
+            marker_colors=SEGMENT_COLORS,
+            textinfo='label+percent',
+            hovertemplate='%{label}<br>%{value:,} customers<br>%{percent}<extra></extra>',
+        ))
+        apply_brand_layout(fig_seg, title="Customers per Segment", height=420)
+        st.plotly_chart(fig_seg, use_container_width=True)
 
     with col_b:
         # Revenue contribution bars

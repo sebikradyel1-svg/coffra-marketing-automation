@@ -169,13 +169,13 @@ if 'unified' in data:
     fig = go.Figure()
 
     method_colors = {
-        'Last-Click': '#A1887F',
-        'First-Click': '#BCAAA4',
-        'Linear': '#D7CCC8',
-        'Time-Decay': '#8D6E63',
-        'Markov': '#6D4C41',
-        'Shapley': '#5D4037',
-        'MMM Bayesian': '#3E2723',
+        'Last-Click':   '#1565C0',  # Albastru
+        'First-Click':  '#2E7D32',  # Verde
+        'Linear':       '#F57F17',  # Amber
+        'Time-Decay':   '#6A1B9A',  # Mov
+        'Markov':       '#00838F',  # Teal
+        'Shapley':      '#AD1457',  # Roz-rosu
+        'MMM Bayesian': '#2C1810',  # Brown inchis (brand)
     }
 
     for method in methods:

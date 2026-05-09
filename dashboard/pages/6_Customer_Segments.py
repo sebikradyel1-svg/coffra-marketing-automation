@@ -254,6 +254,7 @@ if 'kmeans_label' in customers_df.columns:
                 y=cluster_counts.values.tolist(),
                 horizontal=True,
                 height=300,
+                title="Customers per Cluster",
             ),
             use_container_width=True,
         )

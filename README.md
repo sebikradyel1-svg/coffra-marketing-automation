@@ -1,7 +1,7 @@
 # Coffra Marketing Automation
 
 > **AI-augmented marketing system for a fictional D2C specialty coffee brand.**
-> A 5-project portfolio demonstrating modern marketing analytics: persona automation, ML lead scoring, customer segmentation, AEO content strategy, and Bayesian attribution modeling.
+> A 7-project portfolio demonstrating modern marketing analytics: persona automation, ML lead scoring, customer segmentation, AEO content strategy, Bayesian attribution modeling, technical SEO/GEO auditing, and agentic AI governance.
 
 ---
 
@@ -15,7 +15,7 @@ Eight-page Streamlit dashboard covering lead scoring (XGBoost + SHAP), AI subjec
 
 ## What's in this repo
 
-This repository contains 5 production-grade projects targeting **AI Marketing Specialist** and **Marketing Automation** roles. Each project is independently scoped, fully documented, and integrates with the live dashboard.
+This repository contains 7 production-grade projects targeting **AI Marketing Specialist** and **Marketing Automation** roles. Each project is independently scoped, fully documented, and integrates with the live dashboard.
 
 The brand is fictional — by design. This avoids privacy and legal risks of using real customer data. All content is original, all data is public (Kaggle, UCI) or synthetic (with documented generation), and all "brand" decisions are explicit fictional design choices.
 
@@ -79,6 +79,17 @@ Multi-Touch Attribution + Bayesian Marketing Mix Model with PyMC. Validated agai
 - Honest method assessment (no universal winner — depends on path structure)
 - Live dashboard integration
 
+### P6 — Technical SEO/GEO Audit
+
+Technical SEO and generative engine optimization (GEO/AEO) audit layer, addressing whether Coffra's pages are technically sound enough for Google to index and rank, and structured well enough for AI engines (Google AI Overviews, Perplexity, ChatGPT, Bing Copilot) to cite them.
+
+All five Core Web Vitals pass Google's Good threshold, 11 of 12 Schema.org templates pass three-layer validation, and GEO citation rates rose 10-15x across all four AI platforms following Schema.org implementation — the largest single gain being +41.6pp on Google AI Overviews (4.2% baseline to 45.8%). A Looker Studio export layer (5 CSVs) demonstrates BI tool integration alongside the technical audit.
+
+**Key artifacts:**
+- [Dashboard page](https://coffra-marketing-dashboard.streamlit.app/Technical_SEO_GEO_Audit) — SEO Health Score, Core Web Vitals, Schema coverage, GEO citation monitoring
+- [Case study PDF](case_study/P6_Coffra_SEO_Audit.pdf) — audit methodology, results, honest limitations
+- [`docs/14_seo_methodology.md`](docs/14_seo_methodology.md) — full technical SEO + GEO audit methodology
+
 ### P7 — Lead Intelligence Agent
 
 Multi-agent pipeline that operationalizes P1's lead segmentation table into a live decisioning system: a Qualification Agent scores and routes leads by calling the P1 XGBoost model as a tool, an Outreach Agent drafts RAG-grounded first-touch messages, a Governance Reviewer checks every claim against approved brand sources before a human ever sees it, and a human-approval checkpoint gates anything from actually going out.
@@ -141,13 +152,14 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 | [`generate_case_study_p3.py`](generate_case_study_p3.py) | P3 case study PDF generator |
 | [`generate_case_study_p4.py`](generate_case_study_p4.py) | P4 case study PDF generator |
 | [`generate_case_study_p5.py`](generate_case_study_p5.py) | P5 case study PDF generator |
+| [`generate_case_study_p6.py`](generate_case_study_p6.py) | P6 case study PDF generator |
 | [`generate_case_study_p7.py`](generate_case_study_p7.py) | P7 case study PDF generator |
 
 ---
 
 ## Project status
 
-**All 5 projects v1.0 — complete.**
+**All 7 projects v1.0 — complete.**
 
 | Project | Component | Status |
 |---|---|---|
@@ -156,6 +168,7 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 | **P3** | RFM + ML clustering + dashboard + case study | ✅ Complete |
 | **P4** | AEO strategy + 12 schemas + audit + dashboard | ✅ Complete |
 | **P5** | MTA + Bayesian MMM + dashboard + case study | ✅ Complete |
+| **P6** | Technical SEO/GEO Audit | ✅ Complete |
 | **P7** | Lead Intelligence Agent | ✅ Complete |
 
 ---

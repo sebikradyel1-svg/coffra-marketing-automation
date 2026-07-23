@@ -79,6 +79,17 @@ Multi-Touch Attribution + Bayesian Marketing Mix Model with PyMC. Validated agai
 - Honest method assessment (no universal winner — depends on path structure)
 - Live dashboard integration
 
+### P7 — Lead Intelligence Agent
+
+Multi-agent pipeline that operationalizes P1's lead segmentation table into a live decisioning system: a Qualification Agent scores and routes leads by calling the P1 XGBoost model as a tool, an Outreach Agent drafts RAG-grounded first-touch messages, a Governance Reviewer checks every claim against approved brand sources before a human ever sees it, and a human-approval checkpoint gates anything from actually going out.
+
+The architecture deliberately separates generation from evaluation, mirroring current AI evaluation and governance practice. The case study documents three real issues found and fixed during development — a model artifact mismatch, a governance rubric that missed a grounding failure on its first pass, and a JSON parsing edge case — including a REVISE verdict caught live on the production Streamlit Cloud deployment.
+
+**Key artifacts:**
+- [Dashboard page](https://coffra-marketing-dashboard.streamlit.app/Lead_Intelligence) — run the pipeline live against 3 test leads (HOT/WARM/COLD)
+- [Case study PDF](case_study/P7_Coffra_Lead_Intelligence_Case_Study.pdf) — architecture, rigor and limitations, skills demonstrated
+- [`src/lead_intelligence/`](src/lead_intelligence/) — agents, RAG index, scoring tool, and pipeline code
+
 ---
 
 ## Quick navigation
@@ -130,6 +141,7 @@ Multi-Touch Attribution + Bayesian Marketing Mix Model with PyMC. Validated agai
 | [`generate_case_study_p3.py`](generate_case_study_p3.py) | P3 case study PDF generator |
 | [`generate_case_study_p4.py`](generate_case_study_p4.py) | P4 case study PDF generator |
 | [`generate_case_study_p5.py`](generate_case_study_p5.py) | P5 case study PDF generator |
+| [`generate_case_study_p7.py`](generate_case_study_p7.py) | P7 case study PDF generator |
 
 ---
 
@@ -144,6 +156,7 @@ Multi-Touch Attribution + Bayesian Marketing Mix Model with PyMC. Validated agai
 | **P3** | RFM + ML clustering + dashboard + case study | ✅ Complete |
 | **P4** | AEO strategy + 12 schemas + audit + dashboard | ✅ Complete |
 | **P5** | MTA + Bayesian MMM + dashboard + case study | ✅ Complete |
+| **P7** | Lead Intelligence Agent | ✅ Complete |
 
 ---
 

@@ -37,6 +37,7 @@ credentials.json
 # Output
 outputs/
 screenshots/temp/
+src/lead_intelligence/logs/
 
 # Cache (API responses, temp files)
 #cache/

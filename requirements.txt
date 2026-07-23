@@ -20,6 +20,14 @@ python-dotenv>=1.0
 # AI tooling
 anthropic>=0.40
 
+# Lead intelligence RAG (src/lead_intelligence/rag)
+langchain-community>=0.3
+langchain-core>=0.3
+langchain-huggingface>=0.1
+langchain-text-splitters>=0.3
+faiss-cpu>=1.8
+sentence-transformers>=3.0
+
 # HubSpot extraction
 requests>=2.31
 

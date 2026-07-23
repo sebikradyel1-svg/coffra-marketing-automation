@@ -1,0 +1,40 @@
+{
+  "feature_columns": [
+    "Age",
+    "Income",
+    "AdSpend",
+    "WebsiteVisits",
+    "PagesPerVisit",
+    "TimeOnSite",
+    "SocialShares",
+    "EmailOpens",
+    "EmailClicks",
+    "PreviousPurchases",
+    "LoyaltyPoints",
+    "EmailEngagementRate",
+    "EngagementScore",
+    "Gender_Male",
+    "CampaignChannel_PPC",
+    "CampaignChannel_Referral",
+    "CampaignChannel_SEO",
+    "CampaignChannel_Social Media",
+    "CampaignType_Consideration",
+    "CampaignType_Conversion",
+    "CampaignType_Retention"
+  ],
+  "dropped_leakage_columns": [
+    "ConversionRate",
+    "ClickThroughRate"
+  ],
+  "dropped_identifier_columns": [
+    "CustomerID"
+  ],
+  "dropped_zero_var_columns": [
+    "AdvertisingTool",
+    "AdvertisingPlatform"
+  ],
+  "engineered_features": [
+    "EmailEngagementRate",
+    "EngagementScore"
+  ]
+}

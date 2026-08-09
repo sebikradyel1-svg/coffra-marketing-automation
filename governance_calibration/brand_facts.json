@@ -1,0 +1,15 @@
+{
+  "_source": "Rebuilt from the real data/brand_sources.md (not a template — this is your actual grounding source).",
+  "facts": [
+    {"id": "F01", "text": "Coffra is a fictional D2C specialty coffee brand based in Timișoara, used as a portfolio sandbox — deliberately fictional for methodological rigor."},
+    {"id": "F02", "text": "Leads scoring 80-100 are High / Sales-Ready: immediate handoff, personal email."},
+    {"id": "F03", "text": "Leads scoring 40-80 are Medium / Warm MQL: accelerated nurture, weekly contact."},
+    {"id": "F04", "text": "Leads scoring 0-40 are Low / Cold: standard nurture, cadence of 2-4 weeks."},
+    {"id": "F05", "text": "The lead scoring model is XGBoost, achieving test ROC-AUC of 0.7843 versus 0.7643 for a logistic regression baseline, with a data-leakage audit and SHAP explainability."},
+    {"id": "F06", "text": "The nurture system consists of 13 production emails across two persona journeys: Connoisseur (English) and Daily Ritualist (Romanian)."},
+    {"id": "F07", "text": "The AI Subject Line Optimizer is built on the Claude API as a two-stage pipeline (generator + critic), scoring 5 variants across 4 dimensions."},
+    {"id": "F08", "text": "The HubSpot implementation includes visualized workflows for nurture and abandoned-cart recovery."},
+    {"id": "F09_policy", "text": "Coffra outreach never promises guaranteed results."},
+    {"id": "F10_policy", "text": "Coffra outreach never invents figures or case studies that are not in these approved sources."}
+  ]
+}

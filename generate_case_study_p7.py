@@ -203,9 +203,10 @@ story.append(Paragraph(
 story.append(Paragraph(
     "This case study documents the system honestly, including three real issues found and fixed "
     "during development — a model artifact mismatch, a governance rubric that missed a grounding "
-    "failure on its first pass, and a JSON parsing edge case — because a rigorous process is "
-    "more convincing evidence of engineering judgment than a system that never had anything go "
-    "wrong.",
+    "failure on its first pass, and a JSON parsing edge case — and a calibration of the "
+    "Governance Reviewer against a 50-draft hand-labeled test set (100% recall, 88.2% precision), "
+    "because a measured claim about how well a component works is worth more than an "
+    "architectural description of it.",
     styles["body"]))
 
 # Key outcomes
@@ -219,6 +220,7 @@ outcomes_data = [
     ["Tier thresholds", "HOT ≥ 0.70 (outreach) · WARM 0.40-0.70 (nurture) · COLD < 0.40 (disqualify)"],
     ["Grounding", "RAG (LangChain + FAISS, local sentence-transformer embeddings) restricts outreach claims to approved brand sources"],
     ["Governance", "Claim-by-claim decomposition, APPROVE/REVISE verdict; any unsupported claim forces REVISE — no holistic pass"],
+    ["Governance calibration", "100% recall · 88.2% precision · 92% accuracy against a 50-draft hand-labeled test set (Aug 2026)"],
     ["Live verification", "All 3 test leads (HOT/WARM/COLD) run end-to-end locally and on Streamlit Cloud; both APPROVE and REVISE verdicts observed live"],
     ["Deployment", "Integrated as page 10 of the existing Coffra Streamlit dashboard (P2)"],
 ]
@@ -353,6 +355,47 @@ story.append(Paragraph(
     "suite alone.",
     styles["body"]))
 
+story.append(Paragraph("Calibration of the Governance Reviewer", styles["h2"]))
+story.append(Paragraph(
+    "Issue 2's fix was originally confirmed by 3/3 consistent runs on a single test draft plus "
+    "one unprompted production catch. That is anecdotal evidence: it shows the reviewer can "
+    "catch a grounding failure, not how often it does.",
+    styles["body"]))
+story.append(Paragraph(
+    "To measure it, the reviewer was calibrated against a 50-draft test set built from the "
+    "actual approved brand sources and labeled by hand: 20 drafts where every claim is directly "
+    "supported, 20 with a single planted contradiction (wrong model, wrong platform, wrong "
+    "threshold, invented performance figures), and 10 with plausible-sounding but unverifiable "
+    "additions — the harder category, since nothing in them is technically false, it simply is "
+    "not backed by anything. Labeling policy: a draft passes only if every claim in it is "
+    "directly supported; a single contradicted or ungrounded claim makes the whole draft a "
+    "REVISE, the same rule the reviewer's own rubric enforces.",
+    styles["body"]))
+story.append(Paragraph(
+    "<b>Result: 100% recall, 88.2% precision, 92% overall accuracy.</b> The reviewer missed none "
+    "of the 30 drafts that should have been flagged, including the exact \"built for personal "
+    "ritual, not standardized\" phrasing from Issue 2 — confirming that fix holds under "
+    "systematic testing rather than only in the original three runs. Four of twenty clean drafts "
+    "were flagged unnecessarily.",
+    styles["body"]))
+story.append(Paragraph(
+    "Recall was treated as the metric to optimize: an unsupported claim reaching a customer is a "
+    "brand and compliance problem, while an unnecessary flag costs a human reviewer a few "
+    "seconds. Erring toward over-flagging is the correct direction for a compliance filter, and "
+    "the 88.2% precision reflects a reviewer that reads paraphrase strictly rather than one that "
+    "reasons loosely.",
+    styles["body"]))
+story.append(Paragraph(
+    "The calibration process itself required a correction worth noting. The first run returned "
+    "100% recall but only 68% precision, which initially looked like an over-strict reviewer. "
+    "Inspecting the flagged drafts showed the cause was in the test, not the agent: several "
+    "\"clean\" drafts contained personalization claims about lead behaviour, and the harness "
+    "passed an empty lead context, so the reviewer had nothing to verify them against and "
+    "correctly flagged them. The test set was rebuilt to isolate brand-source grounding alone, "
+    "which is what the reviewer is actually responsible for. Verifying personalization claims "
+    "against real lead data is a separate test, not yet run.",
+    styles["body"]))
+
 story.append(Paragraph("Issue 3 — JSON parsing edge case", styles["h2"]))
 story.append(Paragraph(
     "Claude occasionally escapes apostrophes as \\' inside JSON string values — not a valid JSON "
@@ -368,7 +411,11 @@ story.append(Paragraph(
     "stream — production deployment would need input validation for free-form leads. The "
     "human-approval step is a UI checkpoint only; no send integration exists, by design, for "
     "this portfolio. Governance evaluates against a fixed brand_sources.md; a real deployment "
-    "would need a process for keeping that source of truth current as brand claims change.",
+    "would need a process for keeping that source of truth current as brand claims change. The "
+    "governance calibration measures brand-source grounding only; whether the reviewer correctly "
+    "verifies personalization claims against real lead data is untested. The 50-draft set is "
+    "also fixed — a production system would need the test set to grow alongside "
+    "brand_sources.md as claims change.",
     styles["body"]))
 
 story.append(Spacer(1, 0.4 * cm))
@@ -381,7 +428,7 @@ story.append(Paragraph("Skills demonstrated by this project", styles["h2"]))
 skills_data = [
     ["Category", "Skills"],
     ["Agentic AI", "Tool use / function calling, multi-agent orchestration, structured JSON contracts between agents"],
-    ["AI evaluation & governance", "Generation/evaluation separation, claim-level grounding verification, APPROVE/REVISE verdict design"],
+    ["AI evaluation & governance", "Generation/evaluation separation, claim-level grounding verification, APPROVE/REVISE verdict design, LLM-as-judge calibration against a hand-labeled test set with precision/recall measurement"],
     ["Retrieval-augmented generation", "LangChain + FAISS, local sentence-transformer embeddings, chunking strategy, top-k retrieval"],
     ["Machine learning", "XGBoost as an agentic tool, SHAP explainability surfaced in natural-language reasoning"],
     ["Prompt engineering", "System prompts enforcing tool-first behavior, safe fallbacks on tool failure, forced decomposition to prevent evaluation shortcuts"],

@@ -15,10 +15,10 @@
       "test_pr_auc": 0.9440728541635992
     },
     "xgboost": {
-      "cv_roc_auc_mean": 0.7812845506441932,
-      "cv_roc_auc_std": 0.04121449572805306,
-      "test_roc_auc": 0.7842692257813513,
-      "test_pr_auc": 0.9439679848554531,
+      "cv_roc_auc_mean": 0.7744906247884655,
+      "cv_roc_auc_std": 0.03925509281660885,
+      "test_roc_auc": 0.7776192740529403,
+      "test_pr_auc": 0.9440298369072636,
       "hyperparameters": {
         "n_estimators": 200,
         "max_depth": 6,

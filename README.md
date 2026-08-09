@@ -9,7 +9,7 @@
 
 **[coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)**
 
-Eight-page Streamlit dashboard covering lead scoring (XGBoost + SHAP), AI subject line generation, HubSpot CRM snapshot, campaign funnels, customer segmentation, AEO analysis, and multi-method attribution modeling. Brand-aligned with Coffra design system.
+Ten-page Streamlit dashboard covering lead scoring (XGBoost + SHAP), AI subject line generation, HubSpot CRM snapshot, campaign funnels, customer segmentation, AEO analysis, multi-method attribution modeling, technical SEO/GEO auditing, and the live agentic lead-intelligence pipeline. Brand-aligned with Coffra design system.
 
 ---
 
@@ -39,7 +39,7 @@ Persona-driven email automation system with two distinct journeys (English Conno
 Multi-page Streamlit application deployed to Streamlit Cloud with auto-rebuild on git push.
 
 **Key artifacts:**
-- 8 dashboard pages (Lead Quality, Subject Optimizer, HubSpot CRM, Funnel, Methodology, Segments, AEO, Attribution)
+- 10 dashboard pages (Overview, Lead Quality, Subject Optimizer, HubSpot CRM, Campaign Funnel, Methodology, Customer Segments, AEO Analysis, Attribution, Technical SEO/GEO Audit, Lead Intelligence)
 - Coffra brand design system (light theme, brown accent palette)
 - HubSpot Private App API extraction script
 - Snapshot-based data architecture for stable post-trial demo
@@ -96,10 +96,13 @@ Multi-agent pipeline that operationalizes P1's lead segmentation table into a li
 
 The architecture deliberately separates generation from evaluation, mirroring current AI evaluation and governance practice. The case study documents three real issues found and fixed during development — a model artifact mismatch, a governance rubric that missed a grounding failure on its first pass, and a JSON parsing edge case — including a REVISE verdict caught live on the production Streamlit Cloud deployment.
 
+The Governance Reviewer is **calibrated, not just built**: it was measured against a 50-draft hand-labeled test set (20 clean, 20 with a planted contradiction, 10 with plausible-but-unverifiable claims) scoring **100% recall, 88.2% precision, 92% accuracy** on flagging unsupported claims. Recall was the metric optimized — an unsupported claim reaching a customer is a compliance problem, an unnecessary flag costs a reviewer a few seconds.
+
 **Key artifacts:**
 - [Dashboard page](https://coffra-marketing-dashboard.streamlit.app/Lead_Intelligence) — run the pipeline live against 3 test leads (HOT/WARM/COLD)
-- [Case study PDF](case_study/P7_Coffra_Lead_Intelligence_Case_Study.pdf) — architecture, rigor and limitations, skills demonstrated
+- [Case study PDF](case_study/P7_Coffra_Lead_Intelligence_Case_Study.pdf) — architecture, rigor and limitations, calibration methodology, skills demonstrated
 - [`src/lead_intelligence/`](src/lead_intelligence/) — agents, RAG index, scoring tool, and pipeline code
+- [`governance_calibration/`](governance_calibration/) — labeled test set, eval harness, and per-draft results
 
 ---
 
@@ -145,6 +148,8 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 | [`src/subject_optimizer/`](src/subject_optimizer/) | AI Subject Line Optimizer Python package |
 | [`src/streamlit_app.py`](src/streamlit_app.py) | Streamlit UI for Subject Optimizer |
 | [`src/models/`](src/models/) | Saved model artifacts |
+| [`src/lead_intelligence/`](src/lead_intelligence/) | P7 agents, RAG index, scoring tool, pipeline |
+| [`governance_calibration/`](governance_calibration/) | P7 Governance Reviewer calibration: labeled test set + eval harness |
 | [`dashboard/`](dashboard/) | Multi-page Streamlit app (live deployment) |
 | [`extract_hubspot_snapshot.py`](extract_hubspot_snapshot.py) | HubSpot Private App API extraction |
 | [`generate_case_study.py`](generate_case_study.py) | P1 case study PDF generator |
@@ -164,12 +169,12 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 | Project | Component | Status |
 |---|---|---|
 | **P1** | Strategy + 13 emails + ML model + AI tooling + HubSpot | ✅ Complete |
-| **P2** | Live dashboard with 8 pages | ✅ [Live](https://coffra-marketing-dashboard.streamlit.app/) |
+| **P2** | Live dashboard with 10 pages | ✅ [Live](https://coffra-marketing-dashboard.streamlit.app/) |
 | **P3** | RFM + ML clustering + dashboard + case study | ✅ Complete |
 | **P4** | AEO strategy + 12 schemas + audit + dashboard | ✅ Complete |
 | **P5** | MTA + Bayesian MMM + dashboard + case study | ✅ Complete |
 | **P6** | Technical SEO/GEO Audit | ✅ Complete |
-| **P7** | Lead Intelligence Agent | ✅ Complete |
+| **P7** | Lead Intelligence Agent + governance calibration | ✅ Complete |
 
 ---
 
@@ -181,6 +186,8 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 - **Bayesian methods:** PyMC MMM with NUTS sampling, posterior credible intervals
 - **Causal inference:** Markov chain removal effects, Shapley value attribution
 - **AI integration:** Anthropic Claude API for content generation + audit
+- **Agentic AI:** multi-agent orchestration, tool use / function calling, RAG grounding (LangChain + FAISS)
+- **AI evaluation:** LLM-as-judge calibration against a hand-labeled test set, precision/recall measurement on claim verification
 - **Production deployment:** Live Streamlit Cloud with CI/CD via GitHub
 - **Schema.org expertise:** 12 JSON-LD types for AEO 2026 trend
 - **Statistical rigor:** chi-square A/B tests, convergence diagnostics, posterior predictive checks
@@ -202,9 +209,9 @@ The architecture deliberately separates generation from evaluation, mirroring cu
 
 **Strategy & writing:** Markdown, Git for versioned editorial workflow
 
-**Data & ML:** Python 3.11 · pandas · scikit-learn · XGBoost · SHAP · PyMC 5.x · ArviZ
+**Data & ML:** Python 3.13 · pandas · scikit-learn · XGBoost · SHAP · PyMC 5.x · ArviZ
 
-**AI integration:** Anthropic Claude API (claude-sonnet-4-6) for subject optimization and AEO audit
+**AI integration:** Anthropic Claude API (claude-sonnet-5) for subject optimization, AEO audit, and the P7 agent pipeline
 
 **Visualization:** Plotly (interactive) · matplotlib (PDF reports) · seaborn (notebooks)
 

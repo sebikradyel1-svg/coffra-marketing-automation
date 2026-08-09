@@ -1,0 +1,2012 @@
+{
+  "rows": [
+    {
+      "id": "D01",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Coffra is a specialty coffee brand based in Timișoara",
+            "supported": true,
+            "note": "Corespunde cu 'Coffra e un brand fictiv de cafea de specialitate D2C (Timișoara)' din Context."
+          },
+          {
+            "claim": "the whole project is deliberately fictional",
+            "supported": true,
+            "note": "Corespunde cu 'Fictiv, deliberat' din Context."
+          },
+          {
+            "claim": "built as a portfolio sandbox",
+            "supported": true,
+            "note": "Corespunde cu 'folosit ca sandbox pentru portofoliul de marketing automation al lui Paul Sebastian Kradyel'."
+          },
+          {
+            "claim": "rather than a real business",
+            "supported": true,
+            "note": "Parafrazare rezonabilă a caracterului fictiv menționat explicit în surse ('Fictiv, deliberat — pentru rigoare metodologică fără complicații de date reale'); nu adaugă informație nouă, doar clarifică sensul lui 'fictiv'."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Subject line este gol — mesajul pare incomplet pentru trimitere reală, chiar dacă e un test de calibrare."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Nu există context de lead (obiect gol) și personalization_basis confirmă explicit lipsa personalizării — mesajul e generic, acceptabil doar ca test de calibrare, nu ca outreach real."
+          }
+        ],
+        "summary": "Toate claim-urile sunt susținute literal de sursele aprobate, tonul e sobru și fără overclaiming, dar mesajul rămâne un test generic fără subject și fără personalizare reală."
+      }
+    },
+    {
+      "id": "D02",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Lead-urile cu scor între 80 și 100 sar peste coada de nurture",
+            "supported": true,
+            "note": "Corespunde cu 'Scor 80-100 → High / Sales-Ready → handoff imediat' din secțiunea de segmentare — parafrazare acceptabilă, fără adăugiri."
+          },
+          {
+            "claim": "primesc direct un email personal",
+            "supported": true,
+            "note": "Corespunde literal cu 'email personal' menționat pentru scorul 80-100 în segmentarea de lead-uri."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', iar contextul lead-ului e gol; mesajul e generic, fără elemente specifice unui lead real. Acceptabil pentru un test de calibrare, dar trebuie semnalat omului care revizuiește."
+          }
+        ],
+        "summary": "Ambele claims sunt susținute direct de sursele de brand, tonul e neutru și fără overclaiming, singura observație fiind lipsa personalizării reale — justificată de natura de calibrare a mesajului."
+      }
+    },
+    {
+      "id": "D03",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "The engine behind our recommendations is an XGBoost model",
+            "supported": true,
+            "note": "Corespunde cu 'Model de lead scoring: XGBoost' din sursele aprobate."
+          },
+          {
+            "claim": "tested at 0.7843 ROC-AUC",
+            "supported": true,
+            "note": "Cifră exactă citată din surse: 'test ROC-AUC 0.7843'."
+          },
+          {
+            "claim": "against a 0.7643 logistic regression baseline",
+            "supported": true,
+            "note": "Corespunde exact cu 'vs. 0.7643 pentru baseline de regresie logistică'."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul nu are personalizare reală — 'personalization_basis' declară explicit 'no specific lead' și contextul lead-ului este gol ({}). Mesajul e generic/tehnic, potrivit ca test de calibrare, dar nu adaptat unui lead concret."
+          }
+        ],
+        "summary": "Toate afirmațiile sunt susținute literal de sursele aprobate, tonul e sobru și fără overclaiming, dar mesajul rămâne generic din lipsă de personalizare — se aprobă cu observație soft pentru revizuire umană."
+      }
+    },
+    {
+      "id": "D04",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Secvența noastră de nurture are 13 emailuri.",
+            "supported": true,
+            "note": "Confirmat: 'Sistem de nurture: 13 emailuri de producție' — sursele de brand."
+          },
+          {
+            "claim": "Secvența este împărțită pe două parcursuri de persona.",
+            "supported": true,
+            "note": "Confirmat: 'pe două călătorii de persona (Connoisseur - engleză, Daily Ritualist - română)' — sursele de brand."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e complet generic — personalization_basis indică explicit 'no specific lead', iar contextul lead-ului e gol. Nu există nicio adaptare la un destinatar real."
+          },
+          {
+            "criterion": "COMPLETENESS",
+            "severity": "soft",
+            "reason": "Subject line este gol — deși nu e un claim de verificat, un email fără subiect nu e pregătit pentru trimitere reală."
+          }
+        ],
+        "summary": "Ambele claims sunt susținute literal de sursele de brand, tonul e neutru și fără overclaiming, dar mesajul rămâne generic (test de calibrare) — se poate aproba ca draft valid, cu mențiunea că necesită personalizare reală înainte de trimitere."
+      }
+    },
+    {
+      "id": "D05",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "We never promise guaranteed results in our outreach",
+            "supported": true,
+            "note": "Corespunde direct cu 'Ce NU spunem: Nu promitem rezultate garantate.'"
+          },
+          {
+            "claim": "every claim is grounded in what's actually been measured",
+            "supported": true,
+            "note": "Parafrazare rezonabilă a secțiunii 'Rezultate verificate (de citat exact)' și a principiului 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse' — nu adaugă informație nouă, doar reformulează politica de a cita doar date verificate."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e explicit un test de calibrare, fără lead sau context specific — zero personalizare reală. Nu poate fi trimis ca outreach real în această formă, dar e conform pentru un test intern."
+          },
+          {
+            "criterion": "FORMAT",
+            "severity": "soft",
+            "reason": "Subject line este gol — deși nu e un criteriu de claim/compliance, un outreach real necesită subject; de semnalat pentru reviewer uman."
+          }
+        ],
+        "summary": "Ambele claims sunt susținute de sursele de brand, tonul respectă vocea Coffra, iar mesajul reforțează corect politica anti-overpromising; singurele observații sunt soft — lipsa personalizării (asumată, e test de calibrare) și subject-ul gol."
+      }
+    },
+    {
+      "id": "D06",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Lead-urile cu scor între 40 și 80 sunt tratate ca MQL calde",
+            "supported": true,
+            "note": "Corespunde cu 'Scor 40-80 → Medium / Warm MQL' din Segmentarea de lead-uri."
+          },
+          {
+            "claim": "primesc contact accelerat, săptămânal",
+            "supported": true,
+            "note": "Corespunde cu 'nurture accelerat, contact săptămânal' din aceeași secțiune de segmentare."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic prin construcție (test de calibrare, fără lead specific, context gol) — nu conține niciun element de personalizare reală, deși e marcat explicit ca atare."
+          }
+        ],
+        "summary": "Ambele claims sunt susținute literal de sursele de brand, tonul e neutru și fără overclaiming, deci mesajul poate fi aprobat, cu mențiunea că e generic prin design (test de calibrare)."
+      }
+    },
+    {
+      "id": "D07",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Every subject line goes through a two-stage Claude API pipeline",
+            "supported": true,
+            "note": "Corespunde cu 'AI Subject Line Optimizer construit pe Claude API, pipeline în două etape' din sursele aprobate."
+          },
+          {
+            "claim": "a generator, then a critic",
+            "supported": true,
+            "note": "Corespunde cu 'pipeline în două etape (generator + critic)' din sursele aprobate."
+          },
+          {
+            "claim": "critic scoring five candidate variants",
+            "supported": true,
+            "note": "Corespunde cu '5 variante scorate pe 4 dimensiuni'; mesajul omite dimensiunile, dar nu adaugă informație nesusținută."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, fără personalizare bazată pe context — dar personalization_basis indică explicit 'calibration test — no specific lead', deci lipsa personalizării e intenționată și transparentă, nu înșelătoare."
+          }
+        ],
+        "summary": "Toate afirmațiile sunt susținute literal de sursele de brand, tonul e tehnic și fără hype, iar lipsa personalizării e justificată de contextul de calibrare — mesajul poate fi aprobat."
+      }
+    },
+    {
+      "id": "D08",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Nu cităm cifre sau studii de caz care nu apar în sursele noastre aprobate",
+            "supported": true,
+            "note": "Parafrazează direct secțiunea 'Ce NU spunem': 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse.'"
+          },
+          {
+            "claim": "nimic de aici nu e inventat",
+            "supported": true,
+            "note": "Reformulare a aceluiași principiu din 'Ce NU spunem' (nu inventăm cifre/studii de caz); nu introduce informație nouă neverificabilă."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul nu are nicio bază de personalizare reală — personalization_basis indică explicit 'calibration test — no specific lead' și contextul lead-ului e gol; mesajul e complet generic, meta-descriptiv despre politica de citare, nu un outreach adresat unui lead."
+          }
+        ],
+        "summary": "Ambele claim-uri sunt parafrazări fidele ale politicii declarate în sursele aprobate (fără cifre/studii inventate), tonul e neutru și fără hype sau presiune, dar mesajul e generic și lipsit de personalizare reală, ceea ce se raportează ca flag soft."
+      }
+    },
+    {
+      "id": "D09",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Leads scoring below 40 go on a standard nurture cadence, contact every two to four weeks",
+            "supported": true,
+            "note": "Corespunde exact cu 'Scor 0-40 → Low / Cold → nurture standard, cadență 2-4 săptămâni' din secțiunea de segmentare de lead-uri."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, fără nicio personalizare bazată pe context — dar acest lucru e explicit intenționat, fiind marcat drept 'calibration test — no specific lead' și contextul lead-ului fiind gol. Rămâne de notat pentru revizuire umană dacă acest mesaj ar fi folosit vreodată cu un lead real fără personalizare."
+          }
+        ],
+        "summary": "Singurul claim din mesaj este susținut literal de sursele de brand, tonul e neutru și fără presiune, iar lipsa personalizării este justificată de natura de test de calibrare — verdict APPROVE cu un flag soft de reținut."
+      }
+    },
+    {
+      "id": "D10",
+      "ground_truth": "PASS",
+      "predicted": "REVISE",
+      "correct": false,
+      "flagged_claims": [
+        "Fluxul de nurture este construit în HubSpot.",
+        "Fluxul de recuperare a coșului abandonat este construit în HubSpot."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Fluxul de nurture este construit în HubSpot.",
+            "supported": false,
+            "note": "Sursele menționează doar 'workflows vizualizate pentru nurture și recuperare coș abandonat' — nu se afirmă explicit că fluxurile sunt 'construite' în HubSpot, doar vizualizate acolo. 'Construite' e o adăugire față de sursă."
+          },
+          {
+            "claim": "Fluxul de nurture este vizualizat în HubSpot.",
+            "supported": true,
+            "note": "Corespunde cu 'Implementare HubSpot: workflows vizualizate pentru nurture și recuperare coș abandonat.'"
+          },
+          {
+            "claim": "Fluxul de recuperare a coșului abandonat este construit în HubSpot.",
+            "supported": false,
+            "note": "Aceeași problemă ca mai sus — sursa confirmă doar vizualizarea în HubSpot, nu construcția propriu-zisă a fluxului acolo."
+          },
+          {
+            "claim": "Fluxul de recuperare a coșului abandonat este vizualizat în HubSpot.",
+            "supported": true,
+            "note": "Corespunde direct cu talking point-ul despre implementarea HubSpot."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Mesajul afirmă că fluxurile sunt 'construite' în HubSpot, dar sursa aprobată specifică doar că workflows-urile sunt 'vizualizate' în HubSpot — nu se confirmă unde/cum au fost construite efectiv."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead' și contextul lead-ului e gol; mesajul e complet generic, fără ancorare la vreun lead real."
+          }
+        ],
+        "summary": "Mesajul introduce o afirmație neconfirmată ('construite în HubSpot') care extinde sursa aprobată dincolo de ce e documentat, deci necesită revizuire înainte de aprobare."
+      }
+    },
+    {
+      "id": "D11",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Each of the five subject line candidates is scored across four separate dimensions before selection.",
+            "supported": true,
+            "note": "Corespunde cu sursa: 'AI Subject Line Optimizer... 5 variante scorate pe 4 dimensiuni', paralel cu structura generator+critic care implică o etapă de selecție ulterioară scorării."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', iar contextul lead-ului este gol; mesajul nu conține niciun element de personalizare reală, fiind generic prin construcție."
+          },
+          {
+            "criterion": "COMPLETENESS",
+            "severity": "soft",
+            "reason": "Subject line-ul este gol (''), ceea ce face mesajul incomplet pentru un outreach real, deși poate fi acceptabil într-un context de test de calibrare."
+          }
+        ],
+        "summary": "Claim-ul unic din mesaj este susținut integral de sursele aprobate, iar tonul e neutru și fără overclaiming, deci mesajul poate fi aprobat cu observații soft privind lipsa personalizării și a subiectului, justificate de natura sa de test de calibrare."
+      }
+    },
+    {
+      "id": "D12",
+      "ground_truth": "PASS",
+      "predicted": "REVISE",
+      "correct": false,
+      "flagged_claims": [
+        "Modelul de scoring a trecut printr-un audit complet de scurgere de date",
+        "SHAP este folosit pentru transparență"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Modelul de scoring a trecut printr-un audit complet de scurgere de date",
+            "supported": false,
+            "note": "Sursele menționează doar 'audit de data leakage', fără calificativul 'complet'. Adăugarea acestui calificativ constituie o amplificare neverificată a rigorii auditului."
+          },
+          {
+            "claim": "Modelul de scoring e explicat prin SHAP",
+            "supported": true,
+            "note": "Corespunde literal cu 'explicabilitate SHAP' din talking points."
+          },
+          {
+            "claim": "SHAP este folosit pentru transparență",
+            "supported": false,
+            "note": "Sursele nu leagă explicit SHAP de scopul 'transparență' — aceasta e o interpretare/framing adăugat, nu o parafrazare directă a unui claim aprobat."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Două afirmații ('audit complet' și scopul 'pentru transparență') adaugă calificative/interpretări neverificate față de sursele aprobate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Calificativul 'complet' aplicat auditului de data leakage riscă overclaiming — sursele nu susțin gradul de exhaustivitate implicat."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'no specific lead' și contextul lead-ului e gol — mesajul e generic, fără nicio ancorare reală în datele unui prospect."
+          }
+        ],
+        "summary": "Mesajul conține două afirmații cu adăugiri neverificate față de sursele de brand (calificativul 'complet' și scopul 'transparență'), ceea ce impune REVISE conform regulii stricte pe claims."
+      }
+    },
+    {
+      "id": "D13",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "This project is intentionally fictional",
+            "supported": true,
+            "note": "Corespunde cu 'Fictiv, deliberat' din secțiunea Context a surselor."
+          },
+          {
+            "claim": "built to demonstrate marketing-automation methodology",
+            "supported": true,
+            "note": "Corespunde cu 'folosit ca sandbox pentru portofoliul de marketing automation al lui Paul Sebastian Kradyel'."
+          },
+          {
+            "claim": "without using any real customer data",
+            "supported": true,
+            "note": "Corespunde cu 'pentru rigoare metodologică fără complicații de date reale'."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul nu conține niciun element de personalizare pe lead — contextul lead-ului e gol ({}) și personalization_basis indică explicit 'calibration test — no specific lead'. Nu e o problemă de acuratețe, dar e generic prin design și trebuie semnalat pentru revizuire umană."
+          },
+          {
+            "criterion": "STRUCTURE",
+            "severity": "soft",
+            "reason": "Câmpul 'subject' este vid — nu reprezintă un claim de verificat, dar e o lacună structurală de outreach real ce merită atenția reviewer-ului uman."
+          }
+        ],
+        "summary": "Toate afirmațiile identificate sunt susținute literal de sursele aprobate, iar tonul e neutru și fără overclaiming, dar mesajul e generic (fără lead real) și are subject vid — aprobat cu flag-uri soft pentru revizuire umană."
+      }
+    },
+    {
+      "id": "D14",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Parcursul de persona Connoisseur e scris în engleză",
+            "supported": true,
+            "note": "Apare literal în surse: 'Connoisseur - engleză'"
+          },
+          {
+            "claim": "Daily Ritualist e scris în română",
+            "supported": true,
+            "note": "Apare literal în surse: 'Daily Ritualist - română'"
+          },
+          {
+            "claim": "împreună formează secvența de 13 emailuri",
+            "supported": true,
+            "note": "Apare în surse: '13 emailuri de producție, pe două călătorii de persona'"
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, fără personalizare bazată pe context de lead — explicit marcat ca 'calibration test — no specific lead', context lead gol. Corect pentru scopul declarat, dar semnalat pentru vizibilitate."
+          }
+        ],
+        "summary": "Toate claim-urile sunt susținute literal de sursele aprobate, tonul e neutru și fără overclaiming; singurul aspect de notat e lipsa personalizării, asumată explicit ca test de calibrare, deci APPROVE."
+      }
+    },
+    {
+      "id": "D15",
+      "ground_truth": "PASS",
+      "predicted": "REVISE",
+      "correct": false,
+      "flagged_claims": [
+        "Abandoned-cart recovery is one of the workflows we've built"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Abandoned-cart recovery is one of the workflows we've built",
+            "supported": false,
+            "note": "Sursele menționează doar 'workflows vizualizate pentru nurture și recuperare coș abandonat' — nu se afirmă explicit că workflow-ul a fost 'construit' (built), doar că a fost vizualizat în HubSpot. Adăugarea verbului 'built' introduce o afirmație neconfirmată de sursă."
+          },
+          {
+            "claim": "This workflow was visualized directly in HubSpot",
+            "supported": true,
+            "note": "Corespunde direct cu 'Implementare HubSpot: workflows vizualizate pentru nurture și recuperare coș abandonat.'"
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Claim-ul despre 'built' workflow nu este susținut literal de sursele aprobate, care menționează doar vizualizarea workflow-ului, nu construirea lui explicit descrisă în acești termeni."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, marcat explicit ca 'calibration test — no specific lead', fără personalizare bazată pe context real de lead."
+          }
+        ],
+        "summary": "Mesajul conține un claim neconfirmat explicit de sursele de brand ('built' vs. doar 'visualized'), ceea ce impune REVISE; personalizarea este de asemenea inexistentă."
+      }
+    },
+    {
+      "id": "D16",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Un lead cu scor de 80 sau peste sare peste coada automată",
+            "supported": true,
+            "note": "Corespunde cu 'Scor 80-100 → High / Sales-Ready → handoff imediat' din secțiunea de segmentare — parafrazare fără adăugiri."
+          },
+          {
+            "claim": "primește direct un email personal",
+            "supported": true,
+            "note": "Corespunde exact cu 'email personal' menționat în talking points pentru segmentul High / Sales-Ready."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Contextul lead-ului e gol ({}) și personalization_basis indică explicit 'no specific lead' — mesajul e generic, testat pentru calibrare, nu personalizat pe un caz real."
+          },
+          {
+            "criterion": "BRAND VOICE / FORMAT",
+            "severity": "soft",
+            "reason": "Subject line este gol; deși nu afectează acuratețea claim-urilor, un subiect lipsă slăbește calitatea outreach-ului final trimis unui lead real."
+          }
+        ],
+        "summary": "Ambele claim-uri sunt susținute fidel de sursele de brand, fără overclaiming sau ton nepotrivit; rămân doar observații minore de personalizare și format pentru revizuire umană."
+      }
+    },
+    {
+      "id": "D17",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our model outperforms a logistic regression baseline by two points of ROC-AUC",
+            "supported": true,
+            "note": "Corespunde cu 'Model de lead scoring: XGBoost, test ROC-AUC 0.7843 (vs. 0.7643 pentru baseline de regresie logistică)' — diferența de 0.02 este corect exprimată ca 'two points' (puncte procentuale)."
+          },
+          {
+            "claim": "0.7843 versus 0.7643",
+            "supported": true,
+            "note": "Cifre identice, citate exact din sursele aprobate (secțiunea Rezultate verificate)."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis este explicit 'calibration test — no specific lead', iar contextul lead-ului este gol ({}). Mesajul e pur tehnic, fără nicio adaptare la un destinatar real, segment sau nevoie specifică. Acceptabil doar ca test de calibrare, nu ca outreach funcțional."
+          }
+        ],
+        "summary": "Toate afirmațiile numerice sunt susținute exact de sursele aprobate, fără overclaiming sau tonuri agresive; singura observație este lipsa totală de personalizare, semnalată ca flag soft pentru revizuire umană."
+      }
+    },
+    {
+      "id": "D18",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Nu promitem rezultate specifice garantate",
+            "supported": true,
+            "note": "Corespunde direct cu secțiunea 'Ce NU spunem — Nu promitem rezultate garantate' din sursele de brand."
+          },
+          {
+            "claim": "ce putem spune e exact ce am testat și validat",
+            "supported": true,
+            "note": "Paraf razează spiritul secțiunii 'Ce NU spunem' (nu inventăm cifre, limitările sunt documentate transparent) — nu adaugă cifre sau rezultate specifice necitate în sursă, deci nu introduce claim nou nesusținut."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, bazat pe 'calibration test — no specific lead', fără nicio referință la contextul lead-ului (context gol {}). Nu există personalizare reală."
+          },
+          {
+            "criterion": "COMPLETENESS",
+            "severity": "soft",
+            "reason": "Subject line este gol — deși nu e un criteriu explicit din rubrică, un outreach fără subiect e incomplet pentru trimitere reală și merită atenția reviewerului uman."
+          }
+        ],
+        "summary": "Ambele afirmații sunt susținute de sursele de brand (reflectă politica declarată de non-overclaiming), tonul e sobru și conform, fără pattern-uri interzise sau overpromising — dar mesajul e generic și fără subiect, deci se aprobă cu observații soft pentru revizuire umană."
+      }
+    },
+    {
+      "id": "D19",
+      "ground_truth": "PASS",
+      "predicted": "REVISE",
+      "correct": false,
+      "flagged_claims": [
+        "before anything reaches an inbox"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "our subject line pipeline",
+            "supported": true,
+            "note": "Corespunde cu 'AI Subject Line Optimizer construit pe Claude API, pipeline în două etape (generator + critic)' din sursele aprobate."
+          },
+          {
+            "claim": "The critic stage evaluates every variant",
+            "supported": true,
+            "note": "Paraframat rezonabil din '5 variante scorate pe 4 dimensiuni' — etapa critic este cea care scorează variantele generate."
+          },
+          {
+            "claim": "before anything reaches an inbox",
+            "supported": false,
+            "note": "Nu apare în sursele aprobate. Talking points-urile descriu doar structura tehnică a pipeline-ului (generator + critic, scoring pe 4 dimensiuni), nu fac nicio afirmație despre livrare efectivă în inbox sau despre o garanție operațională de tip 'nimic nu ajunge nefiltrat'. E o adăugire care implică un nivel de certitudine/proces de producție nedocumentat."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația 'before anything reaches an inbox' nu este susținută de sursele de brand aprobate — implică o garanție de proces (control total înainte de livrare) care nu apare nicăieri în talking points."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', iar contextul lead-ului este gol. Mesajul e complet generic, fără nicio ancorare în situația unui lead real."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "soft",
+            "reason": "Formularea 'before anything reaches an inbox' sună ca o garanție implicită de calitate/proces, ceea ce se apropie de overpromising, chiar dacă nu e o garanție explicită de rezultat."
+          }
+        ],
+        "summary": "Mesajul conține un claim nesusținut de sursele aprobate (garanția implicită de proces înainte de livrare), ceea ce impune REVISE, alături de personalizare inexistentă și un ton ușor spre overpromising."
+      }
+    },
+    {
+      "id": "D20",
+      "ground_truth": "PASS",
+      "predicted": "PASS",
+      "correct": true,
+      "flagged_claims": [],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Lead-urile reci, cu scor sub 40",
+            "supported": true,
+            "note": "Corespunde exact segmentării: 'Scor 0-40 → Low / Cold'."
+          },
+          {
+            "claim": "sunt contactate pe o cadență mai lentă, de 2-4 săptămâni",
+            "supported": true,
+            "note": "Corespunde exact: 'nurture standard, cadență 2-4 săptămâni' pentru segmentul 0-40."
+          },
+          {
+            "claim": "nu săptămânal",
+            "supported": true,
+            "note": "Contrastul e susținut de surse — cadența săptămânală e documentată explicit pentru segmentul 40-80 (Warm MQL), deci diferențierea e corectă și nu adaugă informație nouă."
+          }
+        ],
+        "verdict": "APPROVE",
+        "flags": [
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e un test de calibrare fără lead specific (context {} și personalization_basis explicit 'no specific lead'); nu există personalizare reală, dar e justificat de natura testului."
+          }
+        ],
+        "summary": "Toate claim-urile sunt susținute literal de sursele de brand, tonul e neutru și factual, fără overclaiming sau presiune; singurul aspect notabil e lipsa personalizării, dar e un test de calibrare declarat, nu outreach real."
+      }
+    },
+    {
+      "id": "D21",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Our lead scoring model is a Random Forest",
+        "tuned to 0.91 ROC-AUC on the test set"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our lead scoring model is a Random Forest",
+            "supported": false,
+            "note": "Sursele specifică explicit model XGBoost, nu Random Forest. Contrazice sursa aprobată, nu doar 'nu apare'."
+          },
+          {
+            "claim": "tuned to 0.91 ROC-AUC on the test set",
+            "supported": false,
+            "note": "Sursele citează exact ROC-AUC 0.7843 pe test set (vs. 0.7643 baseline). Cifra 0.91 nu apare nicăieri și contrazice rezultatul verificat."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații tehnice (tipul modelului și scorul ROC-AUC) sunt neconforme cu sursele aprobate — nu doar nesuportate, ci contrazic direct datele reale (XGBoost, 0.7843)."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Inventarea unei cifre de performanță (0.91) care nu există în sursele aprobate constituie exact tipul de overclaiming interzis explicit ('Nu inventăm cifre sau studii de caz care nu sunt în aceste surse')."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e complet generic — 'personalization_basis' indică test de calibrare, fără niciun element din contextul lead-ului (care e de altfel gol)."
+          }
+        ],
+        "summary": "Mesajul conține afirmații tehnice fabricate care contrazic direct sursele de brand aprobate (model și metrică greșite), ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D22",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Secvența noastră de nurture are 20 de emailuri",
+        "distribuite pe trei parcursuri de persona"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Secvența noastră de nurture are 20 de emailuri",
+            "supported": false,
+            "note": "Sursele specifică 13 emailuri de producție, nu 20. Contrazice direct rezultatele verificate."
+          },
+          {
+            "claim": "distribuite pe trei parcursuri de persona",
+            "supported": false,
+            "note": "Sursele specifică două călătorii de persona (Connoisseur - engleză, Daily Ritualist - română), nu trei. Contrazice direct rezultatele verificate."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Numărul de emailuri (20 vs. 13 real) e inventat/incorect față de sursele aprobate."
+          },
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Numărul de parcursuri de persona (trei vs. două real) e inventat/incorect față de sursele aprobate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Cifrele inflate reprezintă overclaiming asupra unor rezultate verificate deja documentate — exact tipul de afirmație pe care sursele spun explicit că trebuie evitată."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Nu există context de lead (lead context gol, personalization_basis marcat explicit ca test de calibrare fără lead specific) — mesajul e complet generic."
+          }
+        ],
+        "summary": "Mesajul conține două claims factuale unsupported/contrazise de sursele aprobate (20 vs. 13 emailuri, trei vs. două parcursuri de persona), ceea ce constituie overclaiming și necesită REVISE."
+      }
+    },
+    {
+      "id": "D23",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "We guarantee a measurable lift in engagement within your first two weeks on this track."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "We guarantee a measurable lift in engagement within your first two weeks on this track.",
+            "supported": false,
+            "note": "Nu apare în sursele aprobate; secțiunea 'Ce NU spunem' interzice explicit promisiuni de rezultate garantate ('Nu promitem rezultate garantate'). Este o afirmație inventată, contrară brand voice-ului."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre 'guaranteed measurable lift' nu apare în sursele de brand și contravine direct instrucțiunii 'Nu promitem rezultate garantate'."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Garanție absolută asupra unui rezultat de business (engagement lift) reprezintă overpromising/afirmație potențial înșelătoare, interzisă explicit de sursele de brand."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Tonul e agresiv-comercial ('we guarantee'), nu reflectă vocea profesională, directă și fără hype specificată pentru Coffra."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, bazat pe un test de calibrare fără context de lead real; nu există nicio personalizare autentică."
+          }
+        ],
+        "summary": "Mesajul conține un claim negarantat de brand (garanție de rezultate) care încalcă explicit regulile de compliance ale Coffra, deci verdictul este REVISE."
+      }
+    },
+    {
+      "id": "D24",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Coffra este un brand real",
+        "cu magazine fizice în trei orașe din România"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Coffra este un brand real",
+            "supported": false,
+            "note": "Contrazice sursele aprobate: Coffra este explicit definit ca 'brand fictiv de cafea de specialitate D2C', folosit ca sandbox de portofoliu. Afirmația inversează un fapt documentat, nu doar 'nu apare' — este falsă."
+          },
+          {
+            "claim": "cu magazine fizice în trei orașe din România",
+            "supported": false,
+            "note": "Nu apare nicăieri în sursele aprobate. Nu există nicio mențiune despre magazine fizice sau prezență în trei orașe; este o cifră/fapt inventat."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații din mesaj sunt unsupported: una contrazice direct natura fictivă a brandului stabilită în surse, cealaltă inventă detalii operaționale (magazine fizice, trei orașe) inexistente în talking points."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unui brand fictiv ca fiind 'real' constituie o afirmație potențial înșelătoare, exact tipul de overclaiming pe care sursele îl interzic explicit ('Nu inventăm cifre sau studii de caz care nu sunt în aceste surse')."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead' și contextul lead-ului este gol; mesajul e complet generic, fără nicio ancorare reală în nevoile unui prospect."
+          }
+        ],
+        "summary": "Mesajul conține două claims unsupported (unul contrazicând direct sursele, altul inventat), ceea ce declanșează automat REVISE, agravat de un risc real de compliance legat de reprezentarea unui brand fictiv ca fiind real."
+      }
+    },
+    {
+      "id": "D25",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Our subject lines are generated in a single pass",
+        "with no review or critic stage before sending"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our subject lines are generated in a single pass",
+            "supported": false,
+            "note": "Contrazis direct de sursele aprobate: 'AI Subject Line Optimizer... pipeline în două etape (generator + critic)'. Nu doar că nu apare, ci este opusul faptului documentat."
+          },
+          {
+            "claim": "with no review or critic stage before sending",
+            "supported": false,
+            "note": "Contrazis direct de sursele aprobate: sistemul are explicit un 'critic' stage și 5 variante scorate pe 4 dimensiuni înainte de trimitere. Afirmația e falsă, nu doar nesusținută."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Mesajul afirmă contrariul a ceea ce sursele de brand documentează despre propriul sistem de subject lines (pipeline în două etape, cu critic), ceea ce constituie dezinformare, nu doar lipsă de suport."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "A comunica public o capacitate inversă față de cea reală (fără etapă de review) pe un produs care e prezentat ca fiind mai riguros, e o afirmație potențial înșelătoare despre calitatea sistemului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e marcat explicit ca 'calibration test — no specific lead', deci nu există personalizare pe baza contextului lead-ului (context gol)."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Subject-ul este gol, ceea ce nu respectă un standard minim de outreach funcțional, chiar dacă tonul mesajului propriu-zis e sobru și fără hype."
+          }
+        ],
+        "summary": "Verdict REVISE — mesajul conține afirmații care contrazic direct sursele aprobate despre sistemul de subject lines (pipeline cu critic, nu single-pass), ceea ce reprezintă un claim unsupported/fals de severitate hard."
+      }
+    },
+    {
+      "id": "D26",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Fluxurile noastre de nurture și recuperare coș sunt construite direct în Salesforce",
+        "nu în HubSpot"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Fluxurile noastre de nurture și recuperare coș sunt construite direct în Salesforce",
+            "supported": false,
+            "note": "Sursele aprobate specifică explicit 'Implementare HubSpot: workflows vizualizate pentru nurture și recuperare coș abandonat.' Nu există nicio mențiune despre Salesforce în talking points. Claim-ul contrazice direct sursa, nu doar că nu apare în ea."
+          },
+          {
+            "claim": "nu în HubSpot",
+            "supported": false,
+            "note": "Contrazice direct sursa aprobată, care afirmă că implementarea de nurture și recuperare coș este în HubSpot. Aceasta nu e doar o afirmație nesusținută, ci una factual falsă față de sursă."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Mesajul afirmă că fluxurile sunt în Salesforce, când sursa de brand aprobată specifică explicit implementare în HubSpot — contradicție factuală directă, nu simplă lipsă de suport."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmarea unei stive tehnologice greșite (Salesforce vs. HubSpot) constituie o informație potențial înșelătoare despre produs/implementare, expunând brandul la neconcordanțe verificabile de către lead."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead' și contextul lead-ului este gol; mesajul nu are nicio ancorare reală în nevoile sau situația unui lead concret."
+          }
+        ],
+        "summary": "Mesajul conține un claim care contrazice direct sursele aprobate (Salesforce vs. HubSpot), ceea ce declanșează automat REVISE; necesită corectare factuală și, opțional, personalizare reală înainte de retrimitere spre review uman."
+      }
+    },
+    {
+      "id": "D27",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Any lead scoring above 60 receives an immediate personal handoff from the team."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Any lead scoring above 60 receives an immediate personal handoff from the team.",
+            "supported": false,
+            "note": "Sursele specifică pragul de handoff imediat / email personal doar pentru scor 80-100 (High / Sales-Ready). Scorul 40-80 corespunde segmentului Medium / Warm MQL, care primește 'nurture accelerat, contact săptămânal', NU handoff imediat. Claim-ul suprapune greșit pragul (60 în loc de 80) și extinde promisiunea de handoff la un interval care, conform surselor, nu îl garantează."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Pragul de 60 pentru handoff imediat contrazice segmentarea documentată (80-100 pentru handoff, 40-80 pentru nurture accelerat). Afirmația nu apare, nici parafrazat corect, în sursele aprobate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Reprezentarea greșită a pragului de scoring poate induce în eroare lead-ul cu privire la procesul real de calificare — se încadrează la overpromising / afirmație potențial înșelătoare despre funcționarea sistemului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Baza de personalizare este explicit 'calibration test — no specific lead', deci mesajul e generic, fără nicio referire la contextul unui lead real."
+          }
+        ],
+        "summary": "Mesajul distorsionează pragul real de handoff (60 vs. 80 documentat) și implică o garanție de proces nesusținută de surse, deci necesită revizuire înainte de aprobare."
+      }
+    },
+    {
+      "id": "D28",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Un client similar a văzut o creștere de 340% în vânzări după prima lună de nurture."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Un client similar a văzut o creștere de 340% în vânzări după prima lună de nurture.",
+            "supported": false,
+            "note": "Nu apare nicio cifră de 340% sau vreun caz-client citat în sursele aprobate. Secțiunea 'Rezultate verificate' menționează doar metrici legate de modelul de scoring (ROC-AUC), numărul de emailuri de nurture și structura AI Subject Line Optimizer — nimic despre creșteri procentuale în vânzări sau clienți reali/similari. Secțiunea 'Ce NU spunem' interzice explicit inventarea de cifre sau studii de caz."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Cifra de 340% și referința la 'un client similar' sunt inventate — nu există în sursele de brand aprobate și contravin direct instrucțiunii 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse'."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmația are formă de garanție de rezultat cuantificat ('a văzut o creștere de 340%'), ceea ce constituie overpromising / potențial înșelător, interzis explicit de 'Nu promitem rezultate garantate'."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis este 'calibration test — no specific lead', iar contextul lead-ului este gol — mesajul nu are nicio bază reală de personalizare."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Folosirea unei cifre-șoc fără sursă ('340%') seamănă cu hype de tip growth-hacking, nepotrivit cu tonul direct și transparent specificat pentru Coffra."
+          }
+        ],
+        "summary": "Mesajul conține un claim statistic nesusținut și potențial înșelător (340%, 'client similar' inexistent), ceea ce impune REVISE conform regulilor stricte."
+      }
+    },
+    {
+      "id": "D29",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Each subject line candidate is scored across seven separate evaluation dimensions."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Each subject line candidate is scored across seven separate evaluation dimensions.",
+            "supported": false,
+            "note": "Sursele aprobate specifică 'AI Subject Line Optimizer... 5 variante scorate pe 4 dimensiuni', nu 'seven separate evaluation dimensions'. Numărul de dimensiuni citat (șapte) contrazice sursa (patru), deci claim-ul nu este susținut."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre 'seven separate evaluation dimensions' contrazice sursa aprobată, care menționează explicit 4 dimensiuni de scorare pentru AI Subject Line Optimizer."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul nu are subject line, contextul lead-ului e gol ({}) și baza de personalizare declarată e 'calibration test — no specific lead', deci nu există personalizare reală pentru un lead concret."
+          }
+        ],
+        "summary": "Mesajul conține un claim numeric care contrazice sursele aprobate (7 vs. 4 dimensiuni), ceea ce impune REVISE; personalizarea este de asemenea absentă/generică."
+      }
+    },
+    {
+      "id": "D30",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Parcursul Daily Ritualist e disponibil în engleză",
+        "Parcursul Daily Ritualist e disponibil în franceză",
+        "disponibilitatea multi-limbă oferă acoperire mai largă"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Parcursul Daily Ritualist e disponibil în engleză",
+            "supported": false,
+            "note": "Sursele specifică opusul: Daily Ritualist este persona în română, iar Connoisseur este cea în engleză. Afirmația contrazice talking points-urile aprobate."
+          },
+          {
+            "claim": "Parcursul Daily Ritualist e disponibil în franceză",
+            "supported": false,
+            "note": "Nicio sursă aprobată nu menționează o versiune în franceză a vreunui parcurs de nurture. Sistemul descris are doar două călătorii: Connoisseur (engleză) și Daily Ritualist (română)."
+          },
+          {
+            "claim": "Parcursul Daily Ritualist e disponibil în română",
+            "supported": true,
+            "note": "Confirmat explicit în talking points: 'Daily Ritualist - română'."
+          },
+          {
+            "claim": "disponibilitatea multi-limbă oferă acoperire mai largă",
+            "supported": false,
+            "note": "Nu există în sursele aprobate nicio afirmație despre 'acoperire mai largă' sau beneficii de acoperire asociate limbilor disponibile; este o inferență/claim de marketing nesusținut."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Mesajul afirmă că Daily Ritualist e disponibil în engleză și franceză — informații care contrazic sau nu apar deloc în sursele aprobate (Daily Ritualist e documentat exclusiv în română)."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmarea unor limbi/acoperiri inexistente constituie overclaiming/informație potențial înșelătoare despre capacitățile reale ale sistemului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Contextul lead-ului este gol și baza de personalizare declarată e 'calibration test — no specific lead'; mesajul e complet generic, fără ancorare reală în vreun lead."
+          }
+        ],
+        "summary": "Mesajul conține claim-uri false/nesusținute despre disponibilitatea multi-limbă a Daily Ritualist, ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D31",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Leads scoring under 40 still receive weekly contact",
+        "to maximize conversion odds"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Leads scoring under 40 still receive weekly contact",
+            "supported": false,
+            "note": "Sursele specifică pentru scor 0-40 (Low/Cold) cadență de nurture standard 2-4 săptămâni, nu contact săptămânal. Contactul săptămânal e definit explicit pentru segmentul Medium (40-80). Claim-ul contrazice segmentarea aprobată."
+          },
+          {
+            "claim": "to maximize conversion odds",
+            "supported": false,
+            "note": "Nu apare nicio formulare de acest tip în sursele aprobate; secțiunea 'Ce NU spunem' interzice explicit promisiuni de rezultate garantate sau formulări care sugerează optimizare certă a conversiei."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre contact săptămânal pentru scor <40 contrazice direct segmentarea de lead-uri din sursele aprobate (cadență reală: 2-4 săptămâni)."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "'to maximize conversion odds' e o formulare de overpromising, neconformă cu instrucțiunea explicită de a nu promite rezultate garantate."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, marcat explicit ca test de calibrare fără lead specific — nu există personalizare reală de evaluat."
+          }
+        ],
+        "summary": "Mesajul conține o afirmație factual greșită despre cadența de contact pentru lead-uri scor <40 și o formulare de overpromising, ambele generând REVISE obligatoriu."
+      }
+    },
+    {
+      "id": "D32",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Modelul nostru de scoring nu a trecut printr-un audit formal de scurgere de date",
+        "performanța pe test e solidă"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Modelul nostru de scoring nu a trecut printr-un audit formal de scurgere de date",
+            "supported": false,
+            "note": "Contrazice direct sursele aprobate: 'Model de lead scoring: XGBoost, test ROC-AUC 0.7843 ... cu audit de data leakage și explicabilitate SHAP.' Sursa afirmă explicit că auditul de leakage A fost efectuat."
+          },
+          {
+            "claim": "performanța pe test e solidă",
+            "supported": false,
+            "note": "Nu apare ca atare în surse. Sursa citează cifre exacte (ROC-AUC 0.7843 vs. 0.7643 baseline), nu o caracterizare vagă de tip 'solidă'. Afirmația e o parafrazare neancorată în datele reale, fără citarea cifrelor."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Claim-ul despre lipsa auditului de leakage contrazice frontal sursele aprobate, care documentează explicit că auditul a fost realizat."
+          },
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Caracterizarea 'performanța pe test e solidă' nu e susținută literal sau parafrazat de sursă; cifrele exacte disponibile (0.7843 vs 0.7643) nu sunt citate, iar afirmația rămâne vagă și neverificabilă."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Mesajul induce în eroare cu privire la statusul de audit al modelului, contrar principiului de transparență din surse ('limitările sunt documentate transparent, nu ascunse') — aici se inventează o limitare inexistentă."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Nu există context de lead (contextul e gol, personalization_basis indică explicit 'no specific lead'); mesajul e generic, fără nicio ancorare în situația destinatarului."
+          }
+        ],
+        "summary": "Mesajul conține un claim care contrazice direct sursele aprobate (auditul de leakage a fost făcut, nu omis) și un claim vag nesusținut, ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D33",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Our subject line system runs on GPT-4",
+        "chosen specifically for its creative writing strength"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our subject line system runs on GPT-4",
+            "supported": false,
+            "note": "Sursele specifică explicit că AI Subject Line Optimizer este construit pe Claude API, nu pe GPT-4. Claim-ul contrazice direct sursa de brand aprobată, nu doar că nu apare în ea."
+          },
+          {
+            "claim": "chosen specifically for its creative writing strength",
+            "supported": false,
+            "note": "Nu există nicio mențiune în sursele aprobate despre motivul alegerii modelului (Claude) bazat pe 'creative writing strength'. Rațiunea documentată e pipeline-ul în două etape (generator + critic) cu scorare pe 4 dimensiuni, nu o justificare de tip 'creative strength'."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele claim-uri din mesaj sunt unsupported — primul contrazice direct sursa (Claude vs. GPT-4), al doilea inventează o rațiune de alegere care nu apare nicăieri în talking points."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmarea greșită a tehnologiei folosite (GPT-4 vs. Claude real) constituie o afirmație potențial înșelătoare despre stack-ul tehnic real al proiectului, nu doar o simplă lipsă de suport în surse."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', iar contextul lead-ului este gol ({}) — mesajul e generic, fără nicio personalizare reală bazată pe lead."
+          }
+        ],
+        "summary": "Mesajul conține un claim factual incorect despre tehnologia folosită (GPT-4 în loc de Claude) și o justificare inventată, ambele nesusținute de sursele de brand — verdict REVISE."
+      }
+    },
+    {
+      "id": "D34",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "HubSpot gestionează doar campaniile de achiziție",
+        "recuperarea coșului abandonat se face printr-un alt tool"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "HubSpot gestionează doar campaniile de achiziție",
+            "supported": false,
+            "note": "Sursele afirmă opusul: 'Implementare HubSpot: workflows vizualizate pentru nurture și recuperare coș abandonat.' HubSpot gestionează inclusiv recuperarea coșului abandonat, nu doar achiziția."
+          },
+          {
+            "claim": "recuperarea coșului abandonat se face printr-un alt tool",
+            "supported": false,
+            "note": "Contrazice direct sursele, care specifică recuperarea coșului abandonat ca parte din implementarea HubSpot, nu printr-un tool separat."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații despre rolul HubSpot sunt contrazise explicit de sursele de brand aprobate, nu doar neconfirmate."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', context lead complet gol; mesajul nu are nicio personalizare reală."
+          }
+        ],
+        "summary": "Mesajul contrazice sursele aprobate privind rolul HubSpot în recuperarea coșului abandonat, ceea ce impune REVISE indiferent de alte criterii."
+      }
+    },
+    {
+      "id": "D35",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Every recommendation we've shipped this quarter converted at over 90%."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Every recommendation we've shipped this quarter converted at over 90%.",
+            "supported": false,
+            "note": "Nicio sursă aprobată nu menționează o rată de conversie de 90% sau vreun claim despre 'recomandări livrate în acest trimestru'. Singurele cifre verificate sunt ROC-AUC 0.7843/0.7643 pentru modelul de scoring, 13 emailuri de nurture, și 5 variante testate în subject line optimizer. Aceasta este o cifră inventată, exact ce secțiunea 'Ce NU spunem' interzice explicit."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Cifra de '90% conversie' nu apare în sursele de brand aprobate și contravine direct regulii 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse'."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Formularea absolută 'Every... over 90%' este un overpromise / afirmație cu potențial înșelător, incompatibilă cu principiul 'Nu promitem rezultate garantate'."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Tonul e apropiat de hype ('Every... over 90%'), fără nuanțare sau context, ceea ce nu se aliniază cu vocea directă și fără superlative nefondate a brandului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, fără nicio bază de personalizare reală ('calibration test — no specific lead'), și contextul lead-ului este gol."
+          }
+        ],
+        "summary": "Mesajul conține un claim statistic nesusținut de surse și un overpromise, ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D36",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Coffra funcționează din Cluj-Napoca",
+        "în Cluj-Napoca se află producția și logistica Coffra"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Coffra funcționează din Cluj-Napoca",
+            "supported": false,
+            "note": "Sursele aprobate specifică explicit că Coffra este un brand D2C bazat în Timișoara, nu Cluj-Napoca. Afirmația contrazice direct contextul oficial."
+          },
+          {
+            "claim": "în Cluj-Napoca se află producția și logistica Coffra",
+            "supported": false,
+            "note": "Nicio sursă aprobată nu menționează locația producției sau logisticii Coffra; aceasta e o informație inventată, nu doar neconfirmată ci și în contradicție cu locația reală menționată (Timișoara)."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații despre locație (Cluj-Napoca, producție, logistică) sunt neconfirmate și contrazic sursa de brand care indică Timișoara ca bază a Coffra."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unei locații fictive/incorecte ca fapt operațional constituie o afirmație potențial înșelătoare despre brand."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Contextul lead-ului e gol ('no specific lead'), mesajul e generic, fără nicio personalizare reală — acceptabil doar ca test de calibrare, nu ca mesaj de producție."
+          }
+        ],
+        "summary": "Mesajul conține afirmații factuale nesusținute și contradictorii cu sursele de brand (locația Cluj-Napoca vs. Timișoara), deci necesită revizuire înainte de aprobare."
+      }
+    },
+    {
+      "id": "D37",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Our model beat baseline by a wide margin",
+        "0.58 pentru regresia logistică (baseline)"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our model beat baseline by a wide margin",
+            "supported": false,
+            "note": "Sursele arată ROC-AUC 0.7843 (XGBoost) vs 0.7643 (baseline logistic) — o diferență de doar 0.02, nu 'wide margin'. Afirmația e o interpretare exagerată, nesusținută de date."
+          },
+          {
+            "claim": "0.7843 (ROC-AUC model)",
+            "supported": true,
+            "note": "Apare exact în sursă: 'test ROC-AUC 0.7843'."
+          },
+          {
+            "claim": "0.58 pentru regresia logistică (baseline)",
+            "supported": false,
+            "note": "Sursa specifică baseline de 0.7643 pentru regresia logistică, nu 0.58. Cifra este fabricată/contrazice sursele aprobate."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Cifra baseline (0.58) nu corespunde sursei aprobate (0.7643) — reprezintă o afirmație fabricată despre rezultate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Descrierea 'by a wide margin' este overclaiming: diferența reală (0.7843 vs 0.7643) este marginală, nu 'wide'. Combinată cu cifra falsă de baseline, creează o afirmație potențial înșelătoare despre performanța modelului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead'; contextul lead-ului este gol, deci mesajul e complet generic, fără personalizare reală."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Tonul 'beat baseline by a wide margin' introduce un aer de superlativ nefondat, ușor în contradicție cu vocea de brand direct/fără hype gol."
+          }
+        ],
+        "summary": "Mesajul conține o cifră de baseline fabricată (0.58 vs. 0.7643 real) și o exagerare a diferenței de performanță, ambele reprezentând flag-uri hard — verdict REVISE."
+      }
+    },
+    {
+      "id": "D38",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Toate cele 13 emailuri sunt scrise în română, indiferent de persona"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Sistemul de nurture are 13 emailuri",
+            "supported": true,
+            "note": "Corespunde cu sursa: 'Sistem de nurture: 13 emailuri de producție, pe două călătorii de persona'."
+          },
+          {
+            "claim": "Toate cele 13 emailuri sunt scrise în română, indiferent de persona",
+            "supported": false,
+            "note": "Contrazice sursa explicit: 'pe două călătorii de persona (Connoisseur - engleză, Daily Ritualist - română)'. Persona Connoisseur are emailuri în engleză, nu în română."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația că toate emailurile sunt în română 'indiferent de persona' este factual incorectă și contrazice sursele aprobate, care specifică o persoană (Connoisseur) cu jurnal în engleză."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmația este înșelătoare — prezintă o caracteristică a sistemului greșit, riscând să inducă în eroare lead-ul despre capacitățile reale de personalizare lingvistică."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e un test de calibrare fără lead specific ({}), deci nu există personalizare reală — acceptabil doar în context de testare internă, dar trebuie semnalat."
+          }
+        ],
+        "summary": "Mesajul conține un claim factual nesusținut (chiar contrazis) de sursele de brand privind limba emailurilor per persona, ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D39",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "We can promise visible results within 30 days",
+        "or we'll revise the strategy at no extra cost"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "We can promise visible results within 30 days",
+            "supported": false,
+            "note": "Nu apare în sursele de brand. Secțiunea 'Ce NU spunem' specifică explicit: 'Nu promitem rezultate garantate.' Acest claim contrazice direct politica de brand."
+          },
+          {
+            "claim": "or we'll revise the strategy at no extra cost",
+            "supported": false,
+            "note": "Nu apare nicăieri în talking points. Nu există nicio mențiune despre garanții contractuale, revizuiri gratuite sau structuri de tip 'money-back guarantee' în sursele aprobate."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații din mesaj sunt unsupported — nu apar în sursele de brand aprobate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Mesajul face o garanție absolută de rezultate ('promise visible results within 30 days') plus o clauză compensatorie ('revise at no extra cost'), formă clasică de overpromising. Contrazice explicit regula de brand 'Nu promitem rezultate garantate.'"
+          },
+          {
+            "criterion": "BRAND_VOICE",
+            "severity": "hard",
+            "reason": "Tonul de tip garanție comercială agresivă ('we can promise... or...') nu reflectă vocea de brand definită (profesional, direct, transparent despre limitări) — pare mai degrabă un pitch de vânzări cu presiune de tip 'no-risk guarantee', absent din talking points."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis este 'calibration test — no specific lead', context lead complet gol ({}), iar mesajul e complet generic, fără nicio referire la segment, scor sau context real."
+          }
+        ],
+        "summary": "Mesajul conține două claims neverificate care contrazic direct politica de brand împotriva garanțiilor de rezultate, plus probleme de compliance și voice — verdict REVISE."
+      }
+    },
+    {
+      "id": "D40",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Lead-urile cu scor între 40 și 80 primesc un singur email",
+        "fără niciun follow-up"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Lead-urile cu scor între 40 și 80 primesc un singur email",
+            "supported": false,
+            "note": "Contrazice sursele aprobate: pentru scor 40-80 (Medium / Warm MQL) e specificat 'nurture accelerat, contact săptămânal', nu un singur email."
+          },
+          {
+            "claim": "fără niciun follow-up",
+            "supported": false,
+            "note": "Contrazice sursele aprobate: segmentul 40-80 are 'nurture accelerat' cu contact săptămânal, deci follow-up-uri multiple sunt de fapt prevăzute, nu absente."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele claim-uri despre segmentul 40-80 sunt neconforme cu sursele aprobate — descriu greșit procesul de nurture (susțin 'un singur email, fără follow-up' în loc de 'nurture accelerat, contact săptămânal')."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unei informații factual incorecte despre procesul de nurture al leadurilor poate induce în eroare destinatarul cu privire la modul real de operare al sistemului."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Contextul lead-ului este gol ({}) și personalization_basis indică explicit 'calibration test — no specific lead' — mesajul este generic, fără personalizare reală."
+          }
+        ],
+        "summary": "Mesajul contrazice direct sursele de brand aprobate în privința segmentului de scor 40-80, generând claim-uri unsupported și un risc de compliance; necesită revizuire."
+      }
+    },
+    {
+      "id": "D41",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Coffra e gândit pentru oameni care tratează ritualul cafelei ca pe ceva personal",
+        "[Coffra e] nu standardizat"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Coffra e gândit pentru oameni care tratează ritualul cafelei ca pe ceva personal",
+            "supported": false,
+            "note": "Sursele descriu Coffra doar ca 'brand fictiv de cafea de specialitate D2C (Timișoara)' folosit ca sandbox pentru portofoliu. Nu există nicio mențiune despre poziționarea produsului în jurul unui 'ritual personal' al consumatorului — acesta e un claim de brand/produs inventat, nu parafrazat din talking points."
+          },
+          {
+            "claim": "[Coffra e] nu standardizat",
+            "supported": false,
+            "note": "Nu apare în sursele aprobate nicio comparație sau poziționare 'standardizat vs. personal'. Talking points-urile listează doar rezultate tehnice (lead scoring, nurture, subject line optimizer, HubSpot) — nimic despre caracteristici de produs sau filozofie de ritual."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele claims din mesaj (poziționare 'ritual personal' și 'nu standardizat') sunt afirmații de brand/produs care nu apar, literal sau parafrazat, în sursele aprobate — sunt inventate."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis este 'calibration test — no specific lead' și contextul lead-ului este gol ({}). Mesajul e generic, fără nicio ancorare reală în datele unui lead concret."
+          }
+        ],
+        "summary": "Mesajul conține două claims de brand nesusținute de sursele aprobate (poziționare 'ritual personal' vs. 'standardizat'), motiv suficient pentru REVISE, plus o personalizare inexistentă semnalată ca flag soft."
+      }
+    },
+    {
+      "id": "D42",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Echipa noastră de marketing analizează manual fiecare lead.",
+        "Sistemul automat intervine abia după această analiză manuală."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Echipa noastră de marketing analizează manual fiecare lead.",
+            "supported": false,
+            "note": "Sursele aprobate nu menționează nicio etapă de analiză manuală umană a lead-urilor; procesul descris este automatizat (scoring XGBoost, segmentare pe scoruri, nurture pe cadențe fixe). Nu există echipă de marketing care revizuiește manual fiecare lead."
+          },
+          {
+            "claim": "Sistemul automat intervine abia după această analiză manuală.",
+            "supported": false,
+            "note": "Nesusținut de surse — talking points descriu segmentarea și handoff-ul ca fiind determinate direct de scorul modelului (XGBoost), nu de o etapă manuală prealabilă."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații despre revizuirea manuală a lead-urilor înainte de automatizare nu apar în sursele de brand aprobate; par inventate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmația creează impresia unui proces de supervizare umană robust care nu e documentat sau confirmat în sursele aprobate — risc de overclaiming/mesaj potențial înșelător despre modul real de funcționare a sistemului (care e descris ca automatizat: scoring, nurture, subject line optimizer)."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Contextul lead-ului este gol ({}) și personalization_basis indică explicit 'no specific lead' — mesajul e generic, fără ancorare reală în segment, industrie sau comportament al lead-ului."
+          }
+        ],
+        "summary": "Mesajul introduce două claims nesusținute de sursele de brand despre o etapă de analiză manuală a lead-urilor, ceea ce contravine descrierii automatizate a sistemului și generează risc de compliance; necesită revizuire înainte de aprobare."
+      }
+    },
+    {
+      "id": "D43",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Our model gets retrained every month",
+        "to stay accurate as customer behavior shifts"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Our model gets retrained every month",
+            "supported": false,
+            "note": "Sursele aprobate menționează modelul XGBoost cu ROC-AUC 0.7843, audit de leakage și SHAP, dar nu specifică nicio cadență de retraining lunar. Afirmația nu apare nicăieri în talking points."
+          },
+          {
+            "claim": "to stay accurate as customer behavior shifts",
+            "supported": false,
+            "note": "Nu există în sursele aprobate nicio mențiune despre 'customer behavior shifts' ca motiv de recalibrare a modelului. Este o justificare inventată, nu documentată."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații despre retraining lunar și motivul acestuia nu apar în sursele de brand aprobate — sunt cifre/detalii inventate, nu confirmate."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Specificarea unei cadențe operaționale concrete ('every month') fără sursă verificată constituie overclaiming/informație potențial înșelătoare despre modul în care funcționează sistemul."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead' și contextul lead-ului este gol; mesajul nu are nicio personalizare reală."
+          }
+        ],
+        "summary": "Mesajul conține afirmații tehnice nesusținute de sursele de brand aprobate (cadență de retraining și motivul acesteia), ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D44",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Emailurile noastre au o rată medie de deschidere de 42%",
+        "42% este peste media industriei"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Emailurile noastre au o rată medie de deschidere de 42%",
+            "supported": false,
+            "note": "Nicio cifră de open rate nu apare în sursele aprobate. Secțiunea 'Ce NU spunem' interzice explicit inventarea de cifre."
+          },
+          {
+            "claim": "42% este peste media industriei",
+            "supported": false,
+            "note": "Nu există în sursele aprobate nicio referință la 'media industriei' sau comparație de acest tip. Claim inventat, fără sursă."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Cifra de 42% open rate și comparația cu media industriei nu apar în talking points; contrazice direct regula 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse.'"
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unei statistici neverificate ca fapt cert constituie overclaiming/afirmație potențial înșelătoare."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'no specific lead' — mesajul e generic, fără nicio adaptare la contextul lead-ului (contextul lead-ului e gol)."
+          }
+        ],
+        "summary": "Mesajul introduce o statistică (42% open rate, peste media industriei) care nu figurează în sursele de brand aprobate, ceea ce constituie claim unsupported și overclaiming; verdict REVISE."
+      }
+    },
+    {
+      "id": "D45",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Every stage of our lead-scoring pipeline is fully GDPR-compliant."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Every stage of our lead-scoring pipeline is fully GDPR-compliant.",
+            "supported": false,
+            "note": "Nicio mențiune despre GDPR sau conformitate legală nu apare în sursele de brand aprobate. Talking points-urile acoperă doar performanța modelului (XGBoost, ROC-AUC), sistemul de nurture și integrarea HubSpot — nu compliance GDPR. Afirmația este inventată/neconfirmată."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Claim-ul despre conformitatea GDPR 'fully' nu apare în sursele aprobate — nu poate fi verificat sau citat ca fapt."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "'Fully GDPR-compliant' este o afirmație absolută de conformitate legală, nedocumentată în surse; secțiunea 'Ce NU spunem' interzice explicit inventarea de afirmații neconfirmate, iar o pretenție de compliance totală este un risc de overpromising/potențial înșelător dacă nu e susținută de audit real."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e generic, fără nicio ancorare în contextul lead-ului (context gol, marcat explicit ca test de calibrare) — nu există personalizare reală."
+          }
+        ],
+        "summary": "Mesajul conține un claim de compliance nesusținut de sursele aprobate, ceea ce declanșează automat REVISE."
+      }
+    },
+    {
+      "id": "D46",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Acest sistem a fost construit de o echipă de trei specialiști în marketing și AI."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Acest sistem a fost construit de o echipă de trei specialiști în marketing și AI.",
+            "supported": false,
+            "note": "Sursele aprobate specifică explicit că Coffra e un sandbox folosit de o singură persoană — Paul Sebastian Kradyel — pentru portofoliul său de marketing automation. Nu există nicio mențiune a unei 'echipe de trei specialiști'. Claim-ul contrazice sursa, nu doar că nu apare în ea."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre o echipă de trei specialiști nu are suport în sursele aprobate și contrazice contextul care menționează un singur autor (Paul Sebastian Kradyel)."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unui fapt fals despre originea/echipa din spatele sistemului constituie o afirmație potențial înșelătoare despre identitatea brandului, nu doar un claim needocumentat."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e complet generic, fără nicio referință la lead sau context ('calibration test — no specific lead'); nu conține personalizare reală."
+          }
+        ],
+        "summary": "Mesajul conține un claim nesusținut și contrazis de sursele de brand (echipă de trei specialiști vs. autor unic), ceea ce impune REVISE."
+      }
+    },
+    {
+      "id": "D47",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Every A/B test we run requires 95% statistical significance before we act on the result."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Every A/B test we run requires 95% statistical significance before we act on the result.",
+            "supported": false,
+            "note": "Sursele aprobate nu menționează nicio practică de A/B testing sau un prag de semnificație statistică de 95%. Singurele rezultate verificate citate sunt legate de modelul de lead scoring (XGBoost, ROC-AUC 0.7843), sistemul de nurture, AI Subject Line Optimizer și implementarea HubSpot — niciunul nu se referă la metodologie de A/B testing sau praguri statistice. Claim-ul este inventat, nu apare literal sau parafrazat în talking points."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre pragul de 95% semnificație statistică pentru A/B testing nu este documentată în sursele de brand aprobate — este un claim fabricat despre practica internă a Coffra."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Prezentarea unui standard metodologic riguros ('every A/B test... requires 95%') ca fapt despre Coffra, fără sursă, constituie overclaiming/overpromising cu privire la rigoarea proceselor interne, contrar regulii explicite 'nu inventăm cifre sau studii de caz care nu sunt în aceste surse'."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e complet generic, fără nicio legătură cu contextul lead-ului (context gol, marcat explicit ca test de calibrare) — nu există personalizare reală."
+          }
+        ],
+        "summary": "Mesajul conține un claim nesusținut de sursele de brand aprobate (pragul de 95% semnificație statistică pentru A/B testing) și constituie overclaiming metodologic, deci verdictul este REVISE."
+      }
+    },
+    {
+      "id": "D48",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Acest sistem poate fi extins ușor la alte branduri de retail, nu doar la cafea."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Acest sistem poate fi extins ușor la alte branduri de retail, nu doar la cafea.",
+            "supported": false,
+            "note": "Sursele descriu Coffra ca sandbox fictiv pentru portofoliul de marketing automation, cu rezultate specifice (lead scoring, nurture, subject line optimizer, HubSpot). Nu există nicio mențiune despre extensibilitate 'ușoară' la alte branduri de retail — este o extrapolare/generalizare nefondată."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre extensibilitatea sistemului la alte branduri de retail nu apare în sursele aprobate — e o extrapolare nedocumentată."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Cuvântul 'ușor' implică o garanție de performanță/portabilitate nefondată, contravenind regulii 'nu promitem rezultate garantate' și 'nu inventăm afirmații care nu sunt în surse'."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e complet generic — nu există context de lead ('no specific lead'), deci nu reflectă nicio personalizare reală."
+          }
+        ],
+        "summary": "Mesajul conține o afirmație nesusținută despre extensibilitatea sistemului la alte branduri de retail, ceea ce constituie overclaiming și impune REVISE."
+      }
+    },
+    {
+      "id": "D49",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "We benchmark against three competing specialty coffee subscriptions every quarter."
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "We benchmark against three competing specialty coffee subscriptions every quarter.",
+            "supported": false,
+            "note": "Nu apare în sursele aprobate. Talking points-urile nu menționează niciun proces de benchmarking competitiv, nicio cifră de 'trei' abonamente concurente, și nicio cadență trimestrială de comparație. Este o afirmație factuală inventată, nesusținută de context (lead context e gol) sau de brand sources."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Afirmația despre benchmarking trimestrial împotriva a trei concurenți nu are corespondent în sursele de brand aprobate — pare o cifră/proces inventat, ceea ce contravine explicit regulii 'Nu inventăm cifre sau studii de caz care nu sunt în aceste surse'."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "Mesajul e marcat explicit ca 'calibration test — no specific lead', fără context de lead disponibil; nu există nicio personalizare reală, mesajul e generic."
+          }
+        ],
+        "summary": "Mesajul conține o afirmație factuală nesusținută de sursele aprobate (benchmarking trimestrial vs. trei concurenți), ceea ce impune REVISE; personalizarea este de asemenea absentă, dar acesta e doar un flag secundar."
+      }
+    },
+    {
+      "id": "D50",
+      "ground_truth": "REVISE",
+      "predicted": "REVISE",
+      "correct": true,
+      "flagged_claims": [
+        "Fiecare decizie a modelului trece printr-un audit uman săptămânal",
+        "separat de review-ul de guvernanță"
+      ],
+      "raw": {
+        "claims_checked": [
+          {
+            "claim": "Fiecare decizie a modelului trece printr-un audit uman săptămânal",
+            "supported": false,
+            "note": "Sursele menționează doar 'audit de data leakage și explicabilitate SHAP' pentru modelul XGBoost — nu există nicio referire la un 'audit uman săptămânal' al deciziilor modelului. Claim inventat, nu apare în talking points."
+          },
+          {
+            "claim": "separat de review-ul de guvernanță",
+            "supported": false,
+            "note": "Nu există în sursele aprobate niciun proces de 'review de guvernanță' distinct menționat. Nu poate fi verificat sau confirmat — unsupported."
+          }
+        ],
+        "verdict": "REVISE",
+        "flags": [
+          {
+            "criterion": "CLAIMS",
+            "severity": "hard",
+            "reason": "Ambele afirmații din mesaj (audit uman săptămânal + review de guvernanță separat) descriu un proces intern care nu apare, nici parafrazat, în sursele de brand aprobate — risc de overclaiming despre procese de guvernanță inexistente în talking points."
+          },
+          {
+            "criterion": "COMPLIANCE",
+            "severity": "hard",
+            "reason": "Afirmarea unui proces de audit uman și guvernanță neconfirmat de sursele oficiale poate constitui o afirmație potențial înșelătoare despre rigoarea/structura reală a sistemului, mai ales fără nicio ancorare în rezultatele verificate (XGBoost, SHAP, HubSpot etc.)."
+          },
+          {
+            "criterion": "PERSONALIZATION",
+            "severity": "soft",
+            "reason": "personalization_basis indică explicit 'calibration test — no specific lead', iar contextul lead-ului e gol; mesajul e complet generic, fără nicio ancorare în segmentare, scor sau persona din talking points."
+          },
+          {
+            "criterion": "BRAND VOICE",
+            "severity": "soft",
+            "reason": "Subiectul (subject) este gol — lipsa unui subject line contravine standardului de outreach descris implicit prin AI Subject Line Optimizer menționat în sursele de brand."
+          }
+        ],
+        "summary": "Mesajul introduce două afirmații despre procese de audit/guvernanță care nu sunt susținute de sursele aprobate, ceea ce impune REVISE, alături de flag-uri soft pentru personalizare generică și subject absent."
+      }
+    }
+  ],
+  "metrics": {
+    "n": 50,
+    "accuracy": 0.92,
+    "precision": 0.8823529411764706,
+    "recall": 1.0,
+    "f1": 0.9375,
+    "tp": 30,
+    "fn": 0,
+    "fp": 4,
+    "tn": 16,
+    "missed_ids": [],
+    "over_flagged_ids": [
+      "D10",
+      "D12",
+      "D15",
+      "D19"
+    ]
+  }
+}

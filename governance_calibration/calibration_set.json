@@ -1,0 +1,696 @@
+{
+  "_policy": "PASS only if every claim is 'supported'. REVISE if any claim is 'contradicted' or 'ungrounded'.",
+  "_note": "v3 — no lead-specific personalization claims. Isolates brand-source grounding only.",
+  "drafts": [
+    {
+      "id": "D01",
+      "persona": "Connoisseur",
+      "draft_text": "Coffra is a specialty coffee brand based in Timișoara — the whole project is deliberately fictional, built as a portfolio sandbox rather than a real business.",
+      "claims": [
+        {
+          "text": "brand fictiv, sandbox, Timișoara",
+          "status": "supported",
+          "fact_id": "F01"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D02",
+      "persona": "Daily Ritualist",
+      "draft_text": "Lead-urile cu scor între 80 și 100 sar peste coada de nurture și primesc direct un email personal.",
+      "claims": [
+        {
+          "text": "scor 80-100 = handoff imediat, email personal",
+          "status": "supported",
+          "fact_id": "F02"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D03",
+      "persona": "Connoisseur",
+      "draft_text": "The engine behind our recommendations is an XGBoost model, tested at 0.7843 ROC-AUC against a 0.7643 logistic regression baseline.",
+      "claims": [
+        {
+          "text": "XGBoost, 0.7843 vs 0.7643",
+          "status": "supported",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D04",
+      "persona": "Daily Ritualist",
+      "draft_text": "Secvența noastră de nurture are 13 emailuri, împărțite pe două parcursuri de persona.",
+      "claims": [
+        {
+          "text": "13 emailuri, 2 parcursuri",
+          "status": "supported",
+          "fact_id": "F06"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D05",
+      "persona": "Connoisseur",
+      "draft_text": "We never promise guaranteed results in our outreach — every claim is grounded in what's actually been measured.",
+      "claims": [
+        {
+          "text": "fără garanții de rezultate",
+          "status": "supported",
+          "fact_id": "F09_policy"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D06",
+      "persona": "Daily Ritualist",
+      "draft_text": "Lead-urile cu scor între 40 și 80 sunt tratate ca MQL calde și primesc contact accelerat, săptămânal.",
+      "claims": [
+        {
+          "text": "scor 40-80 = MQL cald, contact săptămânal",
+          "status": "supported",
+          "fact_id": "F03"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D07",
+      "persona": "Connoisseur",
+      "draft_text": "Every subject line goes through a two-stage Claude API pipeline — a generator, then a critic scoring five candidate variants.",
+      "claims": [
+        {
+          "text": "pipeline în 2 etape, 5 variante",
+          "status": "supported",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D08",
+      "persona": "Daily Ritualist",
+      "draft_text": "Nu cităm cifre sau studii de caz care nu apar în sursele noastre aprobate — nimic de aici nu e inventat.",
+      "claims": [
+        {
+          "text": "fără cifre/studii inventate",
+          "status": "supported",
+          "fact_id": "F10_policy"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D09",
+      "persona": "Connoisseur",
+      "draft_text": "Leads scoring below 40 go on a standard nurture cadence — contact every two to four weeks.",
+      "claims": [
+        {
+          "text": "scor 0-40, cadență 2-4 săptămâni",
+          "status": "supported",
+          "fact_id": "F04"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D10",
+      "persona": "Daily Ritualist",
+      "draft_text": "Fluxurile de nurture și de recuperare a coșului abandonat sunt construite și vizualizate direct în HubSpot.",
+      "claims": [
+        {
+          "text": "workflow-uri în HubSpot, nurture + cart recovery",
+          "status": "supported",
+          "fact_id": "F08"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D11",
+      "persona": "Connoisseur",
+      "draft_text": "Each of the five subject line candidates is scored across four separate dimensions before selection.",
+      "claims": [
+        {
+          "text": "5 variante, 4 dimensiuni",
+          "status": "supported",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D12",
+      "persona": "Daily Ritualist",
+      "draft_text": "Modelul de scoring a trecut printr-un audit complet de scurgere de date și e explicat prin SHAP, pentru transparență.",
+      "claims": [
+        {
+          "text": "audit de leakage + SHAP",
+          "status": "supported",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D13",
+      "persona": "Connoisseur",
+      "draft_text": "This project is intentionally fictional, built to demonstrate marketing-automation methodology without using any real customer data.",
+      "claims": [
+        {
+          "text": "brand fictiv, deliberat, fără date reale",
+          "status": "supported",
+          "fact_id": "F01"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D14",
+      "persona": "Daily Ritualist",
+      "draft_text": "Parcursul de persona Connoisseur e scris în engleză, iar Daily Ritualist e scris în română — împreună formează secvența de 13 emailuri.",
+      "claims": [
+        {
+          "text": "Connoisseur=EN, Daily Ritualist=RO, 13 emailuri",
+          "status": "supported",
+          "fact_id": "F06"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D15",
+      "persona": "Connoisseur",
+      "draft_text": "Abandoned-cart recovery is one of the workflows we've built and visualized directly in HubSpot.",
+      "claims": [
+        {
+          "text": "cart recovery în HubSpot",
+          "status": "supported",
+          "fact_id": "F08"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D16",
+      "persona": "Daily Ritualist",
+      "draft_text": "Un lead cu scor de 80 sau peste sare peste coada automată și primește direct un email personal.",
+      "claims": [
+        {
+          "text": "scor 80+ = email personal, fără secvență",
+          "status": "supported",
+          "fact_id": "F02"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D17",
+      "persona": "Connoisseur",
+      "draft_text": "Our model outperforms a logistic regression baseline by two points of ROC-AUC — 0.7843 versus 0.7643.",
+      "claims": [
+        {
+          "text": "0.7843 vs 0.7643",
+          "status": "supported",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D18",
+      "persona": "Daily Ritualist",
+      "draft_text": "Nu promitem rezultate specifice garantate — ce putem spune e exact ce am testat și validat.",
+      "claims": [
+        {
+          "text": "fără promisiuni de rezultate",
+          "status": "supported",
+          "fact_id": "F09_policy"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D19",
+      "persona": "Connoisseur",
+      "draft_text": "The critic stage of our subject line pipeline evaluates every variant before anything reaches an inbox.",
+      "claims": [
+        {
+          "text": "etapa de critic evaluează variantele",
+          "status": "supported",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D20",
+      "persona": "Daily Ritualist",
+      "draft_text": "Lead-urile reci, cu scor sub 40, sunt contactate pe o cadență mai lentă, de 2-4 săptămâni, nu săptămânal.",
+      "claims": [
+        {
+          "text": "scor sub 40 = cadență 2-4 săptămâni",
+          "status": "supported",
+          "fact_id": "F04"
+        }
+      ],
+      "ground_truth_verdict": "PASS",
+      "notes": ""
+    },
+    {
+      "id": "D21",
+      "persona": "Connoisseur",
+      "draft_text": "Our lead scoring model is a Random Forest, tuned to 0.91 ROC-AUC on the test set.",
+      "claims": [
+        {
+          "text": "Random Forest, 0.91 ROC-AUC",
+          "status": "contradicted",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": "Real model is XGBoost at 0.7843."
+    },
+    {
+      "id": "D22",
+      "persona": "Daily Ritualist",
+      "draft_text": "Secvența noastră de nurture are 20 de emailuri, distribuite pe trei parcursuri de persona.",
+      "claims": [
+        {
+          "text": "20 emailuri, 3 parcursuri",
+          "status": "contradicted",
+          "fact_id": "F06"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D23",
+      "persona": "Connoisseur",
+      "draft_text": "We guarantee a measurable lift in engagement within your first two weeks on this track.",
+      "claims": [
+        {
+          "text": "garanție de creștere a engagementului",
+          "status": "contradicted",
+          "fact_id": "F09_policy"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D24",
+      "persona": "Daily Ritualist",
+      "draft_text": "Coffra este un brand real, cu magazine fizice în trei orașe din România.",
+      "claims": [
+        {
+          "text": "brand real, magazine fizice",
+          "status": "contradicted",
+          "fact_id": "F01"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D25",
+      "persona": "Connoisseur",
+      "draft_text": "Our subject lines are generated in a single pass, with no review or critic stage before sending.",
+      "claims": [
+        {
+          "text": "generare într-un singur pas, fără critic",
+          "status": "contradicted",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D26",
+      "persona": "Daily Ritualist",
+      "draft_text": "Fluxurile noastre de nurture și recuperare coș sunt construite direct în Salesforce, nu în HubSpot.",
+      "claims": [
+        {
+          "text": "construit în Salesforce",
+          "status": "contradicted",
+          "fact_id": "F08"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D27",
+      "persona": "Connoisseur",
+      "draft_text": "Any lead scoring above 60 receives an immediate personal handoff from the team.",
+      "claims": [
+        {
+          "text": "scor peste 60 = handoff imediat",
+          "status": "contradicted",
+          "fact_id": "F02"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D28",
+      "persona": "Daily Ritualist",
+      "draft_text": "Un client similar a văzut o creștere de 340% în vânzări după prima lună de nurture.",
+      "claims": [
+        {
+          "text": "creștere de 340% citată ca fapt",
+          "status": "contradicted",
+          "fact_id": "F10_policy"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D29",
+      "persona": "Connoisseur",
+      "draft_text": "Each subject line candidate is scored across seven separate evaluation dimensions.",
+      "claims": [
+        {
+          "text": "7 dimensiuni de scorare",
+          "status": "contradicted",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D30",
+      "persona": "Daily Ritualist",
+      "draft_text": "Parcursul Daily Ritualist e disponibil în engleză, franceză și română, pentru acoperire mai largă.",
+      "claims": [
+        {
+          "text": "3 limbi pentru Daily Ritualist",
+          "status": "contradicted",
+          "fact_id": "F06"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D31",
+      "persona": "Connoisseur",
+      "draft_text": "Leads scoring under 40 still receive weekly contact to maximize conversion odds.",
+      "claims": [
+        {
+          "text": "scor sub 40 = contact săptămânal",
+          "status": "contradicted",
+          "fact_id": "F04"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D32",
+      "persona": "Daily Ritualist",
+      "draft_text": "Modelul nostru de scoring nu a trecut printr-un audit formal de scurgere de date, deși performanța pe test e solidă.",
+      "claims": [
+        {
+          "text": "fără audit de leakage",
+          "status": "contradicted",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D33",
+      "persona": "Connoisseur",
+      "draft_text": "Our subject line system runs on GPT-4, chosen specifically for its creative writing strength.",
+      "claims": [
+        {
+          "text": "sistem pe GPT-4",
+          "status": "contradicted",
+          "fact_id": "F07"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D34",
+      "persona": "Daily Ritualist",
+      "draft_text": "HubSpot gestionează doar campaniile de achiziție — recuperarea coșului abandonat se face printr-un alt tool.",
+      "claims": [
+        {
+          "text": "HubSpot nu acoperă cart recovery",
+          "status": "contradicted",
+          "fact_id": "F08"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D35",
+      "persona": "Connoisseur",
+      "draft_text": "Every recommendation we've shipped this quarter converted at over 90%.",
+      "claims": [
+        {
+          "text": "90%+ conversie citată ca fapt",
+          "status": "contradicted",
+          "fact_id": "F10_policy"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D36",
+      "persona": "Daily Ritualist",
+      "draft_text": "Coffra funcționează din Cluj-Napoca, unde se află producția și logistica noastră.",
+      "claims": [
+        {
+          "text": "sediul în Cluj-Napoca",
+          "status": "contradicted",
+          "fact_id": "F01"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D37",
+      "persona": "Connoisseur",
+      "draft_text": "Our model beat baseline by a wide margin — 0.7843 versus just 0.58 for logistic regression.",
+      "claims": [
+        {
+          "text": "baseline de 0.58",
+          "status": "contradicted",
+          "fact_id": "F05"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": "Subtler swap — real baseline is 0.7643, not 0.58."
+    },
+    {
+      "id": "D38",
+      "persona": "Daily Ritualist",
+      "draft_text": "Toate cele 13 emailuri din secvența de nurture sunt scrise în română, indiferent de persona.",
+      "claims": [
+        {
+          "text": "toate 13 emailurile în română",
+          "status": "contradicted",
+          "fact_id": "F06"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D39",
+      "persona": "Connoisseur",
+      "draft_text": "We can promise visible results within 30 days, or we'll revise the strategy at no extra cost.",
+      "claims": [
+        {
+          "text": "promisiune de rezultate în 30 zile",
+          "status": "contradicted",
+          "fact_id": "F09_policy"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D40",
+      "persona": "Daily Ritualist",
+      "draft_text": "Lead-urile cu scor între 40 și 80 primesc un singur email, fără niciun follow-up.",
+      "claims": [
+        {
+          "text": "scor 40-80 = un singur email",
+          "status": "contradicted",
+          "fact_id": "F03"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D41",
+      "persona": "Daily Ritualist",
+      "draft_text": "Coffra e gândit pentru oameni care tratează ritualul cafelei ca pe ceva personal, nu standardizat.",
+      "claims": [
+        {
+          "text": "cadru de brand: ritual personal, nu standardizat",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": "Fraza exactă folosită ca exemplu în system prompt-ul propriu al governance.py. Nu apare literal în brand_sources.md — doar faptul brut că Coffra e un brand de cafea de specialitate. Cel mai important draft din tot setul."
+    },
+    {
+      "id": "D42",
+      "persona": "Daily Ritualist",
+      "draft_text": "Echipa noastră de marketing analizează manual fiecare lead înainte ca sistemul automat să intervină.",
+      "claims": [
+        {
+          "text": "review manual înainte de automatizare",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D43",
+      "persona": "Connoisseur",
+      "draft_text": "Our model gets retrained every month to stay accurate as customer behavior shifts.",
+      "claims": [
+        {
+          "text": "retraining lunar",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D44",
+      "persona": "Daily Ritualist",
+      "draft_text": "Emailurile noastre au o rată medie de deschidere de 42%, peste media industriei.",
+      "claims": [
+        {
+          "text": "rată de deschidere de 42%",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D45",
+      "persona": "Connoisseur",
+      "draft_text": "Every stage of our lead-scoring pipeline is fully GDPR-compliant.",
+      "claims": [
+        {
+          "text": "conformitate GDPR",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D46",
+      "persona": "Daily Ritualist",
+      "draft_text": "Acest sistem a fost construit de o echipă de trei specialiști în marketing și AI.",
+      "claims": [
+        {
+          "text": "echipă de 3 specialiști",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D47",
+      "persona": "Connoisseur",
+      "draft_text": "Every A/B test we run requires 95% statistical significance before we act on the result.",
+      "claims": [
+        {
+          "text": "prag de semnificație statistică 95%",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D48",
+      "persona": "Daily Ritualist",
+      "draft_text": "Acest sistem poate fi extins ușor la alte branduri de retail, nu doar la cafea.",
+      "claims": [
+        {
+          "text": "extensibil la alte branduri",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D49",
+      "persona": "Connoisseur",
+      "draft_text": "We benchmark against three competing specialty coffee subscriptions every quarter.",
+      "claims": [
+        {
+          "text": "benchmarking trimestrial cu 3 competitori",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    },
+    {
+      "id": "D50",
+      "persona": "Daily Ritualist",
+      "draft_text": "Fiecare decizie a modelului trece printr-un audit uman săptămânal, separat de review-ul de guvernanță.",
+      "claims": [
+        {
+          "text": "audit uman săptămânal separat",
+          "status": "ungrounded"
+        }
+      ],
+      "ground_truth_verdict": "REVISE",
+      "notes": ""
+    }
+  ]
+}

@@ -396,13 +396,17 @@ story.append(Paragraph(
     "against real lead data is a separate test, not yet run.",
     styles["body"]))
 
-story.append(Paragraph("Issue 3 — JSON parsing edge case", styles["h2"]))
+story.append(Paragraph("Issue 3 — JSON parsing edge case, and the structural fix", styles["h2"]))
 story.append(Paragraph(
-    "Claude occasionally escapes apostrophes as \\' inside JSON string values — not a valid JSON "
-    "escape sequence, since apostrophes never need escaping in JSON — which breaks json.loads on "
-    "an otherwise well-formed response. A defensive normalization step (stripping that specific "
-    "escape before parsing) was added to _extract_json() identically across all three agents "
-    "that parse structured JSON output from Claude.",
+    "Asking the model to emit its verdict as free-form JSON text proved fragile in several ways: "
+    "on longer claim decompositions the response could be truncated mid-string when it ran out of "
+    "the token budget, and the model occasionally produced small escaping quirks — both breaking "
+    "json.loads on an otherwise reasonable response. Rather than keep patching the text parser "
+    "defensively, the Governance Reviewer was migrated to tool use (function calling): the verdict "
+    "schema is now declared as a tool the model must call, so the Anthropic API validates and "
+    "returns a structured object directly, with no hand-written JSON parsing left in the code path. "
+    "This eliminated the entire class of parsing failures rather than the single reported symptom — "
+    "the same principle the Qualification Agent already used for its scoring tool.",
     styles["body"]))
 
 story.append(Paragraph("Known limitations", styles["h2"]))
@@ -433,7 +437,7 @@ skills_data = [
     ["Machine learning", "XGBoost as an agentic tool, SHAP explainability surfaced in natural-language reasoning"],
     ["Prompt engineering", "System prompts enforcing tool-first behavior, safe fallbacks on tool failure, forced decomposition to prevent evaluation shortcuts"],
     ["Debugging & rigor", "Diagnosed and fixed a model artifact mismatch, a governance grounding miss, and a JSON parsing edge case — each documented with root cause and fix"],
-    ["Deployment", "Streamlit multi-page integration, live verification on Streamlit Cloud including a real production REVISE catch"],
+    ["Deployment & production rigor", "Streamlit multi-page integration, live verification on Streamlit Cloud including a real production REVISE catch; API rate limiting with exponential backoff, and a live observability dashboard tracking the weekly REVISE-vs-APPROVE governance split"],
     ["Software engineering", "Python 3.13, Anthropic Claude API, joblib model artifacts, Git versioning"],
 ]
 story.append(create_table(skills_data, col_widths=[4 * cm, 12 * cm]))
@@ -444,7 +448,7 @@ story.append(Paragraph(
     styles["body"]))
 
 next_steps = [
-    "<b>Rate limiting for the public demo.</b> The live dashboard page calls the Claude API directly on every click; a public portfolio deployment needs request throttling to control cost and abuse.",
+    "<b>Broaden observability.</b> Rate limiting with backoff and a weekly REVISE-vs-APPROVE observability dashboard are now in place; a next step is richer metrics — per-criterion flag rates and latency percentiles — alongside the current verdict trend.",
     "<b>Caching on the 3 test leads.</b> Since the demo leads are fixed, their agent outputs could be cached to reduce latency and API cost for repeat visitors, with a manual refresh option.",
     "<b>Extension to custom leads.</b> Add a form for arbitrary lead input with schema validation against models/feature_spec_v1.json, rather than only the 3 fixed demo leads.",
 ]

@@ -39,7 +39,7 @@ Persona-driven email automation system with two distinct journeys (English Conno
 Multi-page Streamlit application deployed to Streamlit Cloud with auto-rebuild on git push.
 
 **Key artifacts:**
-- 10 dashboard pages (Overview, Lead Quality, Subject Optimizer, HubSpot CRM, Campaign Funnel, Methodology, Customer Segments, AEO Analysis, Attribution, Technical SEO/GEO Audit, Lead Intelligence)
+- 11 dashboard pages (Overview, Lead Quality, Subject Optimizer, HubSpot CRM, Campaign Funnel, Methodology, Customer Segments, AEO Analysis, Attribution, Technical SEO/GEO Audit, Lead Intelligence, Observability)
 - Coffra brand design system (light theme, brown accent palette)
 - HubSpot Private App API extraction script
 - Snapshot-based data architecture for stable post-trial demo
@@ -96,10 +96,13 @@ Multi-agent pipeline that operationalizes P1's lead segmentation table into a li
 
 The architecture deliberately separates generation from evaluation, mirroring current AI evaluation and governance practice. The case study documents three real issues found and fixed during development — a model artifact mismatch, a governance rubric that missed a grounding failure on its first pass, and a JSON parsing edge case — including a REVISE verdict caught live on the production Streamlit Cloud deployment.
 
+The pipeline is wrapped with production-grade operational rigor: rate limiting with exponential backoff on every Claude API call, structured tool-use outputs on the Governance Reviewer instead of fragile free-text JSON parsing, and a live Observability dashboard tracking the weekly REVISE-vs-APPROVE verdict split, so governance drift is visible continuously rather than only at calibration time.
+
 The Governance Reviewer is **calibrated, not just built**: it was measured against a 50-draft hand-labeled test set (20 clean, 20 with a planted contradiction, 10 with plausible-but-unverifiable claims) scoring **100% recall, 88.2% precision, 92% accuracy** on flagging unsupported claims. Recall was the metric optimized — an unsupported claim reaching a customer is a compliance problem, an unnecessary flag costs a reviewer a few seconds.
 
 **Key artifacts:**
 - [Dashboard page](https://coffra-marketing-dashboard.streamlit.app/Lead_Intelligence) — run the pipeline live against 3 test leads (HOT/WARM/COLD)
+- [Observability dashboard](https://coffra-marketing-dashboard.streamlit.app/Observability) — live weekly REVISE-vs-APPROVE governance trend from the pipeline decision log
 - [Case study PDF](case_study/P7_Coffra_Lead_Intelligence_Case_Study.pdf) — architecture, rigor and limitations, calibration methodology, skills demonstrated
 - [`src/lead_intelligence/`](src/lead_intelligence/) — agents, RAG index, scoring tool, and pipeline code
 - [`governance_calibration/`](governance_calibration/) — labeled test set, eval harness, and per-draft results
@@ -189,6 +192,7 @@ The Governance Reviewer is **calibrated, not just built**: it was measured again
 - **Agentic AI:** multi-agent orchestration, tool use / function calling, RAG grounding (LangChain + FAISS)
 - **AI evaluation:** LLM-as-judge calibration against a hand-labeled test set, precision/recall measurement on claim verification
 - **Production deployment:** Live Streamlit Cloud with CI/CD via GitHub
+- **Production rigor:** API rate limiting with backoff, structured tool-use outputs over fragile text parsing, live observability of model-governance decisions
 - **Schema.org expertise:** 12 JSON-LD types for AEO 2026 trend
 - **Statistical rigor:** chi-square A/B tests, convergence diagnostics, posterior predictive checks
 - **Honest documentation:** transparent disclosure of synthetic data, assumptions, limitations

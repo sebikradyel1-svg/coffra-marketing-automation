@@ -20,6 +20,7 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from scoring import score_lead  # noqa: E402
+from utils.rate_limiter import call_claude  # noqa: E402
 
 load_dotenv()
 
@@ -131,7 +132,8 @@ def run_qualification(lead: dict[str, Any]) -> dict[str, Any]:
     ]
 
     while True:
-        response = client.messages.create(
+        response = call_claude(
+            client,
             model=MODEL,
             max_tokens=MAX_TOKENS,
             system=SYSTEM_PROMPT,

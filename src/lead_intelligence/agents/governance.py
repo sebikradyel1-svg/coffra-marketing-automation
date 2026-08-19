@@ -20,6 +20,9 @@ from dotenv import load_dotenv
 ROOT_DIR = Path(__file__).resolve().parent.parent
 BRAND_SOURCES_PATH = ROOT_DIR / "data" / "brand_sources.md"
 
+sys.path.insert(0, str(ROOT_DIR))
+from utils.rate_limiter import call_claude  # noqa: E402
+
 load_dotenv()
 
 MODEL = "claude-sonnet-5"
@@ -113,7 +116,8 @@ def run_governance(draft: dict[str, Any], lead: dict[str, Any]) -> dict[str, Any
     )
 
     client = Anthropic()
-    response = client.messages.create(
+    response = call_claude(
+        client,
         model=MODEL,
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,

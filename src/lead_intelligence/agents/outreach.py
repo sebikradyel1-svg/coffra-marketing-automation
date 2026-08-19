@@ -18,6 +18,7 @@ from dotenv import load_dotenv
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from rag.brand_index import get_relevant_chunks  # noqa: E402
+from utils.rate_limiter import call_claude  # noqa: E402
 
 load_dotenv()
 
@@ -105,7 +106,8 @@ def run_outreach(lead: dict[str, Any], qualification_result: dict[str, Any]) -> 
     )
 
     client = Anthropic()
-    response = client.messages.create(
+    response = call_claude(
+        client,
         model=MODEL,
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,

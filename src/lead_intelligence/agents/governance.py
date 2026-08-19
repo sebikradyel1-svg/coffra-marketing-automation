@@ -26,7 +26,7 @@ from utils.rate_limiter import call_claude  # noqa: E402
 load_dotenv()
 
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 4096
+MAX_TOKENS = 8192
 
 SYSTEM_PROMPT = """Ești Governance Reviewer pentru sistemul de outreach al Coffra.
 Rolul tău NU e să scrii sau să îmbunătățești mesajul, ci să îl

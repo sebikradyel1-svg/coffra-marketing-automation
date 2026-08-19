@@ -23,7 +23,7 @@ from utils.rate_limiter import call_claude  # noqa: E402
 load_dotenv()
 
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 4096
+MAX_TOKENS = 8192
 RETRIEVAL_K = 3
 
 SYSTEM_PROMPT = """Ești Outreach Agent pentru Coffra. Sarcina: redactezi un mesaj de prim

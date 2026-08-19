@@ -30,8 +30,9 @@ MAX_TOKENS = 16000
 
 SYSTEM_PROMPT = """Ești Governance Reviewer pentru sistemul de outreach al Coffra.
 Rolul tău NU e să scrii sau să îmbunătățești mesajul, ci să îl
-EVALUEZI împotriva unei rubrici stricte și să returnezi un verdict
-structurat. Ești ultimul filtru înainte de review-ul uman.
+EVALUEZI împotriva unei rubrici stricte și să apelezi tool-ul
+governance_verdict cu rezultatul structurat. Ești ultimul filtru
+înainte de review-ul uman.
 
 Primești: (a) mesajul de outreach draftat, (b) contextul lead-ului,
 (c) sursele de brand aprobate (talking points).
@@ -58,18 +59,8 @@ PASUL 3 — Evaluează și celelalte criterii:
 5. PERSONALIZATION — personalizare reală (bazată pe context) sau
    generică? Generică → FLAG (soft).
 
-Returnează STRICT în acest format JSON:
-{
-  "claims_checked": [
-    {"claim": "text exact al afirmației", "supported": true|false,
-     "note": "unde apare în surse, sau de ce nu apare - max 15 cuvinte"}
-  ],
-  "verdict": "APPROVE" | "REVISE",
-  "flags": [
-    {"criterion": "...", "severity": "hard" | "soft", "reason": "..."}
-  ],
-  "summary": "o frază despre decizie"
-}
+Apelează OBLIGATORIU tool-ul governance_verdict cu rezultatul - nu
+răspunde în text liber.
 
 Reguli: orice claim din "claims_checked" cu supported=false generează
 AUTOMAT un flag "hard" pe CLAIMS și verdict "REVISE" — nu poți da
@@ -79,19 +70,50 @@ per total înseamnă verdict "REVISE". Doar flags "soft" pot rămâne
 motive; dacă totul e curat, returnezi APPROVE cu flags gol. Fii strict
 la descompunere — nu evalua propoziții per ansamblu."""
 
-
-def _extract_json(text: str) -> dict[str, Any]:
-    cleaned = text.strip()
-    if cleaned.startswith("```"):
-        cleaned = cleaned.strip("`")
-        if cleaned.startswith("json"):
-            cleaned = cleaned[4:]
-    cleaned = cleaned.strip()
-    # Claude occasionally escapes apostrophes as \' inside JSON strings;
-    # that's not a valid JSON escape (apostrophes never need escaping)
-    # and breaks json.loads, so strip it before parsing.
-    cleaned = cleaned.replace("\\'", "'")
-    return json.loads(cleaned)
+GOVERNANCE_VERDICT_TOOL = {
+    "name": "governance_verdict",
+    "description": (
+        "Records the structured governance review result for an outreach "
+        "draft: the claim-by-claim grounding check, any rubric flags, the "
+        "final APPROVE/REVISE verdict, and a one-sentence summary."
+    ),
+    "input_schema": {
+        "type": "object",
+        "properties": {
+            "claims_checked": {
+                "type": "array",
+                "description": "Every individual claim extracted from the draft.",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "claim": {"type": "string", "description": "Exact text of the claim."},
+                        "supported": {"type": "boolean"},
+                        "note": {
+                            "type": "string",
+                            "description": "Where it appears in sources, or why not - max 15 words.",
+                        },
+                    },
+                    "required": ["claim", "supported", "note"],
+                },
+            },
+            "verdict": {"type": "string", "enum": ["APPROVE", "REVISE"]},
+            "flags": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "criterion": {"type": "string"},
+                        "severity": {"type": "string", "enum": ["hard", "soft"]},
+                        "reason": {"type": "string"},
+                    },
+                    "required": ["criterion", "severity", "reason"],
+                },
+            },
+            "summary": {"type": "string", "description": "One sentence about the decision."},
+        },
+        "required": ["claims_checked", "verdict", "flags", "summary"],
+    },
+}
 
 
 def run_governance(draft: dict[str, Any], lead: dict[str, Any]) -> dict[str, Any]:
@@ -102,7 +124,9 @@ def run_governance(draft: dict[str, Any], lead: dict[str, Any]) -> dict[str, Any
         returned by agents.outreach.run_outreach.
     lead: the lead dict the draft was written for.
 
-    Returns the parsed {"verdict", "flags", "summary"} dict.
+    Returns the {"claims_checked", "verdict", "flags", "summary"} dict,
+    taken directly from the model's governance_verdict tool call - no
+    manual JSON text parsing involved.
     """
     brand_sources = BRAND_SOURCES_PATH.read_text(encoding="utf-8")
 
@@ -121,20 +145,25 @@ def run_governance(draft: dict[str, Any], lead: dict[str, Any]) -> dict[str, Any
         model=MODEL,
         max_tokens=MAX_TOKENS,
         system=SYSTEM_PROMPT,
+        tools=[GOVERNANCE_VERDICT_TOOL],
+        tool_choice={"type": "tool", "name": "governance_verdict"},
         messages=[{"role": "user", "content": user_message}],
     )
-    final_text = "".join(block.text for block in response.content if block.type == "text")
-    if not final_text.strip():
-        raise RuntimeError(
-            f"Governance Reviewer returned no text (stop_reason={response.stop_reason!r})."
-        )
+
     if response.stop_reason == "max_tokens":
         raise RuntimeError(
             "Governance Reviewer response was truncated (stop_reason='max_tokens') - "
             "the claim decomposition for this draft was too long for MAX_TOKENS. "
             "Increase MAX_TOKENS or shorten the claims_checked 'note' field in the prompt."
         )
-    return _extract_json(final_text)
+
+    for block in response.content:
+        if block.type == "tool_use" and block.name == "governance_verdict":
+            return block.input
+
+    raise RuntimeError(
+        f"Governance Reviewer did not call governance_verdict (stop_reason={response.stop_reason!r})."
+    )
 
 
 if __name__ == "__main__":

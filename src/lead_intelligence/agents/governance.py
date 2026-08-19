@@ -26,7 +26,7 @@ from utils.rate_limiter import call_claude  # noqa: E402
 load_dotenv()
 
 MODEL = "claude-sonnet-5"
-MAX_TOKENS = 8192
+MAX_TOKENS = 16000
 
 SYSTEM_PROMPT = """Ești Governance Reviewer pentru sistemul de outreach al Coffra.
 Rolul tău NU e să scrii sau să îmbunătățești mesajul, ci să îl
@@ -62,7 +62,7 @@ Returnează STRICT în acest format JSON:
 {
   "claims_checked": [
     {"claim": "text exact al afirmației", "supported": true|false,
-     "note": "unde apare în surse, sau de ce nu apare"}
+     "note": "unde apare în surse, sau de ce nu apare - max 15 cuvinte"}
   ],
   "verdict": "APPROVE" | "REVISE",
   "flags": [
@@ -127,6 +127,12 @@ def run_governance(draft: dict[str, Any], lead: dict[str, Any]) -> dict[str, Any
     if not final_text.strip():
         raise RuntimeError(
             f"Governance Reviewer returned no text (stop_reason={response.stop_reason!r})."
+        )
+    if response.stop_reason == "max_tokens":
+        raise RuntimeError(
+            "Governance Reviewer response was truncated (stop_reason='max_tokens') - "
+            "the claim decomposition for this draft was too long for MAX_TOKENS. "
+            "Increase MAX_TOKENS or shorten the claims_checked 'note' field in the prompt."
         )
     return _extract_json(final_text)
 

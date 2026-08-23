@@ -1,0 +1,116 @@
+{
+  "name": "Coffra Lead Alert (n8n demo)",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "lead-qualified",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "eb156cb2-84d2-46b7-be03-48f8759f6096",
+      "name": "Webhook",
+      "webhookId": "717fc335-bf14-4fb6-bf24-4526dd664b8d"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 3
+          },
+          "conditions": [
+            {
+              "id": "0b4715f8-7b84-46e8-bde8-8d66691a60c3",
+              "leftValue": "={{ $json.tier }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "equals",
+                "name": "filter.operator.equals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        224,
+        0
+      ],
+      "id": "f45180ba-b7a6-4cac-af71-0a920446f437",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://hooks.slack.com/services/YOUR/SLACK/WEBHOOK",
+        "sendBody": true,
+        "contentType": "=json",
+        "specifyBody": "json",
+        "bodyParameters": {
+          "parameters": [
+            {}
+          ]
+        },
+        "jsonBody": "={ \"text\": \"🔥 New HOT lead: {{ $json.body.lead_name }} (score: {{ $json.body.score }})\" }",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        448,
+        -96
+      ],
+      "id": "256e8474-53da-4a2b-adfa-990765d0b6d1",
+      "name": "HTTP Request"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "1a8ad155-bf67-4739-ad16-9c67af013281",
+  "meta": {
+    "instanceId": "147bcc4a879ddc666a8c407cb3c0207c9992b036c45e8384725705ddcd16e8f3"
+  },
+  "nodeGroups": [],
+  "id": "KVr1dj6VA16HcEiL",
+  "tags": []
+}

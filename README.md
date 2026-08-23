@@ -78,6 +78,7 @@ Multi-Touch Attribution + Bayesian Marketing Mix Model with PyMC. Validated agai
 - **Strategic finding:** Email is 8x more cost-efficient than Meta Ads (CPA £1.92 vs £15.44)
 - Honest method assessment (no universal winner — depends on path structure)
 - Live dashboard integration
+- [`power-bi-demo/`](power-bi-demo/) — the method-comparison table rebuilt as an interactive clustered bar chart in Power BI Desktop, with a Method slicer, as a second BI-tool rendering of the same attribution data
 
 ### P6 — Technical SEO/GEO Audit
 
@@ -106,6 +107,7 @@ The Governance Reviewer is **calibrated, not just built**: it was measured again
 - [Case study PDF](case_study/P7_Coffra_Lead_Intelligence_Case_Study.pdf) — architecture, rigor and limitations, calibration methodology, skills demonstrated
 - [`src/lead_intelligence/`](src/lead_intelligence/) — agents, RAG index, scoring tool, and pipeline code
 - [`governance_calibration/`](governance_calibration/) — labeled test set, eval harness, and per-draft results
+- [`n8n-demo/`](n8n-demo/) — the HOT-lead notification step rebuilt natively in n8n (Webhook → conditional routing → Slack alert), a side-by-side demo of code-first vs low-code orchestration for the same pipeline stage
 
 ---
 
@@ -193,6 +195,8 @@ The Governance Reviewer is **calibrated, not just built**: it was measured again
 - **AI evaluation:** LLM-as-judge calibration against a hand-labeled test set, precision/recall measurement on claim verification
 - **Production deployment:** Live Streamlit Cloud with CI/CD via GitHub
 - **Production rigor:** API rate limiting with backoff, structured tool-use outputs over fragile text parsing, live observability of model-governance decisions
+- **Low-code automation:** n8n (webhooks, conditional routing, Slack integration) as a complement to code-first pipelines — see P7's [n8n-demo/](n8n-demo/)
+- **BI tooling:** Power BI (Power Query transforms, DAX-free clustered visuals, interactive slicers) — see P5's [power-bi-demo/](power-bi-demo/)
 - **Schema.org expertise:** 12 JSON-LD types for AEO 2026 trend
 - **Statistical rigor:** chi-square A/B tests, convergence diagnostics, posterior predictive checks
 - **Honest documentation:** transparent disclosure of synthetic data, assumptions, limitations
@@ -222,6 +226,8 @@ The Governance Reviewer is **calibrated, not just built**: it was measured again
 **Web & deployment:** Streamlit · Streamlit Community Cloud · ReportLab (PDF generation)
 
 **CRM:** HubSpot Free + Marketing Hub Trial · HubSpot Private App API
+
+**BI & automation:** Power BI Desktop (Power Query, clustered visuals, slicers) · n8n (webhooks, conditional logic, Slack integration)
 
 ---
 

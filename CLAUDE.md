@@ -4,7 +4,7 @@
 - Coffra Marketing Automation: a 7-project portfolio for a **fictional** D2C specialty coffee brand (synthetic or public data only).
 - Covers persona email automation, XGBoost lead scoring, RFM segmentation, AEO, MTA/Bayesian MMM attribution, technical SEO/GEO audit, and an agentic lead pipeline.
 - P7 (`src/lead_intelligence/`) is the live pipeline: Qualification -> Outreach -> Governance Reviewer -> human approval.
-- A 10-page Streamlit dashboard (`dashboard/`) is deployed on Streamlit Cloud; it reads committed data under `data/` and `src/`.
+- A 12-page Streamlit dashboard (`dashboard/`) is deployed on Streamlit Cloud; it reads committed data under `data/` and `src/`.
 - Claude models are called through the Anthropic API; docs and case-study PDFs live in `docs/` and `case_study/`.
 
 ## Where the agents live

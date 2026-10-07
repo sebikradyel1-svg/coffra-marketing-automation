@@ -9,7 +9,7 @@
 
 **[coffra-marketing-dashboard.streamlit.app](https://coffra-marketing-dashboard.streamlit.app/)**
 
-Ten-page Streamlit dashboard covering lead scoring (XGBoost + SHAP), AI subject line generation, HubSpot CRM snapshot, campaign funnels, customer segmentation, AEO analysis, multi-method attribution modeling, technical SEO/GEO auditing, and the live agentic lead-intelligence pipeline. Brand-aligned with Coffra design system.
+Twelve-page Streamlit dashboard covering lead scoring (XGBoost + SHAP), AI subject line generation, HubSpot CRM snapshot, campaign funnels, customer segmentation, AEO analysis, multi-method attribution modeling, technical SEO/GEO auditing, and the live agentic lead-intelligence pipeline. Brand-aligned with Coffra design system.
 
 ---
 
@@ -39,7 +39,7 @@ Persona-driven email automation system with two distinct journeys (English Conno
 Multi-page Streamlit application deployed to Streamlit Cloud with auto-rebuild on git push.
 
 **Key artifacts:**
-- 11 dashboard pages (Overview, Lead Quality, Subject Optimizer, HubSpot CRM, Campaign Funnel, Methodology, Customer Segments, AEO Analysis, Attribution, Technical SEO/GEO Audit, Lead Intelligence, Observability)
+- 12 dashboard pages (Overview, Lead Quality, Subject Optimizer, HubSpot CRM, Campaign Funnel, Methodology, Customer Segments, AEO Analysis, Attribution, Technical SEO/GEO Audit, Lead Intelligence, Observability)
 - Coffra brand design system (light theme, brown accent palette)
 - HubSpot Private App API extraction script
 - Snapshot-based data architecture for stable post-trial demo
@@ -174,7 +174,7 @@ The Governance Reviewer is **calibrated, not just built**: it was measured again
 | Project | Component | Status |
 |---|---|---|
 | **P1** | Strategy + 13 emails + ML model + AI tooling + HubSpot | ✅ Complete |
-| **P2** | Live dashboard with 10 pages | ✅ [Live](https://coffra-marketing-dashboard.streamlit.app/) |
+| **P2** | Live dashboard with 12 pages | ✅ [Live](https://coffra-marketing-dashboard.streamlit.app/) |
 | **P3** | RFM + ML clustering + dashboard + case study | ✅ Complete |
 | **P4** | AEO strategy + 12 schemas + audit + dashboard | ✅ Complete |
 | **P5** | MTA + Bayesian MMM + dashboard + case study | ✅ Complete |

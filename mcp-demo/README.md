@@ -111,3 +111,12 @@ kept for transparency and should not be used for the comparison.
   cannot run without the rest of the repo's dependencies.
 - **Scoring only.** It does not show the agent's reasoning or tiering, only
   that the same function can be served over MCP.
+
+Results (single run, 2026-10-07, claude-sonnet-5). With identical tool and
+property descriptions, the hand-written definition measured 633 input tokens
+and the FastMCP-generated one 663, a difference of 30 tokens (about 5%). A
+reference request with an empty "noop" tool measured 390, so most of both
+counts is fixed tool-use overhead (approximate reference: the noop tool has a
+shorter name and no description). The difference comes from schema metadata
+FastMCP adds (title fields, additionalProperties). One tool, one model, one
+run: this says nothing about how the cost scales with many tools.

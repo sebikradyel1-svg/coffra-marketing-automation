@@ -94,8 +94,38 @@ python qualification_eval/eval_harness.py --stub   # fake agent, writes results_
 - **Stub mode** is a deterministic fake agent for testing the plumbing. Its
   output is not a result and `results_stub.json` is labeled as such.
 
-`results.json` does not exist until the real harness has been run. This README
-deliberately contains no measured numbers.
+## Results (single run, 2026-10-07)
+
+On the 40 valid-field leads the agent returned the expected tier in 39 cases
+(97.5%; 30/30 on the three clear groups, 9/10 on the borderline group). With
+n=40 and one run per lead this is a rough estimate (95% Wilson interval about
+87% to 99.6%), and the agent is not deterministic.
+
+The single miss was BORD08 (model score 0.399, expected COLD): the agent
+reported the score rounded to 0.40, treated it as the WARM threshold and
+returned WARM. Rounding crossed a threshold in two borderline cases (BORD03
+and BORD08); the agent handled the first correctly and the second
+incorrectly, so this shows the failure exists, not how often it occurs.
+
+Score fidelity: the harness required the agent's score to equal the tool's
+score to 1e-6, which held in 7 of 40 cases. The agent rounds scores to two
+decimals in 33 of 40 cases and reports full precision in the rest. All 40
+returned scores are within 0.005 of the tool score, so this is rounding and
+not altered scores. The 1e-6 tolerance was a design error in this experiment
+and is kept as run.
+
+Bad-field leads (separate line; the expected WARM comes from a prompt
+instruction): 1 of 4 matched. For the two leads with a missing field (BAD01,
+BAD02) the agent's output could not be parsed (JSONDecodeError) and no tier
+was recorded; the harness did not save the raw text. For the two leads with an
+invalid value (BAD03, BAD04) the agent did not apply the documented WARM
+fallback. According to its own reasoning text it replaced the invalid value
+with 0, scored the lead and tiered it: BAD03 landed on WARM only because the
+imputed score fell in the WARM band, BAD04 on COLD. The harness does not
+record tool calls, so the imputation is known only from the agent's text.
+
+Not measured: reasoning quality, predictive accuracy, run-to-run variability.
+results.json does not record the agent's model or a timestamp..
 
 ## Tests
 
@@ -107,3 +137,5 @@ python -m pytest qualification_eval -rs
 Tests that need the model dependencies (xgboost, shap, scikit-learn,
 anthropic) are skipped with a reason when those are missing; check the `-rs`
 output, since skipped tests have not run.
+
+Only one of the five leads near the 0.70 threshold (BORD02) lies above it, so the HOT side of that boundary is tested by a single case.

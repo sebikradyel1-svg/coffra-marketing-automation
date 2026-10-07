@@ -1,0 +1,54 @@
+{
+  "experiment": true,
+  "model": "claude-sonnet-5",
+  "measured_at": "2026-10-07T10:46:12.271076+00:00",
+  "baseline_no_tools_tokens": 8,
+  "direct_tool_use_tokens": 633,
+  "mcp_tokens": 663,
+  "difference_mcp_minus_direct": 30,
+  "fixed_overhead_reference": 390,
+  "direct_minus_overhead": 243,
+  "mcp_minus_overhead": 273,
+  "fixed_overhead_tool": {
+    "name": "noop",
+    "input_schema": {
+      "type": "object",
+      "properties": {}
+    }
+  },
+  "direct_definition": {
+    "name": "score_lead",
+    "description": "Scores a lead with the trained XGBoost conversion model. Returns a conversion probability in [0, 1] and the top 3 contributing features (SHAP-based) with their direction of influence.",
+    "input_schema": {
+      "type": "object",
+      "properties": {
+        "lead": {
+          "type": "object",
+          "description": "Lead attributes keyed by the feature names in models/feature_spec_v1.json (Age, Income, AdSpend, WebsiteVisits, PagesPerVisit, TimeOnSite, SocialShares, EmailOpens, EmailClicks, PreviousPurchases, LoyaltyPoints, plus one-hot flags like Gender_Male, CampaignChannel_PPC, CampaignType_Conversion, etc.)."
+        }
+      },
+      "required": [
+        "lead"
+      ]
+    }
+  },
+  "mcp_definition": {
+    "name": "score_lead",
+    "description": "Scores a lead with the trained XGBoost conversion model. Returns a conversion probability in [0, 1] and the top 3 contributing features (SHAP-based) with their direction of influence.",
+    "input_schema": {
+      "properties": {
+        "lead": {
+          "additionalProperties": true,
+          "description": "Lead attributes keyed by the feature names in models/feature_spec_v1.json (Age, Income, AdSpend, WebsiteVisits, PagesPerVisit, TimeOnSite, SocialShares, EmailOpens, EmailClicks, PreviousPurchases, LoyaltyPoints, plus one-hot flags like Gender_Male, CampaignChannel_PPC, CampaignType_Conversion, etc.).",
+          "title": "Lead",
+          "type": "object"
+        }
+      },
+      "required": [
+        "lead"
+      ],
+      "title": "score_leadArguments",
+      "type": "object"
+    }
+  }
+}

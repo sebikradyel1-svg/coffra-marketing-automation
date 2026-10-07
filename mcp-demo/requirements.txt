@@ -1,0 +1,6 @@
+# Extra dependencies for mcp-demo only. Everything else (xgboost, shap,
+# anthropic, ...) comes from the repo-root requirements.txt.
+# mcp is pinned to the version this demo was tested with; mcp 2.x renamed
+# FastMCP to MCPServer, so the <2 line matters.
+mcp==1.30.0
+pytest==9.1.1

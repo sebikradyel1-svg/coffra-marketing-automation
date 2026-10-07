@@ -1,0 +1,1261 @@
+{
+  "experiment": true,
+  "mode": "real",
+  "note": "Real agent run",
+  "environment": {
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "shap": "0.52.0"
+  },
+  "eval_set_environment": {
+    "xgboost": "3.4.1",
+    "scikit-learn": "1.9.1",
+    "shap": "0.52.0"
+  },
+  "environment_matches_eval_set": true,
+  "thresholds": {
+    "hot": 0.7,
+    "warm": 0.4
+  },
+  "metrics": {
+    "headline_valid_field": {
+      "n": 40,
+      "correct": 39,
+      "accuracy": 0.975
+    },
+    "per_group": {
+      "clear_hot": {
+        "n": 10,
+        "correct": 10,
+        "accuracy": 1.0
+      },
+      "clear_warm": {
+        "n": 10,
+        "correct": 10,
+        "accuracy": 1.0
+      },
+      "clear_cold": {
+        "n": 10,
+        "correct": 10,
+        "accuracy": 1.0
+      },
+      "borderline": {
+        "n": 10,
+        "correct": 9,
+        "accuracy": 0.9
+      }
+    },
+    "confusion_matrix_expected_by_predicted": {
+      "HOT": {
+        "HOT": 11,
+        "WARM": 0,
+        "COLD": 0,
+        "INVALID": 0
+      },
+      "WARM": {
+        "HOT": 0,
+        "WARM": 16,
+        "COLD": 0,
+        "INVALID": 0
+      },
+      "COLD": {
+        "HOT": 0,
+        "WARM": 1,
+        "COLD": 12,
+        "INVALID": 0
+      }
+    },
+    "score_fidelity": {
+      "n": 40,
+      "agent_score_equals_tool_score": 7,
+      "mismatched_ids": [
+        "HOT01",
+        "HOT02",
+        "HOT03",
+        "HOT04",
+        "HOT05",
+        "HOT06",
+        "HOT07",
+        "HOT09",
+        "HOT10",
+        "WARM01",
+        "WARM02",
+        "WARM03",
+        "WARM04",
+        "WARM06",
+        "WARM08",
+        "WARM09",
+        "COLD01",
+        "COLD02",
+        "COLD03",
+        "COLD04",
+        "COLD05",
+        "COLD06",
+        "COLD07",
+        "COLD08",
+        "COLD10",
+        "BORD01",
+        "BORD02",
+        "BORD03",
+        "BORD04",
+        "BORD06",
+        "BORD07",
+        "BORD08",
+        "BORD10"
+      ]
+    },
+    "bad_field_separate": {
+      "n": 4,
+      "correct": 1,
+      "accuracy": 0.25
+    },
+    "environment_drift": {
+      "n": 0,
+      "ids": []
+    },
+    "misclassified": [
+      {
+        "id": "BORD08",
+        "group": "borderline",
+        "expected": "COLD",
+        "predicted": "WARM",
+        "agent_score": 0.4,
+        "runtime_model_score": 0.399,
+        "raw": {
+          "score": 0.4,
+          "tier": "WARM",
+          "action": "NURTURE",
+          "reasoning": "Scorul se află chiar la granița inferioară a zonei WARM (0.399, rotunjit 0.40). Factorii care trag scorul în jos sunt EmailClicks foarte scăzut (1 click) și PreviousPurchases = 0, semnalând lipsă de istoric de conversie și engagement redus pe canalul email. În contrapondere, EngagementScore ridicat (probabil generat din combinația WebsiteVisits=42, PagesPerVisit~7.6 și SocialShares=25) împinge scorul în sus, arătând interes activ pe site și social media. Lead-ul are potențial dar nu a demonstrat încă intenție de cumpărare clară — recomandat nurture pentru a stimula interacțiunea prin email și a construi istoric de achiziție înainte de outreach direct.",
+          "top_factors": [
+            "EmailClicks scăzut (1) — scade scorul",
+            "PreviousPurchases = 0 — scade scorul",
+            "EngagementScore ridicat — crește scorul"
+          ]
+        },
+        "error": null
+      },
+      {
+        "id": "BAD01",
+        "group": "bad_field",
+        "expected": "WARM",
+        "predicted": "INVALID",
+        "agent_score": null,
+        "runtime_model_score": null,
+        "raw": null,
+        "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+      },
+      {
+        "id": "BAD02",
+        "group": "bad_field",
+        "expected": "WARM",
+        "predicted": "INVALID",
+        "agent_score": null,
+        "runtime_model_score": null,
+        "raw": null,
+        "error": "JSONDecodeError: Extra data: line 8 column 1 (char 725)"
+      },
+      {
+        "id": "BAD04",
+        "group": "bad_field",
+        "expected": "WARM",
+        "predicted": "COLD",
+        "agent_score": 0.24,
+        "runtime_model_score": null,
+        "raw": {
+          "score": 0.24,
+          "tier": "COLD",
+          "action": "DISQUALIFY",
+          "reasoning": "Scorul este sub pragul de calificare. Campania de tip Conversion a împins scorul în sus, dar acest efect este anulat de EmailClicks foarte scăzut (1 click din 9 deschideri — engagement slab pe email) și de AdSpend ridicat fără randament corespunzător, ambele factori cu impact negativ puternic asupra probabilității de conversie. Notă: TimeOnSite lipsea ca valoare validă în date ('unknown'); a fost folosit un placeholder (0) pentru a putea rula modelul — rezultatul ar trebui reverificat dacă se obține valoarea reală de TimeOnSite, deoarece aceasta ar putea schimba scorul.",
+          "top_factors": [
+            "CampaignType_Conversion (crește scorul)",
+            "EmailClicks scăzut (scade scorul)",
+            "AdSpend ridicat fără eficiență (scade scorul)"
+          ]
+        },
+        "error": null
+      }
+    ]
+  },
+  "rows": [
+    {
+      "id": "HOT01",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.889,
+      "runtime_model_score": 0.889,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.89,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.89,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor ridicat (0.89), susținut puternic de tipul de campanie Conversion (cel mai mare impuls pozitiv) și de un nivel bun de EmailOpens, semn de engagement activ cu comunicările. Singurul factor negativ relevant este EmailClicks=0, care trage scorul în jos, dar nu suficient să compenseze fit-ul puternic de campanie și istoricul de achiziții (PreviousPurchases=9) și loialitate ridicată (LoyaltyPoints=3789). Lead calificat pentru outreach direct, echivalent SQL.",
+        "top_factors": [
+          "CampaignType_Conversion (crește scorul puternic — fit excelent pe tipul de campanie)",
+          "EmailOpens ridicat (crește scorul — engagement bun cu emailurile)",
+          "EmailClicks=0 (scade scorul — lipsă de click-through, deși compensată de alți factori)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT02",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9461,
+      "runtime_model_score": 0.9461,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.95,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.95,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat (0.95), susținut puternic de engagement comportamental: numărul mare de WebsiteVisits (12) și TimeOnSite ridicat (~10.7 min) împing scorul sus semnificativ, indicând interes activ și explorare detaliată a site-ului. Singurul factor negativ e EmailClicks=0, care scade ușor scorul, dar nu contrabalansează semnalele puternice de engagement pe site. PreviousPurchases (9) și LoyaltyPoints (2611) susțin suplimentar profilul unui lead cald, cu istoric de conversie.",
+        "top_factors": [
+          "WebsiteVisits — crește scorul (engagement ridicat pe site)",
+          "TimeOnSite — crește scorul (timp petrecut semnificativ pe site)",
+          "EmailClicks — scade scorul (lipsă click-uri pe email, 0 clickuri)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT03",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9816,
+      "runtime_model_score": 0.9816,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.98,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.98,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat, susținut de AdSpend mare (investiție puternică în acest lead/campanie, semnal de prioritizare bugetară), TimeOnSite ridicat (engagement real pe site, nu doar vizită superficială) și EmailOpens solid (receptivitate la comunicare). Toți cei trei factori principali împing scorul în sus, fără semnale negative dominante — lead calificat clar pentru contact direct, în ciuda lipsei de achiziții anterioare.",
+        "top_factors": [
+          "AdSpend ridicat — crește scorul",
+          "TimeOnSite ridicat — crește scorul",
+          "EmailOpens ridicat — crește scorul"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT04",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9526,
+      "runtime_model_score": 0.9526,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.95,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.95,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat, dominat de apartenența la o campanie de tip Conversion (cel mai puternic factor pozitiv), susținut de un nivel bun de engagement prin EmailOpens (19 deschideri) și de un istoric solid de achiziții (PreviousPurchases = 4). Combinația arată un lead aflat deja în etapa de decizie, cu comportament activ și istoric de cumpărare, deci potrivit pentru outreach direct.",
+        "top_factors": [
+          "CampaignType_Conversion (crește scorul puternic)",
+          "EmailOpens ridicat (crește scorul)",
+          "PreviousPurchases (crește scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT05",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9942,
+      "runtime_model_score": 0.9942,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.99,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.99,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat, dominat de un EngagementScore puternic (cel mai mare contribuitor pozitiv), susținut de un nivel solid de EmailOpens (10) și EmailClicks (6), care indică interacțiune activă și repetată cu comunicările. Combinate cu trafic bun pe site (43 vizite, 7.4 pagini/vizită) și activitate socială ridicată (78 share-uri), lead-ul arată un comportament de engagement matur, tipic pentru conversie rapidă.",
+        "top_factors": [
+          "EngagementScore (impact pozitiv puternic)",
+          "EmailOpens (impact pozitiv)",
+          "EmailClicks (impact pozitiv)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT06",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.8389,
+      "runtime_model_score": 0.8389,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.84,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.84,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor ridicat (0.84), susținut în primul rând de istoricul de achiziții anterioare (PreviousPurchases) și de engagement direct prin EmailClicks, ambii factori cu impact pozitiv puternic. Singurul factor care trage scorul în jos este AdSpend, posibil pentru că un spend ridicat pe acest lead nu s-a tradus proporțional în conversie suplimentară, dar contribuțiile pozitive domină clar, plasând lead-ul în zona HOT.",
+        "top_factors": [
+          "PreviousPurchases crește scorul (comportament de cumpărare repetat)",
+          "EmailClicks crește scorul (engagement activ cu comunicările)",
+          "AdSpend scade scorul (cost de achiziție ridicat relativ la semnal)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT07",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9115,
+      "runtime_model_score": 0.9115,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.91,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.91,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat (0.91), susținut în primul rând de un TimeOnSite ridicat (engagement puternic pe site, contribuție +0.72) și de LoyaltyPoints mare (1980, semn de istoric și fidelizare solidă, +0.45), ceea ce indică un lead cald, implicat și cu valoare acumulată în relație. Singurul factor care trage scorul în jos este AdSpend-ul alocat pe acest lead (-0.39), posibil indicând cost de achiziție mai mare raportat la segment, dar nu suficient pentru a contrabalansa semnalele puternice de engagement și loialitate. Recomand rutare directă către outreach, echivalent SQL.",
+        "top_factors": [
+          "TimeOnSite (crește scorul)",
+          "LoyaltyPoints (crește scorul)",
+          "AdSpend (scade scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT08",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9561,
+      "runtime_model_score": 0.9561,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.9561,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.9561,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat, dominat de apartenența la o campanie de tip Conversion (cel mai puternic impuls pozitiv), susținut și de un TimeOnSite ridicat care indică engagement real pe site. Factorul negativ este lipsa de PreviousPurchases (0), care trage scorul în jos, dar nu suficient cât să contrabalanseze semnalele puternice de intenție de conversie și engagement.",
+        "top_factors": [
+          "CampaignType_Conversion (impact pozitiv puternic - lead-ul e expus unei campanii orientate spre conversie)",
+          "PreviousPurchases = 0 (impact negativ - fără istoric de achiziții anterioare)",
+          "TimeOnSite ridicat (impact pozitiv - engagement activ pe site)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT09",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.9199,
+      "runtime_model_score": 0.9199,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.92,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.92,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor foarte ridicat, susținut de trei semnale puternice: AdSpend ridicat (investiție de marketing semnificativă asociată cu leaduri de calitate), LoyaltyPoints mare (indică relație deja construită/engagement susținut cu brandul) și PreviousPurchases ridicat (8 achiziții anterioare, semn clar de comportament de cumpărare recurent). Combinația acestor factori de fit și istoric plasează lead-ul ferm în categoria HOT, pregătit pentru outreach direct.",
+        "top_factors": [
+          "AdSpend ridicat",
+          "LoyaltyPoints ridicat",
+          "PreviousPurchases ridicat"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "HOT10",
+      "group": "clear_hot",
+      "expected": "HOT",
+      "stored_model_score": 0.8571,
+      "runtime_model_score": 0.8571,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.86,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.86,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scor ridicat (0.86), susținut de AdSpend mare (cel mai puternic factor pozitiv, semn de investiție/intenție comercială ridicată pe acest lead) și de Income ridicat, care indică un profil cu putere de cumpărare bună. Singurul factor negativ e PagesPerVisit scăzut (engagement pe site mai superficial per vizită), dar nu contrabalansează semnalele puternice de fit financiar. Lead calificat pentru outreach direct, echivalent SQL.",
+        "top_factors": [
+          "AdSpend ridicat — crește puternic scorul",
+          "Income ridicat — crește scorul",
+          "PagesPerVisit scăzut — scade scorul (engagement per vizită redus)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM01",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5275,
+      "runtime_model_score": 0.5275,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.53,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.53,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.53 plasează lead-ul în zona WARM. Factorii pozitivi sunt LoyaltyPoints ridicate (4139) și un istoric de PreviousPurchases, care indică o relație existentă și potențial de reangajare. Totuși, TimeOnSite scăzut (1.5) trage scorul în jos semnificativ, sugerând un engagement activ redus pe site în ciuda vizitelor numeroase (44) — posibil navigare rapidă fără interes profund în conținut. Combinația sugerează un client existent cu valoare dar engagement curent slab, potrivit pentru nurture mai degrabă decât outreach direct.",
+        "top_factors": [
+          "TimeOnSite scăzut – reduce scorul (engagement superficial pe site)",
+          "LoyaltyPoints ridicate – crește scorul (client cu istoric de fidelitate)",
+          "PreviousPurchases – crește scorul (istoric de conversie anterioară)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM02",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5535,
+      "runtime_model_score": 0.5535,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.55,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.55,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scor moderat (0.55), sub pragul HOT. Engagement-ul pe site (PagesPerVisit ridicat) și istoricul de cumpărare (PreviousPurchases=7) împing scorul în sus, indicând un lead cu fit bun și interes real. Totuși, EmailClicks foarte scăzut (1) trage scorul în jos, sugerând engagement slab pe canalul de email, ceea ce încă nu confirmă intenție puternică de conversie imediată. Recomand nurture pentru a crește engagement-ul pe email înainte de outreach direct.",
+        "top_factors": [
+          "PagesPerVisit — crește scorul (engagement ridicat pe site)",
+          "EmailClicks — scade scorul (interacțiune scăzută pe email)",
+          "PreviousPurchases — crește scorul (istoric de cumpărare solid)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM03",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5243,
+      "runtime_model_score": 0.5243,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.52,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.52,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul este împins în sus de apartenența la CampaignType_Conversion (semnal puternic de intenție), dar este tras în jos de PreviousPurchases scăzut (1 achiziție anterioară, indicator slab de istoric de conversie) și de WebsiteVisits redus (6 vizite, engagement limitat pe site). Rezultatul net plasează lead-ul în zona WARM — are potențial de conversie, dar engagement-ul comportamental insuficient recomandă nurture înainte de outreach direct.",
+        "top_factors": [
+          "CampaignType_Conversion (crește scorul)",
+          "PreviousPurchases scăzut (scade scorul)",
+          "WebsiteVisits redus (scade scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM04",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5636,
+      "runtime_model_score": 0.5636,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.56,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.56,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.56 plasează lead-ul în zona WARM. AdSpend ridicat (campanie cu investiție semnificativă) împinge scorul în sus, dar engagement-ul pe email este slab — EmailClicks (2) și EmailOpens (2) scad scorul, indicând un lead expus la marketing dar încă neangajat activ prin canalul email. Website activity (45 vizite, 6.7 pagini/vizită) sugerează interes, dar nu e suficient pentru a compensa engagement-ul scăzut pe email și a trece în HOT.",
+        "top_factors": [
+          "AdSpend ridicat — crește scorul (fit/investiție campanie)",
+          "EmailClicks scăzute (2) — scade scorul (engagement slab)",
+          "EmailOpens scăzute (2) — scade scorul (engagement slab)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM05",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5856,
+      "runtime_model_score": 0.5856,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.5856,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.5856,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.59 plasează lead-ul în zona WARM. Engagementul pe site este solid - PagesPerVisit (3.76) și TimeOnSite (7.2 min) împing scorul în sus, indicând interes activ în explorarea conținutului. Totuși, PreviousPurchases foarte scăzut (1) are cel mai mare impact negativ, sugerând un istoric de cumpărare limitat care reduce probabilitatea de conversie rapidă. Lead-ul arată potențial dar necesită maturizare înainte de outreach direct.",
+        "top_factors": [
+          "PreviousPurchases scăzut (1) - scade scorul, lipsă istoric solid de achiziții",
+          "PagesPerVisit ridicat (3.76) - crește scorul, engagement bun pe conținut",
+          "TimeOnSite ridicat (7.2 min) - crește scorul, interes activ pe site"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM06",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5426,
+      "runtime_model_score": 0.5426,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.54,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.54,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.54 plasează lead-ul în zona WARM. AdSpend ridicat asociat acestui lead împinge scorul în sus, semnalând o investiție de marketing semnificativă pe acest profil. În schimb, LoyaltyPoints și PagesPerVisit scăzute trag scorul în jos, indicând engagement comportamental slab pe site (puține pagini vizitate per sesiune) și lipsă de loialitate acumulată — lead-ul nu are încă semnale puternice de intenție de cumpărare, deci necesită nurture înainte de outreach direct.",
+        "top_factors": [
+          "AdSpend ridicat (crește scorul)",
+          "LoyaltyPoints scăzut (scade scorul)",
+          "PagesPerVisit scăzut (scade scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM07",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.507,
+      "runtime_model_score": 0.507,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.507,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.507,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scor mediu (0.507), aproape de pragul HOT dar insuficient pentru outreach direct. Factorul principal negativ este PreviousPurchases (doar 1 achiziție anterioară) — indică istoric de cumpărare slab, scade semnificativ scorul. EmailOpens (5) contribuie și el negativ, sugerând engagement pe email sub media celor calificați direct. Pe partea pozitivă, PagesPerVisit ridicat (9.38) arată interes activ în navigare pe site, ceea ce compensează parțial. WebsiteVisits=0 e un semnal de alertă suplimentar (lead fără vizite directe înregistrate, posibil tracking din altă sursă). Lead-ul are potențial dar are nevoie de nurture pentru a crește engagement-ul și a genera o a doua achiziție înainte de a fi împins spre outreach.",
+        "top_factors": [
+          "PreviousPurchases scăzut (1) — reduce semnificativ scorul, indică istoric slab de cumpărare",
+          "PagesPerVisit ridicat (9.38) — crește scorul, semnal de interes activ pe site",
+          "EmailOpens scăzut (5) — reduce scorul, engagement moderat pe canalul email"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM08",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5123,
+      "runtime_model_score": 0.5123,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.51,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.51,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.51 plasează lead-ul în zona WARM. Factorul principal pozitiv este PagesPerVisit (engagement ridicat pe site, navigare profundă), ceea ce indică interes real. Totuși, scorul este tras în jos de AdSpend (eficiență scăzută a costului per achiziție pentru acest profil) și de EmailClicks redus (doar 1 click, engagement scăzut pe canalul email). Combinația de engagement bun pe site dar slab pe email justifică nurture înainte de outreach direct.",
+        "top_factors": [
+          "PagesPerVisit – crește scorul (engagement puternic pe site)",
+          "AdSpend – scade scorul (cost de achiziție nefavorabil pentru acest profil)",
+          "EmailClicks – scade scorul (interacțiune scăzută prin email)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM09",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5285,
+      "runtime_model_score": 0.5285,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.53,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.53,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.53 plasează lead-ul în zona WARM. Engagementul pe site este slab — PagesPerVisit are cel mai mare impact negativ asupra scorului, indicând vizite superficiale, iar EmailClicks reduse (doar 2 din 10 deschideri) confirmă o conversie slabă a interesului în acțiune. În contrapartidă, EmailOpens (10) contribuie pozitiv, arătând un nivel de interes inițial prin canalul de email. Combinația de interes prezent dar engagement comportamental scăzut justifică rutarea spre nurture, nu outreach direct.",
+        "top_factors": [
+          "PagesPerVisit - scade scorul (navigare superficială pe site)",
+          "EmailClicks - scade scorul (interacțiune redusă cu emailurile)",
+          "EmailOpens - crește scorul (interes inițial prin deschiderea emailurilor)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "WARM10",
+      "group": "clear_warm",
+      "expected": "WARM",
+      "stored_model_score": 0.5958,
+      "runtime_model_score": 0.5958,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.5958,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.5958,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scor mediu (0.60), sub pragul HOT. Engagement-ul pe site este un punct forte - TimeOnSite ridicat împinge scorul în sus, susținut și de LoyaltyPoints mari (istoric de loialitate solid, 6 achiziții anterioare). Însă lipsa completă de EmailClicks (0 clicuri din 2 deschideri) este cel mai puternic factor negativ, scăzând semnificativ scorul - sugerează engagement scăzut pe canalul email, chiar dacă interacțiunea pe site e bună. Lead-ul merită nurture pentru a crește engagement-ul email înainte de outreach direct.",
+        "top_factors": [
+          "EmailClicks scăzut (0) - reduce puternic scorul, semn de engagement slab pe email",
+          "TimeOnSite ridicat - crește scorul, indică interes real pe site",
+          "LoyaltyPoints mari - crește scorul, client cu istoric de loialitate valoros"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD01",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.1213,
+      "runtime_model_score": 0.1213,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.12,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.12,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut (0.12), determinat în principal de PreviousPurchases redus (istoric slab de achiziții anterioare), un EngagementScore scăzut per ansamblu și TimeOnSite redus (~3 min), semn de interacțiune superficială cu conținutul. Deși lead-ul are email opens/clicks și social shares decente, aceste semnale nu compensează lipsa de istoric comercial și engagement-ul general slab identificat de model.",
+        "top_factors": [
+          "PreviousPurchases scăzut — reduce puternic scorul",
+          "EngagementScore scăzut — reduce scorul",
+          "TimeOnSite redus — indică interacțiune superficială"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD02",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.1989,
+      "runtime_model_score": 0.1989,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.2,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.2,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Deși CampaignType_Conversion împinge scorul în sus, acest efect este depășit de doi factori negativi puternici: LoyaltyPoints scăzut (loialitate/istoric redus de relație cu brandul) și PagesPerVisit foarte scăzut (1.57 pagini/vizită, semn de engagement slab pe site). Combinația indică un lead cu intenție comercială aparentă dar comportament de navigare superficial și loialitate redusă, ceea ce plasează scorul final (0.20) clar sub pragul WARM.",
+        "top_factors": [
+          "CampaignType_Conversion crește scorul (+1.544)",
+          "LoyaltyPoints scade scorul (-1.1526) — loialitate/istoric redus",
+          "PagesPerVisit scade scorul (-1.0669) — engagement slab pe site"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD03",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.1618,
+      "runtime_model_score": 0.1618,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.16,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.16,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scorul este scăzut (0.16), sub pragul de 0.40. Modelul penalizează puternic acest lead pe baza unui engagement slab: TimeOnSite foarte redus (~1.4 min) reduce semnificativ probabilitatea de conversie, PagesPerVisit scăzut (~2.7 pagini) indică explorare minimă a site-ului, iar EmailOpens foarte scăzut (doar 2) arată lipsă de interacțiune cu comunicările email. Deși există semnale pozitive precum PreviousPurchases (8) și LoyaltyPoints ridicate (1947), acestea nu sunt suficiente pentru a compensa comportamentul slab de engagement activ, care domină decizia modelului.",
+        "top_factors": [
+          "TimeOnSite scăzut — reduce semnificativ scorul (timp foarte scurt petrecut pe site)",
+          "PagesPerVisit scăzut — indică navigare superficială, reduce scorul",
+          "EmailOpens scăzut — lipsă de interacțiune cu campaniile email, reduce scorul"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD04",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.0946,
+      "runtime_model_score": 0.0946,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.09,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.09,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut (0.09), sub pragul de 0.40. Factorul dominant negativ este PreviousPurchases (doar 1 achiziție anterioară), care scade puternic probabilitatea de conversie, alături de un EngagementScore slab (vizite reduse pe site - 4, TimeOnSite scurt ~4 min, puține EmailClicks - 2 din 12 deschideri). Singurul factor pozitiv este CampaignType_Conversion, dar nu compensează lipsa de istoric de achiziții și engagement-ul redus. Lead-ul nu îndeplinește criteriile de fit comportamental pentru calificare.",
+        "top_factors": [
+          "PreviousPurchases scăzut (istoric de achiziții redus) - impact negativ puternic",
+          "EngagementScore scăzut (comportament slab pe site/email) - impact negativ",
+          "CampaignType_Conversion - singurul impact pozitiv, insuficient pentru calificare"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD05",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.0609,
+      "runtime_model_score": 0.0609,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.06,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.06,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut (0.06), driven de trei factori negativi majori: PreviousPurchases foarte redus (doar 1 achiziție anterioară) scade puternic probabilitatea de conversie, LoyaltyPoints insuficiente indică angajament redus pe termen lung, iar PagesPerVisit scăzut (~2.5 pagini/vizită) arată engagement slab pe site în ciuda unui număr decent de vizite și distribuiri sociale. Combinația istoric de cumpărare slab + loialitate redusă + navigare superficială plasează lead-ul clar sub pragul WARM.",
+        "top_factors": [
+          "PreviousPurchases scăzut — reduce semnificativ scorul",
+          "LoyaltyPoints reduse — indică lipsă de angajament pe termen lung",
+          "PagesPerVisit scăzut — engagement superficial pe site"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD06",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.2101,
+      "runtime_model_score": 0.2101,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.21,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.21,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor scăzut (0.21), sub pragul de 0.40. Modelul penalizează lead-ul în principal pe EmailClicks=0 (lipsă totală de interacțiune activă cu email-urile, deși a avut 2 deschideri, nu a dat click), LoyaltyPoints (662 nu compensează, fiind evaluat negativ în acest context de engagement scăzut) și AdSpend ridicat (947.5) fără conversie corespunzătoare - sugerează cost de achiziție ineficient pentru acest profil. Combinația de engagement slab pe canalul email și cheltuială publicitară mare fără rezultat proporțional indică un lead cu fit scăzut pentru conversie, în ciuda unui istoric de 9 achiziții anterioare.",
+        "top_factors": [
+          "EmailClicks scăzut (0) - reduce puternic scorul",
+          "LoyaltyPoints - contribuție negativă neașteptată în acest context",
+          "AdSpend ridicat fără conversie proporțională - reduce scorul"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD07",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.0215,
+      "runtime_model_score": 0.0215,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.02,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.02,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut, susținut de trei semnale negative puternice: lipsa achizițiilor anterioare (PreviousPurchases=0) sugerează un lead fără istoric de conversie, LoyaltyPoints are un efect negativ neașteptat (posibil interacțiune cu lipsa achizițiilor, indicând engagement pasiv fără conversie reală), iar PagesPerVisit scăzut (2.37) arată o navigare superficială pe site, fără explorare aprofundată a ofertei. Nu există factori pozitivi relevanți care să compenseze.",
+        "top_factors": [
+          "PreviousPurchases scade scorul (fără istoric de achiziții)",
+          "LoyaltyPoints scade scorul (semnal de engagement fără conversie)",
+          "PagesPerVisit scade scorul (navigare superficială, interes scăzut)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD08",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.0199,
+      "runtime_model_score": 0.0199,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.02,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.02,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut, dominat de trei factori negativi puternici: PreviousPurchases redus (istoric slab de achiziții), EmailClicks zero (nicio interacțiune cu campaniile de email) și un EngagementScore general scăzut (combinat cu 0 WebsiteVisits și TimeOnSite foarte mic). Leadul nu arată semnale de intenție sau engagement activ, în ciuda AdSpend-ului și LoyaltyPoints-ului ridicate.",
+        "top_factors": [
+          "PreviousPurchases scăzut - reduce semnificativ scorul",
+          "EmailClicks = 0 - lipsă totală de interacțiune cu email-urile",
+          "EngagementScore scăzut - engagement general slab (vizite web = 0, timp pe site minim)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD09",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.2367,
+      "runtime_model_score": 0.2367,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.2367,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.2367,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor scăzut, sub pragul de 0.40. Modelul penalizează semnificativ engagement-ul la nivel de conținut (PagesPerVisit redus) și istoricul comercial slab (PreviousPurchases = 1), ambele cu contribuție negativă puternică. Deși EmailOpens aduce un plus moderat, nu compensează deficitul de fit comportamental — lead-ul navighează puțin per vizită și are achiziții anterioare minime, semne de interes scăzut sau fit slab cu oferta.",
+        "top_factors": [
+          "PagesPerVisit scăzut — reduce scorul (navigare superficială pe site)",
+          "PreviousPurchases redus — reduce scorul (istoric de achiziție slab)",
+          "EmailOpens ridicat — crește scorul (engagement pe email, dar insuficient pentru a compensa)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "COLD10",
+      "group": "clear_cold",
+      "expected": "COLD",
+      "stored_model_score": 0.0827,
+      "runtime_model_score": 0.0827,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.08,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.08,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor foarte scăzut (0.08), dominat negativ de EngagementScore slab — consistent cu WebsiteVisits=0, EmailClicks=0 și TimeOnSite redus (~1.9), semn de interacțiune minimă cu campania. LoyaltyPoints contribuie și el negativ, în ciuda valorii relativ ridicate (409), sugerând că nu compensează lipsa de engagement activ. Singurul factor pozitiv e AdSpend ridicat, dar nu reușește să contrabalanseze lipsa de interacțiune reală a lead-ului.",
+        "top_factors": [
+          "EngagementScore (scade scorul)",
+          "AdSpend (crește scorul)",
+          "LoyaltyPoints (scade scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD01",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.6905,
+      "runtime_model_score": 0.6905,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.69,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.69,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scor sub pragul HOT (0.70) la limită. AdSpend ridicat și PreviousPurchases (7) împing scorul în sus, indicând investiție în achiziție și istoric de cumpărare solid. Însă TimeOnSite scăzut (sub 3 min) trage scorul în jos, sugerând engagement slab pe site în pofida vizitelor numeroase — lead-ul nu e încă suficient de 'cald' pentru outreach direct.",
+        "top_factors": [
+          "AdSpend ridicat (crește scorul)",
+          "TimeOnSite scăzut (scade scorul)",
+          "PreviousPurchases (7) - istoric de cumpărare (crește scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD02",
+      "group": "borderline",
+      "expected": "HOT",
+      "stored_model_score": 0.7025,
+      "runtime_model_score": 0.7025,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "HOT",
+      "correct": true,
+      "agent_score": 0.7,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.7,
+        "tier": "HOT",
+        "action": "OUTREACH",
+        "reasoning": "Scorul atinge exact pragul HOT (0.70), susținut puternic de AdSpend ridicat (6783) și de un istoric solid de achiziții anterioare (7 PreviousPurchases) — ambii factori cu impact pozitiv mare în model. Contrabalansat parțial de un TimeOnSite scăzut (2.73 min), care trage scorul în jos, dar nu suficient pentru a coborî sub pragul HOT. Engagement-ul pe email este slab (3 deschideri, 2 click-uri), însă semnalele de valoare comercială (spend + loialitate istorică) domină decizia modelului.",
+        "top_factors": [
+          "AdSpend ridicat — crește puternic scorul (fit investițional mare)",
+          "PreviousPurchases (7) — crește scorul, indică client cu istoric de conversie",
+          "TimeOnSite scăzut — scade scorul, semnal de engagement slab pe site"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD03",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.6978,
+      "runtime_model_score": 0.6978,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.7,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.7,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul de 0.6978 se situează chiar sub pragul HOT de 0.70, deci leadul intră la limită în zona WARM. Factorul cu cel mai mare impact pozitiv este CampaignType_Conversion (lead deja într-o campanie orientată spre conversie), susținut și de PreviousPurchases ridicat (istoric de achiziții anterioare, semn de intenție reală). Totuși, SocialShares (98) trage scorul în jos semnificativ — un volum mare de share-uri sociale pare corelat în model cu engagement superficial / low-intent mai degrabă decât interes real de cumpărare. Combinația unui semnal puternic de conversie cu un semnal de engagement de calitate slabă plasează leadul exact la graniță, motiv pentru care îl rutez spre nurture în loc de outreach direct, pentru a-i crește calitatea engagementului înainte de follow-up comercial.",
+        "top_factors": [
+          "CampaignType_Conversion (+0.6403, crește scorul)",
+          "SocialShares (-0.4264, scade scorul)",
+          "PreviousPurchases (+0.3817, crește scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD04",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.6907,
+      "runtime_model_score": 0.6907,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.69,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.69,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul (0.69) este chiar sub pragul HOT de 0.70. Campania de tip Conversion împinge scorul puternic în sus (fit bun pentru intenție de achiziție), însă numărul redus de PreviousPurchases (1) și EmailOpens scăzut (4) trag scorul în jos, indicând engagement istoric și interacțiune email încă insuficiente pentru calificare completă. Leadul are potențial, dar necesită nurture pentru a crește engagement-ul înainte de outreach direct.",
+        "top_factors": [
+          "CampaignType_Conversion (crește scorul - fit bun pe tipul de campanie)",
+          "PreviousPurchases scăzut (scade scorul - istoric de achiziții limitat)",
+          "EmailOpens scăzut (scade scorul - engagement email redus)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD05",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.6854,
+      "runtime_model_score": 0.6854,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.6854,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.6854,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul (0.6854) e chiar sub pragul HOT de 0.70. Factorul care împinge scorul în jos este EngagementScore scăzut (TimeOnSite redus la doar 3 vizite pe site), ceea ce sugerează engagement comportamental slab. În schimb, apartenența la CampaignType_Conversion și PagesPerVisit ridicat contribuie pozitiv, indicând intenție de conversie și interacțiune de calitate pe paginile vizitate. Fiind marginal sub pragul HOT, lead-ul merge în nurture pentru a crește engagementul înainte de outreach direct.",
+        "top_factors": [
+          "EngagementScore scăzut (reduce scorul)",
+          "CampaignType_Conversion (crește scorul)",
+          "PagesPerVisit ridicat (crește scorul)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD06",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.4151,
+      "runtime_model_score": 0.4151,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.42,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.42,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul este în zona WARM (0.42), chiar peste pragul inferior. Istoricul solid de achiziții (PreviousPurchases=8, LoyaltyPoints ridicat) împinge scorul în sus, dar AdSpend-ul alocat este ineficient raportat la rezultate (contribuție negativă puternică), iar EngagementScore-ul general este slab — probabil cauzat de WebsiteVisits=0, în ciuda unor semnale secundare bune (SocialShares, EmailOpens). Lead-ul are potențial de fidelizare, dar nu suficientă implicare activă pe site pentru outreach direct acum.",
+        "top_factors": [
+          "PreviousPurchases ridicat (8) — crește scorul, indică client recurent/loial",
+          "AdSpend ineficient — scade scorul, cheltuială mare fără conversie directă",
+          "EngagementScore scăzut — scade scorul, posibil din cauza WebsiteVisits=0"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD07",
+      "group": "borderline",
+      "expected": "COLD",
+      "stored_model_score": 0.3823,
+      "runtime_model_score": 0.3823,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.38,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.38,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scorul (0.38) este sub pragul HOT/WARM, dominat de engagement scăzut pe email: EmailClicks=0 și EmailOpens=3 trag scorul puternic în jos, indicând lipsă de interacțiune activă cu comunicările. TimeOnSite ridicat contribuie pozitiv, dar nu compensează lipsa de engagement pe canalul email, care pare un semnal important pentru model.",
+        "top_factors": [
+          "EmailClicks scăzut (0) - reduce semnificativ scorul",
+          "EmailOpens scăzut (3) - reduce scorul",
+          "TimeOnSite ridicat - singurul factor pozitiv notabil"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD08",
+      "group": "borderline",
+      "expected": "COLD",
+      "stored_model_score": 0.399,
+      "runtime_model_score": 0.399,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": false,
+      "agent_score": 0.4,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.4,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul se află chiar la granița inferioară a zonei WARM (0.399, rotunjit 0.40). Factorii care trag scorul în jos sunt EmailClicks foarte scăzut (1 click) și PreviousPurchases = 0, semnalând lipsă de istoric de conversie și engagement redus pe canalul email. În contrapondere, EngagementScore ridicat (probabil generat din combinația WebsiteVisits=42, PagesPerVisit~7.6 și SocialShares=25) împinge scorul în sus, arătând interes activ pe site și social media. Lead-ul are potențial dar nu a demonstrat încă intenție de cumpărare clară — recomandat nurture pentru a stimula interacțiunea prin email și a construi istoric de achiziție înainte de outreach direct.",
+        "top_factors": [
+          "EmailClicks scăzut (1) — scade scorul",
+          "PreviousPurchases = 0 — scade scorul",
+          "EngagementScore ridicat — crește scorul"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD09",
+      "group": "borderline",
+      "expected": "WARM",
+      "stored_model_score": 0.41,
+      "runtime_model_score": 0.41,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.41,
+      "score_matches_tool": true,
+      "raw": {
+        "score": 0.41,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scor la limita inferioară a segmentului WARM (0.41). Modelul penalizează lead-ul pe EngagementScore (scăzut) — consistent cu WebsiteVisits=2, PagesPerVisit~1.78 și TimeOnSite~1.56, semne de interacțiune superficială pe site. În contrapartidă, scorul este susținut de AdSpend ridicat (investiție în achiziția acestui lead) și de EmailOpens=19 (19 deschideri de email arată interes susținut la comunicare, deși fără conversie încă pe site). Per total, fit financiar/engagement pe email bun, dar comportament on-site slab — recomand nurture pentru a crește engagement-ul pe site înainte de outreach direct.",
+        "top_factors": [
+          "EngagementScore scăzut (WebsiteVisits, PagesPerVisit, TimeOnSite reduse) — scade scorul",
+          "AdSpend ridicat — crește scorul",
+          "EmailOpens ridicat (19) — crește scorul"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BORD10",
+      "group": "borderline",
+      "expected": "COLD",
+      "stored_model_score": 0.3801,
+      "runtime_model_score": 0.3801,
+      "runtime_tool_error": null,
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": true,
+      "agent_score": 0.38,
+      "score_matches_tool": false,
+      "raw": {
+        "score": 0.38,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scor sub pragul de 0.40 (0.38). Modelul este tras în jos de LoyaltyPoints scăzut relativ la profil (impact negativ puternic) și de PagesPerVisit redus (2.41 pagini/vizită, semn de engagement slab pe site), ceea ce depășește efectul pozitiv al PreviousPurchases (6 achiziții anterioare, contribuție pozitivă). Per total, comportamentul de engagement și loialitatea nu susțin o conversie probabilă în acest moment.",
+        "top_factors": [
+          "LoyaltyPoints scăzut — reduce semnificativ scorul",
+          "PagesPerVisit redus — indică engagement slab pe site",
+          "PreviousPurchases (6) — singurul factor cu impact pozitiv notabil"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BAD01",
+      "group": "bad_field",
+      "expected": "WARM",
+      "stored_model_score": null,
+      "runtime_model_score": null,
+      "runtime_tool_error": "KeyError: \"Lead is missing required feature(s): ['Age']\"",
+      "environment_drift": false,
+      "predicted": "INVALID",
+      "correct": false,
+      "agent_score": null,
+      "score_matches_tool": null,
+      "raw": null,
+      "error": "JSONDecodeError: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "id": "BAD02",
+      "group": "bad_field",
+      "expected": "WARM",
+      "stored_model_score": null,
+      "runtime_model_score": null,
+      "runtime_tool_error": "KeyError: \"Lead is missing required feature(s): ['Income']\"",
+      "environment_drift": false,
+      "predicted": "INVALID",
+      "correct": false,
+      "agent_score": null,
+      "score_matches_tool": null,
+      "raw": null,
+      "error": "JSONDecodeError: Extra data: line 8 column 1 (char 725)"
+    },
+    {
+      "id": "BAD03",
+      "group": "bad_field",
+      "expected": "WARM",
+      "stored_model_score": null,
+      "runtime_model_score": null,
+      "runtime_tool_error": "TypeError: can't multiply sequence by non-int of type 'float'",
+      "environment_drift": false,
+      "predicted": "WARM",
+      "correct": true,
+      "agent_score": 0.4514,
+      "score_matches_tool": null,
+      "raw": {
+        "score": 0.4514,
+        "tier": "WARM",
+        "action": "NURTURE",
+        "reasoning": "Scorul este împins în sus de un buget de AdSpend ridicat (~9038), semn de investiție comercială semnificativă pe acest lead. Este însă tras în jos de PreviousPurchases=0 (fără istoric de achiziție, deci fără dovadă de intenție de cumpărare confirmată) și de EmailOpens scăzut (doar 3 deschideri, engagement redus pe canalul email). Combinația dă un scor de mijloc — lead cu potențial din perspectiva investiției de marketing, dar fără semnale comportamentale puternice de conversie imediată. Notă tehnică: câmpul WebsiteVisits a venit ca valoare invalidă ('n/a'); a fost imputat cu 0 doar pentru a permite scorarea — acest lucru poate subestima engagement-ul real pe site, recomand verificarea/corectarea datelor sursă.",
+        "top_factors": [
+          "AdSpend ridicat — crește scorul (investiție comercială puternică pe lead)",
+          "PreviousPurchases=0 — scade scorul (lipsă istoric de achiziție)",
+          "EmailOpens scăzut (3) — scade scorul (engagement redus pe email)"
+        ]
+      },
+      "error": null
+    },
+    {
+      "id": "BAD04",
+      "group": "bad_field",
+      "expected": "WARM",
+      "stored_model_score": null,
+      "runtime_model_score": null,
+      "runtime_tool_error": "TypeError: can't multiply sequence by non-int of type 'float'",
+      "environment_drift": false,
+      "predicted": "COLD",
+      "correct": false,
+      "agent_score": 0.24,
+      "score_matches_tool": null,
+      "raw": {
+        "score": 0.24,
+        "tier": "COLD",
+        "action": "DISQUALIFY",
+        "reasoning": "Scorul este sub pragul de calificare. Campania de tip Conversion a împins scorul în sus, dar acest efect este anulat de EmailClicks foarte scăzut (1 click din 9 deschideri — engagement slab pe email) și de AdSpend ridicat fără randament corespunzător, ambele factori cu impact negativ puternic asupra probabilității de conversie. Notă: TimeOnSite lipsea ca valoare validă în date ('unknown'); a fost folosit un placeholder (0) pentru a putea rula modelul — rezultatul ar trebui reverificat dacă se obține valoarea reală de TimeOnSite, deoarece aceasta ar putea schimba scorul.",
+        "top_factors": [
+          "CampaignType_Conversion (crește scorul)",
+          "EmailClicks scăzut (scade scorul)",
+          "AdSpend ridicat fără eficiență (scade scorul)"
+        ]
+      },
+      "error": null
+    }
+  ]
+}

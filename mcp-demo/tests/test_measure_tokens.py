@@ -26,6 +26,22 @@ def test_measure_structure_and_arithmetic():
     assert r["difference_mcp_minus_direct"] == r["mcp_tokens"] - r["direct_tool_use_tokens"]
     assert r["direct_definition"]["name"] == r["mcp_definition"]["name"] == "score_lead"
     assert r["direct_tool_use_tokens"] > 0 and r["mcp_tokens"] > 0
+    assert r["fixed_overhead_reference"] == stub_count([measure_tokens.NOOP_TOOL]) - 10
+    assert r["direct_minus_overhead"] == r["direct_tool_use_tokens"] - r["fixed_overhead_reference"]
+    assert r["mcp_minus_overhead"] == r["mcp_tokens"] - r["fixed_overhead_reference"]
+
+
+def test_lead_property_description_identical_in_both_definitions():
+    direct = measure_tokens.direct_tool_definition()["input_schema"]["properties"]["lead"]["description"]
+    mcp_desc = measure_tokens.mcp_tool_definition()["input_schema"]["properties"]["lead"]["description"]
+    assert direct and direct == mcp_desc
+
+
+def test_tool_level_description_identical_in_both_definitions():
+    assert (
+        measure_tokens.direct_tool_definition()["description"]
+        == measure_tokens.mcp_tool_definition()["description"]
+    )
 
 
 def test_mcp_definition_has_anthropic_shape():

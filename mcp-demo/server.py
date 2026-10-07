@@ -10,27 +10,29 @@ from __future__ import annotations
 import json
 import sys
 from pathlib import Path
-from typing import Any
+from typing import Annotated, Any
 
 from mcp.server.fastmcp import FastMCP
+from pydantic import Field
 
 LEAD_INTELLIGENCE_DIR = Path(__file__).resolve().parent.parent / "src" / "lead_intelligence"
 sys.path.insert(0, str(LEAD_INTELLIGENCE_DIR))
 from scoring import score_lead as _score_lead  # noqa: E402
 
-# Same wording as SCORE_LEAD_TOOL in agents/qualification.py, so the token
-# comparison measures the protocol and not different descriptions.
-TOOL_DESCRIPTION = (
-    "Scores a lead with the trained XGBoost conversion model. Returns "
-    "a conversion probability in [0, 1] and the top 3 contributing "
-    "features (SHAP-based) with their direction of influence."
-)
+# Reuse the description strings from the direct tool-use definition (imported,
+# not copied), so the token comparison measures the protocol and not different
+# wording. This makes the server depend on agents.qualification (and thus on
+# anthropic); it is not standalone.
+from agents.qualification import SCORE_LEAD_TOOL  # noqa: E402
+
+TOOL_DESCRIPTION = SCORE_LEAD_TOOL["description"]
+LEAD_DESCRIPTION = SCORE_LEAD_TOOL["input_schema"]["properties"]["lead"]["description"]
 
 mcp = FastMCP("coffra-lead-scoring")
 
 
 @mcp.tool(name="score_lead", description=TOOL_DESCRIPTION)
-def score_lead(lead: dict[str, Any]) -> str:
+def score_lead(lead: Annotated[dict[str, Any], Field(description=LEAD_DESCRIPTION)]) -> str:
     """Score one lead; returns the same JSON string the agent's tool_result carries today."""
     return json.dumps(_score_lead(lead))
 

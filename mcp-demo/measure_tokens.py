@@ -1,7 +1,8 @@
 """
 EXPERIMENT: measure the token size of the score_lead tool definition in the
 direct tool-use version (SCORE_LEAD_TOOL in agents/qualification.py) vs the
-MCP version (schema as FastMCP generates it, mapped to Anthropic's format).
+MCP version (schema as FastMCP generates it, mapped to Anthropic's format),
+plus a minimal "noop" tool as a reference for the fixed tool-use overhead.
 
 Each definition is counted with the Anthropic token-counting endpoint as
 (request with the tool) - (same request without tools). Needs ANTHROPIC_API_KEY.
@@ -24,6 +25,9 @@ sys.path.insert(0, str(HERE.parent / "src" / "lead_intelligence"))
 
 MODEL = "claude-sonnet-5"
 RESULTS_PATH = HERE / "results.json"
+# Minimal tool (name only, empty object schema) to make the fixed tool-use
+# overhead visible. Approximate: its name is shorter and it has no description.
+NOOP_TOOL = {"name": "noop", "input_schema": {"type": "object", "properties": {}}}
 PROBE_MESSAGES = [{"role": "user", "content": "ping"}]
 
 
@@ -57,6 +61,7 @@ def measure(count: Callable[[list[dict[str, Any]]], int], model: str = MODEL) ->
     baseline = count([])
     direct_tokens = count([direct]) - baseline
     mcp_tokens = count([mcp_def]) - baseline
+    overhead = count([NOOP_TOOL]) - baseline
     return {
         "experiment": True,
         "model": model,
@@ -65,6 +70,10 @@ def measure(count: Callable[[list[dict[str, Any]]], int], model: str = MODEL) ->
         "direct_tool_use_tokens": direct_tokens,
         "mcp_tokens": mcp_tokens,
         "difference_mcp_minus_direct": mcp_tokens - direct_tokens,
+        "fixed_overhead_reference": overhead,
+        "direct_minus_overhead": direct_tokens - overhead,
+        "mcp_minus_overhead": mcp_tokens - overhead,
+        "fixed_overhead_tool": NOOP_TOOL,
         "direct_definition": direct,
         "mcp_definition": mcp_def,
     }

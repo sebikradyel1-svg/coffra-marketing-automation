@@ -68,7 +68,34 @@ installed, then restart Claude Desktop.
 | Reuse | Only code that imports and wires it up | Any MCP client (Claude Desktop, other agents) can use it without custom glue |
 | Control over the loop | Full: custom error handling, retries, rate limiting (`call_claude`) | Client-defined; the host app drives the loop |
 | Extra moving parts | None | A process, a transport, a client config |
-| Token cost of the definition | See `results.json` after you run `measure_tokens.py` | Same |
+| Token cost of the definition | Measured by `measure_tokens.py` (see "Token measurement" below) | Same |
+
+## Token measurement
+
+`measure_tokens.py` counts, with the Anthropic token-counting endpoint, how
+many input tokens each tool definition adds to a request (request with the
+tool minus the same request without tools). The `lead` property description
+and the tool-level description are imported from `SCORE_LEAD_TOOL`, so both
+versions carry identical text. FastMCP's generated schema still has a few
+extra keys of its own (for example `title` and `additionalProperties`); these
+are left untouched on purpose.
+
+`results.json` (written when you run the script) contains:
+
+- `baseline_no_tools_tokens`: the probe request with no tools
+- `direct_tool_use_tokens` and `mcp_tokens`: tokens added by each definition
+- `difference_mcp_minus_direct`
+- `fixed_overhead_reference`: tokens added by a minimal `noop` tool (name only,
+  empty object schema). This is an **approximate** reference for the fixed
+  tool-use overhead: the `noop` name is shorter and it has no description, so
+  it is not an exact floor for `score_lead`.
+- `direct_minus_overhead` and `mcp_minus_overhead`: each count minus
+  `fixed_overhead_reference`
+- both full tool definitions, the dummy definition, the model, and a timestamp
+
+`results_v1_unequal_schemas.json` is a first run made when the two schemas
+were not equal (the MCP version lacked the long `lead` description). It is
+kept for transparency and should not be used for the comparison.
 
 ## What this does not show
 
@@ -79,5 +106,8 @@ installed, then restart Claude Desktop.
 - **Not production.** No rate limiting, logging, input validation beyond what
   `score_lead` already does, or deployment story. The live pipeline does not
   use this server.
+- **Not standalone.** `server.py` imports `agents.qualification` (and
+  therefore `anthropic`) only to reuse the description strings, so the server
+  cannot run without the rest of the repo's dependencies.
 - **Scoring only.** It does not show the agent's reasoning or tiering, only
   that the same function can be served over MCP.
